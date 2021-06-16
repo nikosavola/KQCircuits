@@ -2,6 +2,7 @@ FROM ubuntu:20.04
 
 LABEL version="0.2"
 LABEL description="This is a KQCircuit test environment including Klayout"
+LABEL org.opencontainers.image.source https://github.com/iqm-finland/KQCircuits
 
 WORKDIR /kqc
 ENV DISPLAY :99
