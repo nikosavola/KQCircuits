@@ -12,7 +12,7 @@ jobs:
   test:
     name: Tests
     runs-on: ubuntu-latest
-    container: ghcr.io/iqm-finland/kqcircuits
+    container: ghcr.io/nikosavola/kqc-test-02
     steps:
       - uses: actions/checkout@v2
       - name: Init KQCircuits
@@ -29,7 +29,7 @@ jobs:
   verify_documentation:
     name: Verify documentation
     runs-on: ubuntu-latest
-    container: ghcr.io/iqm-finland/kqcircuits
+    container: ghcr.io/nikosavola/kqc-test-02
     steps:
       - uses: actions/checkout@v2
       - name: Init KQCircuits
@@ -50,7 +50,7 @@ jobs:
     name: Deploy documentation
     needs: [ test, verify_documentation ]
     runs-on: ubuntu-latest
-    container: ghcr.io/iqm-finland/kqcircuits
+    container: ghcr.io/nikosavola/kqc-test-02
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v2
@@ -58,12 +58,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: docs
-          path: docs/_build/html
-      - name: Prepare docs
-        run: |
-          cd docs
-          find _build/html -name "*.html" -exec sed -i 's#github.com/iqm-finland/KQCircuits#$KQC_REPOSITORY_STRING#g' {} +
-          mv _build/html ../public
+          path: public
       - name: Install rsync  # https://github.com/JamesIves/github-pages-deploy-action#using-a-container-
         run: apt-get update && apt-get install -y rsync
       - name: Upload pages
