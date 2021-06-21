@@ -11,7 +11,15 @@ API.
 .. image:: https://github.com/iqm-finland/KQCircuits/actions/workflows/ci.yaml/badge.svg
    :target: https://github.com/iqm-finland/KQCircuits/actions/workflows/ci.yaml
    :alt: Continuous Integration
-
+   
+.. image:: https://img.shields.io/github/license/iqm-finland/KQCircuits.js.svg
+   :target: https://github.com/iqm-finland/kqcircuits/blob/master/LICENSE
+   :alt: License
+   
+.. image:: https://img.shields.io/github/release/iqm-finland/KQCircuits.js.svg
+   :target: https://github.com/iqm-finland/KQCircuits/releases/
+   :alt: Latest release
+   
 ----
 
 KQCircuits generates multi-layer 2-dimensional-geometry representing common structures in quantum
