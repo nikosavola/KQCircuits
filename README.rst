@@ -12,11 +12,11 @@ API.
    :target: https://github.com/iqm-finland/KQCircuits/actions/workflows/ci.yaml
    :alt: Continuous Integration
    
-.. image:: https://img.shields.io/github/license/iqm-finland/KQCircuits.js.svg
+.. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
    :target: https://github.com/iqm-finland/kqcircuits/blob/master/LICENSE
    :alt: License
    
-.. image:: https://img.shields.io/github/release/iqm-finland/KQCircuits.js.svg
+.. image:: https://img.shields.io/github/v/tag/iqm-finland/KQCircuits
    :target: https://github.com/iqm-finland/KQCircuits/releases/
    :alt: Latest release
    
