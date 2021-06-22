@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        klayout_version: [0.26.11, 0.26.12, 0.27.0, 0.27.1]
+        klayout_version: [0.26.4, 0.26.12, 0.27.2]
     steps:
       - uses: actions/checkout@v2
       - name: Init KQCircuits
@@ -39,7 +39,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, macos-latest]
-        klayout_version: [0.26.11, 0.26.12, 0.27.0, 0.27.1]
+        klayout_version: [0.26.4, 0.26.12, 0.27.2]
     steps:
       - uses: actions/checkout@v2
       - name: macOS setup

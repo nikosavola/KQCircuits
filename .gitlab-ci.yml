@@ -12,7 +12,7 @@ test:
   stage: test
   parallel:
     matrix:
-      - KLAYOUT_VERSION: [0.26.11, 0.26.12, 0.27.0, 0.27.1]
+      - KLAYOUT_VERSION: [0.26.4, 0.26.12, 0.27.2]
   script:
     - pip install -Iv klayout==$KLAYOUT_VERSION
     - tox
