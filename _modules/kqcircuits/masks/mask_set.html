@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.masks.mask_set &mdash; KQCircuits 2019 documentation</title>
+  <title>kqcircuits.masks.mask_set &mdash; KQCircuits 3.2.0 documentation</title>
   
 
   
@@ -90,7 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/kqcircuits.html">API documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../trademarks.html">Trademarks</a></li>
 </ul>
 
@@ -175,11 +175,12 @@
 <span class="c1"># (meetiqm.com/developers/osstmpolicy). IQM welcomes contributions to the code. Please see our contribution agreements</span>
 <span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
 
-
 <span class="kn">from</span> <span class="nn">autologging</span> <span class="kn">import</span> <span class="n">logged</span><span class="p">,</span> <span class="n">traced</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
 <span class="kn">import</span> <span class="nn">kqcircuits.masks.mask_export</span> <span class="k">as</span> <span class="nn">mask_export</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_bar_format</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.masks.mask_layout</span> <span class="kn">import</span> <span class="n">MaskLayout</span>
 
 
@@ -242,6 +243,7 @@
 <span class="sd">            face_id: face_id of the mask layout</span>
 <span class="sd">            mask_layout_type: type of the mask layout (MaskLayout or a child class of it)</span>
 <span class="sd">            kwargs: keyword arguments passed to the mask layout</span>
+
 <span class="sd">        Returns:</span>
 <span class="sd">            the created mask layout</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -260,6 +262,16 @@
                                        <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mask_layouts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mask_layout</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">mask_layout</span></div>
+
+<div class="viewcode-block" id="MaskSet.add_chips"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.add_chips">[docs]</a>    <span class="k">def</span> <span class="nf">add_chips</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chips</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add list of chips with parameters to self.chips_map_legend</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            chips: List of tuples that ``add_chip`` uses.</span>
+<span class="sd">                For example, ``(QualityFactor, &quot;QDG&quot;, parameters)``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">chip_class</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">chips</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Building variants&#39;</span><span class="p">,</span> <span class="n">bar_format</span><span class="o">=</span><span class="n">default_bar_format</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_chip</span><span class="p">(</span><span class="n">chip_class</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MaskSet.add_chip"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.add_chip">[docs]</a>    <span class="k">def</span> <span class="nf">add_chip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chip_class</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds a chip with the given name and parameters to self.chips_map_legend.</span>

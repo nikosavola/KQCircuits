@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.masks.mask_layout &mdash; KQCircuits 2019 documentation</title>
+  <title>kqcircuits.masks.mask_layout &mdash; KQCircuits 3.2.0 documentation</title>
   
 
   
@@ -90,7 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/kqcircuits.html">API documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../trademarks.html">Trademarks</a></li>
 </ul>
 
@@ -178,10 +178,11 @@
 
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">from</span> <span class="nn">autologging</span> <span class="kn">import</span> <span class="n">logged</span><span class="p">,</span> <span class="n">traced</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_layers</span><span class="p">,</span> <span class="n">default_brand</span><span class="p">,</span> <span class="n">default_faces</span><span class="p">,</span> <span class="n">default_mask_parameters</span><span class="p">,</span> \
-    <span class="n">default_layers_to_mask</span><span class="p">,</span> <span class="n">default_mask_export_layers</span>
+    <span class="n">default_layers_to_mask</span><span class="p">,</span> <span class="n">default_mask_export_layers</span><span class="p">,</span> <span class="n">default_bar_format</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.util</span> <span class="kn">import</span> <span class="n">merge</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.markers.marker</span> <span class="kn">import</span> <span class="n">Marker</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.mask_marker_fc</span> <span class="kn">import</span> <span class="n">MaskMarkerFc</span>
@@ -273,7 +274,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span> <span class="o">=</span> <span class="p">{}</span>
 
-        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">chips_map_legend</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">chips_map_legend</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Building cell hierarchy&#39;</span><span class="p">,</span> <span class="n">bar_format</span><span class="o">=</span><span class="n">default_bar_format</span><span class="p">):</span>
             <span class="c1"># create copies of the chips, so that modifying these only affects the ones in this MaskLayout</span>
             <span class="n">new_cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">create_cell</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
             <span class="n">new_cell</span><span class="o">.</span><span class="n">copy_tree</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
@@ -312,7 +313,7 @@
                 <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">top_cell</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DCellInstArray</span><span class="p">(</span><span class="n">labels_cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">(),</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))))</span>
 
-        <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chips_map</span><span class="p">):</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tqdm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chips_map</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Adding chips to mask&#39;</span><span class="p">,</span> <span class="n">bar_format</span><span class="o">=</span><span class="n">default_bar_format</span><span class="p">)):</span>
             <span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">slot</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
                 <span class="n">position</span> <span class="o">=</span> <span class="n">step_ver</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">step_hor</span> <span class="o">*</span> <span class="n">j</span>
                 <span class="n">pos_index_name</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{:02d}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>

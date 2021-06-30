@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title> &mdash; KQCircuits 2019 documentation</title>
+  <title>KQCircuits documentation &mdash; KQCircuits 3.2.0 documentation</title>
   
 
   
@@ -91,7 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/kqcircuits.html">API documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trademarks.html">Trademarks</a></li>
 </ul>
 
@@ -141,7 +141,7 @@
     
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li></li>
+      <li>KQCircuits documentation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -162,8 +162,29 @@
             
   <div class="section" id="logo">
 <h1><img alt="KQC logo" src="_images/logo.png" /><a class="headerlink" href="#logo" title="Permalink to this headline">¶</a></h1>
-<a class="reference external image-reference" href="https://github.com/iqm-finland/KQCircuits"><img alt="https://img.shields.io/badge/source-github-ff69b4.svg" src="https://img.shields.io/badge/source-github-ff69b4.svg" /></a>
-<p>KQCircuits is a KLayout/Python-based superconducting quantum circuit library developed by IQM.</p>
+<a class="reference external image-reference" href="https://github.com/iqm-finland/KQCircuits"><img alt="GitHub" src="https://img.shields.io/badge/source-github-ff69b4.svg" /></a>
+<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4944796"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4944796.svg" /></a>
+<p><strong>KQCircuits</strong> is a Python library developed by IQM for automating the design of
+superconducting quantum circuits. It uses the <a class="reference external" href="https://klayout.de">KLayout</a>
+layout design program API.</p>
+<p>KQCircuits was created to reduce the time and effort needed to design quantum
+processors and to help avoid human errors in the design process. Defining the
+circuits using code allows the geometry to be created in a consistent way, with
+more precision than manual drawing. Using KQCircuits it is easy to instantly
+generate multiple designs with different parameter values affecting the geometry
+in complex ways. KQCircuits also enables the exchange of circuit element
+definitions between quantum processor designers, making it easy to modify or
+extend the elements designed by others.</p>
+<img alt="example layout" class="align-center" src="_images/single_xmons_chip_3.png" />
+<p>KQCircuits generates multi-layer 2-dimensional-geometry representing common
+structures in quantum processing units (QPU). It includes definitions of
+parametrized geometrical objects or “elements”, framework to easily define
+your own elements, framework to get geometry from the elements by setting
+values to parameters and a framework to assemble a full QPU design by combining
+many of the elements in different geometrical relations. Among other
+templates, are also structures to combine QPU designs to create optical mask
+layout and EBL patterns for fabrication of quantum circuits and export a set
+of files for a mask as needed for QPU fabrication.</p>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -189,6 +210,7 @@
 <li class="toctree-l2"><a class="reference internal" href="developer/testing.html">Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developer/coding_style.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developer/documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer/contributing.html">Contributing</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="libraries/index.html">Libraries</a><ul>
@@ -212,7 +234,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api/kqcircuits.html#module-kqcircuits">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trademarks.html">Trademarks</a></li>
 </ul>
 </div>

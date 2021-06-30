@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.masks.mask_export &mdash; KQCircuits 2019 documentation</title>
+  <title>kqcircuits.masks.mask_export &mdash; KQCircuits 3.2.0 documentation</title>
   
 
   
@@ -90,7 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/kqcircuits.html">API documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../trademarks.html">Trademarks</a></li>
 </ul>
 
@@ -179,12 +179,13 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">autologging</span> <span class="kn">import</span> <span class="n">logged</span><span class="p">,</span> <span class="n">traced</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.klayout_view</span> <span class="kn">import</span> <span class="n">KLayoutView</span><span class="p">,</span> <span class="n">resolve_default_layer_info</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.chips.chip</span> <span class="kn">import</span> <span class="n">Chip</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">mask_bitmap_export_layers</span><span class="p">,</span> <span class="n">chip_export_layer_clusters</span><span class="p">,</span> <span class="n">default_layers</span><span class="p">,</span> \
-    <span class="n">default_mask_parameters</span><span class="p">,</span> <span class="n">default_drc_runset</span><span class="p">,</span> <span class="n">ROOT_PATH</span>
+    <span class="n">default_mask_parameters</span><span class="p">,</span> <span class="n">default_drc_runset</span><span class="p">,</span> <span class="n">default_bar_format</span><span class="p">,</span> <span class="n">ROOT_PATH</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.util.netlist_extraction</span> <span class="kn">import</span> <span class="n">export_cell_netlist</span>
 <span class="sd">&quot;&quot;&quot;Functions for exporting mask sets.&quot;&quot;&quot;</span>
 
@@ -213,7 +214,7 @@
         <span class="n">export_masks_of_face</span><span class="p">(</span><span class="n">export_dir</span><span class="p">,</span> <span class="n">mask_layout</span><span class="p">,</span> <span class="n">mask_set</span><span class="p">)</span>
 
     <span class="c1"># export chips</span>
-    <span class="k">for</span> <span class="n">chip_name</span><span class="p">,</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">mask_set</span><span class="o">.</span><span class="n">used_chips</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">chip_name</span><span class="p">,</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">mask_set</span><span class="o">.</span><span class="n">used_chips</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Exporting chips&#39;</span><span class="p">,</span> <span class="n">bar_format</span><span class="o">=</span><span class="n">default_bar_format</span><span class="p">):</span>
         <span class="n">export_chip</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">chip_name</span><span class="p">,</span> <span class="n">export_dir</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">mask_set</span><span class="p">)</span></div>
 
 

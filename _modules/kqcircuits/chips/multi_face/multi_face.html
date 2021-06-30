@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.chips.multi_face.multi_face &mdash; KQCircuits 2019 documentation</title>
+  <title>kqcircuits.chips.multi_face.multi_face &mdash; KQCircuits 3.2.0 documentation</title>
   
 
   
@@ -90,7 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../api/kqcircuits.html">API documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../trademarks.html">Trademarks</a></li>
 </ul>
 
@@ -283,6 +283,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
         <span class="n">existing_bumps</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;indium_bump&quot;</span><span class="p">)))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
+        <span class="n">existing_bump_count</span> <span class="o">=</span> <span class="n">existing_bumps</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
         <span class="n">avoidance_existing_bumps</span> <span class="o">=</span> <span class="n">existing_bumps</span><span class="o">.</span><span class="n">sized</span><span class="p">((</span><span class="n">existing_bump_avoidance_margin</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
         <span class="n">avoidance_region</span> <span class="o">=</span> <span class="p">(</span><span class="n">avoidance_layer_bottom</span> <span class="o">+</span> <span class="n">avoidance_layer_top</span> <span class="o">+</span> <span class="n">avoidance_existing_bumps</span><span class="p">)</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
 
@@ -302,7 +303,8 @@
         <span class="k">for</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">bump_locations</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">bump</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="n">location</span><span class="p">))</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">__log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Inserted </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">bump_locations</span><span class="p">)</span><span class="si">}</span><span class="s1"> ground bumps&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Found </span><span class="si">{</span><span class="n">existing_bump_count</span><span class="si">}</span><span class="s1"> existing bumps and inserted </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">bump_locations</span><span class="p">)</span><span class="si">}</span><span class="s1"> ground bumps, &#39;</span>
+                        <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;totalling </span><span class="si">{</span><span class="n">existing_bump_count</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">bump_locations</span><span class="p">)</span><span class="si">}</span><span class="s1"> bumps.&#39;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="MultiFace.produce_ground_grid"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.multi_face.html#kqcircuits.chips.multi_face.multi_face.MultiFace.produce_ground_grid">[docs]</a>    <span class="k">def</span> <span class="nf">produce_ground_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Produces ground grid on t and b faces.&quot;&quot;&quot;</span>
