@@ -12,6 +12,10 @@ API.
    :target: https://github.com/iqm-finland/KQCircuits/actions/workflows/ci.yaml
    :alt: Continuous Integration
 
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.4944796.svg
+   :target: https://doi.org/10.5281/zenodo.4944796
+   :alt: DOI
+
 .. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
    :target: https://github.com/iqm-finland/kqcircuits/blob/master/LICENSE
    :alt: License
@@ -43,11 +47,11 @@ the graphical user interface mode is recommended.
 
 Install and run KLayout once. Run ``python3 setup_within_klayout.py`` then klayout will contain
 KQCircuits. For further details see the `getting started documentation
-<https://iqm-finland.github.io/KQCircuits/_build/html/start/index.html>`__.
+<https://iqm-finland.github.io/KQCircuits/start/index.html>`__.
 
 For stand-alone mode run ``python -m pip install -e python[docs,tests]``. Then scripts may be run and
 documentation can be built. For further details see the `documentation
-<https://iqm-finland.github.io/KQCircuits/_build/html/developer/setup.html>`__.
+<https://iqm-finland.github.io/KQCircuits/developer/setup.html>`__.
 
 Documentation
 -------------
@@ -62,7 +66,7 @@ Contributing
 Contributions to KQC are welcome from the community. Contributors are expected to accept IQM
 Individual Contributor License Agreement by filling `a form at IQM website
 <https://meetiqm.com/developers/clas>`__. See also section `Contributing
-<https://iqm-finland.github.io/KQCircuits/_build/html/developer/contributing.html>`__ in the
+<https://iqm-finland.github.io/KQCircuits/developer/contributing.html>`__ in the
 documentation.
 
 Copyright
