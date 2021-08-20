@@ -118,6 +118,7 @@ deploy_image:
       --cache-repo=$CI_REGISTRY_IMAGE/cache
       --cache=true
   only:
+    - 826-docker-cli  # TODO DEBUG
     - master
     - tags
 
