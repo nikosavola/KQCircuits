@@ -4,15 +4,17 @@ on:
   pull_request:
     branches:
       - main
+      - 849-add-docker-entrypoint
   push:
     branches:
       - main
+      - 849-add-docker-entrypoint
 
 jobs:
   test:
     name: Tests
     runs-on: ubuntu-latest
-    container: ghcr.io/iqm-finland/kqcircuits
+    container: ghcr.io/nikosavola/kqcircuits:826-docker-cli
     strategy:
       fail-fast: false
       matrix:
@@ -83,7 +85,7 @@ jobs:
   static_analysis:
     name: Static code analysis
     runs-on: ubuntu-latest
-    container: ghcr.io/iqm-finland/kqcircuits
+    container: ghcr.io/nikosavola/kqcircuits:826-docker-cli
     steps:
       - uses: actions/checkout@v2
       - name: Init KQCircuits
@@ -94,7 +96,7 @@ jobs:
   verify_documentation:
     name: Verify documentation
     runs-on: ubuntu-latest
-    container: ghcr.io/iqm-finland/kqcircuits
+    container: ghcr.io/nikosavola/kqcircuits:826-docker-cli
     steps:
       - uses: actions/checkout@v2
         with:
@@ -116,7 +118,7 @@ jobs:
   check_copyright_headers:
     name: Check copyright headers
     runs-on: ubuntu-latest
-    container: ghcr.io/iqm-finland/kqcircuits
+    container: ghcr.io/nikosavola/kqcircuits:826-docker-cli
     steps:
       - uses: actions/checkout@v2
       - name: Init KQCircuits
@@ -130,7 +132,7 @@ jobs:
   check_license:
     name: Check license
     runs-on: ubuntu-latest
-    container: ghcr.io/iqm-finland/kqcircuits
+    container: ghcr.io/nikosavola/kqcircuits:826-docker-cli
     steps:
       - uses: actions/checkout@v2
       - name: Init KQCircuits
@@ -143,7 +145,7 @@ jobs:
     needs: [ test, test_non_linux, static_analysis, check_copyright_headers,
              check_license, verify_documentation ]
     runs-on: ubuntu-latest
-    container: ghcr.io/iqm-finland/kqcircuits
+    container: ghcr.io/nikosavola/kqcircuits:826-docker-cli
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v2
