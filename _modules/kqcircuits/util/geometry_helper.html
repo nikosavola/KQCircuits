@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.util.geometry_helper &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.util.geometry_helper &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
@@ -254,7 +259,7 @@
 <div class="viewcode-block" id="get_object_path_length"><a class="viewcode-back" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.get_object_path_length">[docs]</a><span class="k">def</span> <span class="nf">get_object_path_length</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns sum of lengths of all the paths in the object and its children</span>
 
-<span class="sd">    Attributes:</span>
+<span class="sd">    Arguments:</span>
 <span class="sd">        obj: ObjectInstPath object</span>
 <span class="sd">        layer: layer integer id in the database</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -371,23 +376,24 @@
     <span class="n">b</span> <span class="o">=</span> <span class="n">polygon_points</span><span class="p">[</span><span class="n">bottom_left_point_idx</span><span class="p">]</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">polygon_points</span><span class="p">[(</span><span class="n">bottom_left_point_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">polygon_points</span><span class="p">)]</span>
     <span class="n">det</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">a</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">a</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-    <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">det</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">False</span></div>
+    <span class="k">return</span> <span class="n">det</span> <span class="o">&lt;</span> <span class="mi">0</span></div>
 
 
-<div class="viewcode-block" id="circle_polygon"><a class="viewcode-back" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.circle_polygon">[docs]</a><span class="k">def</span> <span class="nf">circle_polygon</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="viewcode-block" id="circle_polygon"><a class="viewcode-back" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.circle_polygon">[docs]</a><span class="k">def</span> <span class="nf">circle_polygon</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns a polygon for a full circle around the origin.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        r: radius</span>
-<span class="sd">        n: number of points</span>
+<span class="sd">        r: Radius</span>
+<span class="sd">        origin: Center of the circle, default (0,0)</span>
+<span class="sd">        n: Number of points.</span>
 
 <span class="sd">    Returns: list of ``DPoint``s, length ``n``.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPolygon</span><span class="p">([</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="n">sin</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)])</span></div>
+    <span class="k">return</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPolygon</span><span class="p">([</span><span class="n">origin</span> <span class="o">+</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="n">sin</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)])</span></div>
 
 
-<div class="viewcode-block" id="arc_points"><a class="viewcode-back" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.arc_points">[docs]</a><span class="k">def</span> <span class="nf">arc_points</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
+<div class="viewcode-block" id="arc_points"><a class="viewcode-back" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.arc_points">[docs]</a><span class="k">def</span> <span class="nf">arc_points</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns point describing an arc around the origin with specified start and stop angles. The start and stop angle</span>
 <span class="sd">    are included.</span>
@@ -398,12 +404,13 @@
 <span class="sd">        r: Arc radius</span>
 <span class="sd">        start: Start angle in radians, default 0</span>
 <span class="sd">        stop: Stop angle in radians, default 2*pi</span>
+<span class="sd">        origin: Center of the arc, default (0,0)</span>
 <span class="sd">        n: Number of steps corresponding to a full circle.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">n_steps</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">))</span>
+    <span class="n">n_steps</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)),</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">step</span> <span class="o">=</span> <span class="p">(</span><span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">step</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="n">sin</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">step</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">)]</span></div>
+    <span class="k">return</span> <span class="p">[</span><span class="n">origin</span> <span class="o">+</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">step</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="n">sin</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">step</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">)]</span></div>
 </pre></div>
 
            </div>
@@ -415,7 +422,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

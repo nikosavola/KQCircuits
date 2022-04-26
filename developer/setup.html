@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Developer Setup &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>Developer Setup &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Developer Setup</a><ul>
@@ -98,6 +103,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#manual-installation">Manual installation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#linux-or-macos">Linux or MacOS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
@@ -106,11 +112,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="standalone.html">KLayout Standalone Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker_image.html">Docker image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="testing.html">Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coding_style.html">Coding Style</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation.html">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html">Contributing</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
@@ -195,12 +202,6 @@
 <p>Developer setup may be done independently from the GUI based installation of the KQCircuits Salt
 package. But you should not do both without removing the other one. Otherwise there will be
 duplicate macros and possibly other problems.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You must open KLayout at least once before installing KQCircuits, because the KLayout python
-folder <code class="docutils literal notranslate"><span class="pre">~/.klayout/python</span></code> is only created then. The documentation uses Linux paths unless
-explicitely mentioned otherwise.</p>
-</div>
 <div class="section" id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>KQCircuits installation requires Python 3, which should be already installed on Linux. On Windows
@@ -216,9 +217,7 @@ manager, you have to also install that.</p>
 <div class="section" id="sources">
 <h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
 <p>Get KQCircuits’ sources with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">iqm</span><span class="o">-</span><span class="n">finland</span><span class="o">/</span><span class="n">KQCircuits</span>
-</pre></div>
-</div>
+<pre class="literal-block">git clone <a class="reference external" href="https://github.com/iqm-finland/KQCircuits">https://github.com/iqm-finland/KQCircuits</a></pre>
 <p>Alternatively, you may re-use the Salt package itself for quick tests, it is under the
 <code class="docutils literal notranslate"><span class="pre">.klayout/salt/KQCircuits</span></code> directory. In this case creating symbolic links or installing some
 dependencies may not be required. Beware, a Salt package update <strong>will overwrite your code</strong> in this
@@ -230,8 +229,9 @@ directory without any warning!</p>
 are automatically installed in the default locations where KLayout looks for
 them. If you want to have more control over the installation process, see the
 next section.</p>
-<p>Open a command line / terminal (in Windows you must open it with
-administrator privileges) and <code class="docutils literal notranslate"><span class="pre">cd</span></code> to your KQCircuits folder. Then write:</p>
+<p>Open a command line / terminal and <code class="docutils literal notranslate"><span class="pre">cd</span></code> to your KQCircuits folder.
+<strong>In Windows you must open the terminal with administrator privileges</strong>.
+Then write:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">setup_within_klayout</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
@@ -243,6 +243,32 @@ manager, you have to also install that too.</p>
 <p>Note, that KLayout will run macros with it’s own Python version, ignoring
 virtualenv settings. KLayout is linked together with libpython*.so on Linux and
 libpython*.dll on Windows.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If KQCircuits is not working properly after installation (KQC libraries
+not visible, running any macro gives an error, etc.), there might be some
+problem with the specific KLayout version/build you are using, see
+<a class="reference internal" href="../start/installation.html#installation-issues"><span class="std std-ref">Known installation issues</span></a> section for possible solutions.</p>
+</div>
+</div>
+<div class="section" id="secondary-install">
+<h2>Secondary install<a class="headerlink" href="#secondary-install" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don’t do it, unless you really need multiple parallel environments.</p>
+</div>
+<p>It is possible to work with several independent KQC instances simultaneously. You only need to check
+out KQCircuits under some different name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">iqm</span><span class="o">-</span><span class="n">finland</span><span class="o">/</span><span class="n">KQCircuits</span> <span class="n">KQC_2nd</span>
+</pre></div>
+</div>
+<p>KLayout needs to know about this secondary environment, run it with <code class="docutils literal notranslate"><span class="pre">startkl.py</span></code> or by manualy
+setting the environment variable <code class="docutils literal notranslate"><span class="pre">KLAYOUT_HOME</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KLAYOUT_HOME</span><span class="o">=~/.</span><span class="n">klayout_alt</span><span class="o">/</span><span class="n">KQC_2nd</span> <span class="n">klayout</span>
+</pre></div>
+</div>
+<p>Remember to set up a new <code class="docutils literal notranslate"><span class="pre">venv</span></code> before attempting <a class="reference internal" href="standalone.html#standalone"><span class="std std-ref">KLayout Standalone Usage</span></a> in this directory. Otherwise
+your secondary environment may get mixed up with the primary one.</p>
 </div>
 <div class="section" id="manual-installation">
 <h2>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h2>
@@ -254,9 +280,9 @@ operating systems are explained in the following subsections. The script
 automatically do the same steps as explained below.</p>
 <div class="section" id="linux-or-macos">
 <h3>Linux or MacOS<a class="headerlink" href="#linux-or-macos" title="Permalink to this headline">¶</a></h3>
-<p>Create a symlink from KLayout to the  kqcircuits package and scripts:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">Path_to_KQCircuits</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">ksqcircuits</span> <span class="o">~/.</span><span class="n">klayout</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">kqcircuits</span>
-<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">Path_to_KQCircuits</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">scripts</span> <span class="o">~/.</span><span class="n">klayout</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">kqcircuits_scripts</span>
+<p>Create a symlink from KLayout to the kqcircuits package and scripts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">Path_to_KQCircuits</span><span class="o">/</span><span class="n">klayout_package</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">kqcircuits</span> <span class="o">~/.</span><span class="n">klayout</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">kqcircuits</span>
+<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">Path_to_KQCircuits</span><span class="o">/</span><span class="n">klayout_package</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">scripts</span> <span class="o">~/.</span><span class="n">klayout</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">kqcircuits_scripts</span>
 </pre></div>
 </div>
 <p>To install the required packages, open a terminal in your KQCircuits folder
@@ -273,9 +299,9 @@ have to create a symlink to there.</p>
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>Create a symlink from KLayout to kqcircuits by opening a command prompt with
 administrator privileges, and do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">%</span><span class="n">HOMEPATH</span><span class="o">%</span>\<span class="n">KLayout</span>\<span class="n">python</span>
-<span class="n">mklink</span> <span class="o">/</span><span class="n">D</span> <span class="s1">&#39;kqcircuits&#39;</span> <span class="s2">&quot;Path_to_KQCircuits\python\kqcircuits&quot;</span>
-<span class="n">mklink</span> <span class="o">/</span><span class="n">D</span> <span class="s1">&#39;kqcircuits_scripts&#39;</span> <span class="s2">&quot;Path_to_KQCircuits\python\scripts&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">%</span><span class="n">HOMEPATH</span><span class="o">%</span>\<span class="n">KLayout</span>\<span class="n">klayout_package</span>\<span class="n">python</span>
+<span class="n">mklink</span> <span class="o">/</span><span class="n">D</span> <span class="s1">&#39;kqcircuits&#39;</span> <span class="s2">&quot;Path_to_KQCircuits\klayout_package\python\kqcircuits&quot;</span>
+<span class="n">mklink</span> <span class="o">/</span><span class="n">D</span> <span class="s1">&#39;kqcircuits_scripts&#39;</span> <span class="s2">&quot;Path_to_KQCircuits\klayout_package\python\scripts&quot;</span>
 </pre></div>
 </div>
 <p>Install the required packages by opening command prompt in your KQCircuits
@@ -308,7 +334,7 @@ is already included with KLayout, so this shouldn’t be a problem.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

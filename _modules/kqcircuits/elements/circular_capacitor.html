@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.elements.circular_capacitor &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.elements.circular_capacitor &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
@@ -177,14 +182,17 @@
 <span class="c1"># (meetiqm.com/developers/osstmpolicy). IQM welcomes contributions to the code. Please see our contribution agreements</span>
 <span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
 
+
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span><span class="p">,</span> <span class="n">add_parameters_from</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.util.geometry_helper</span> <span class="kn">import</span> <span class="n">circle_polygon</span><span class="p">,</span> <span class="n">arc_points</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.element</span> <span class="kn">import</span> <span class="n">Element</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.elements.finger_capacitor_square</span> <span class="kn">import</span> <span class="n">FingerCapacitorSquare</span>
 
 
-<div class="viewcode-block" id="CircularCapacitor"><a class="viewcode-back" href="../../../api/kqcircuits.elements.circular_capacitor.html#kqcircuits.elements.circular_capacitor.CircularCapacitor">[docs]</a><span class="k">class</span> <span class="nc">CircularCapacitor</span><span class="p">(</span><span class="n">Element</span><span class="p">):</span>
+<div class="viewcode-block" id="CircularCapacitor"><a class="viewcode-back" href="../../../api/kqcircuits.elements.circular_capacitor.html#kqcircuits.elements.circular_capacitor.CircularCapacitor">[docs]</a><span class="nd">@add_parameters_from</span><span class="p">(</span><span class="n">FingerCapacitorSquare</span><span class="p">,</span> <span class="s2">&quot;fixed_length&quot;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">CircularCapacitor</span><span class="p">(</span><span class="n">Element</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;The PCell declaration for a circular capacitor.</span>
 
 <span class="sd">    An outer semi-circular island with an inside circular island. Fixed-length capacitor is supported and different line</span>
@@ -202,9 +210,8 @@
     <span class="n">outer_island_width</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;External island width&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">,</span>
                                <span class="n">docstring</span><span class="o">=</span><span class="s2">&quot;Width of the external island [μm]&quot;</span><span class="p">)</span>
     <span class="n">ground_gap</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Ground plane padding&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
-    <span class="n">fixed_length</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Fixed length of element, 0 for auto-length&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="CircularCapacitor.produce_impl"><a class="viewcode-back" href="../../../api/kqcircuits.elements.circular_capacitor.html#kqcircuits.elements.circular_capacitor.CircularCapacitor.produce_impl">[docs]</a>    <span class="k">def</span> <span class="nf">produce_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="CircularCapacitor.build"><a class="viewcode-back" href="../../../api/kqcircuits.elements.circular_capacitor.html#kqcircuits.elements.circular_capacitor.CircularCapacitor.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">y_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">/</span> <span class="mi">2</span>
         <span class="n">y_right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a2</span> <span class="o">/</span> <span class="mi">2</span>
         <span class="n">x_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_outer</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">ground_gap</span>
@@ -231,6 +238,7 @@
             <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r_outer</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">outer_island_width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">y_right</span><span class="p">),</span>
             <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">x_end</span><span class="p">,</span> <span class="o">-</span><span class="n">y_right</span><span class="p">),</span>
         <span class="p">])</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)])</span>
+        <span class="n">capacitor_neg</span><span class="o">.</span><span class="n">round_corners</span><span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">,</span> <span class="mi">5</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_add_waveguides</span><span class="p">(</span><span class="n">capacitor_neg</span><span class="p">,</span> <span class="n">x_end</span><span class="p">,</span> <span class="n">y_left</span><span class="p">,</span> <span class="n">y_right</span><span class="p">)</span>
 
         <span class="c1"># define the capacitor in the ground</span>
@@ -240,15 +248,14 @@
 
         <span class="c1"># protection region</span>
         <span class="n">region_protection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_protection_region</span><span class="p">(</span><span class="n">ground_region</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">shapes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">region_protection</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_protection</span><span class="p">(</span><span class="n">region_protection</span><span class="p">)</span>
 
         <span class="c1"># ports</span>
         <span class="n">x_port</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x_end</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fixed_length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_port</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="o">-</span><span class="n">x_port</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_port</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">x_port</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_port</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">x_port</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span></div>
 
         <span class="c1"># adds annotation based on refpoints calculated above</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">produce_impl</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_get_outer_island</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r_outer</span><span class="p">,</span> <span class="n">outer_island_width</span><span class="p">,</span> <span class="n">swept_angle</span><span class="p">):</span>
         <span class="n">angle_rad</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">swept_angle</span><span class="p">)</span>
@@ -289,7 +296,6 @@
             <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">x_guide</span><span class="p">,</span> <span class="o">-</span><span class="n">y_right</span><span class="p">),</span>
             <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">x_end</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">margin</span><span class="p">,</span> <span class="o">-</span><span class="n">y_right</span><span class="p">),</span>
         <span class="p">])</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)])</span></div>
-
 </pre></div>
 
            </div>
@@ -301,7 +307,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.elements.airbridges.airbridge_rectangular &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.elements.airbridges.airbridge_rectangular &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
@@ -104,7 +109,6 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.f2f_connectors.html">kqcircuits.elements.f2f_connectors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.fluxlines.html">kqcircuits.elements.fluxlines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.markers.html">kqcircuits.elements.markers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.qubits.html">kqcircuits.elements.qubits</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.airbridge_connection.html">kqcircuits.elements.airbridge_connection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.chip_frame.html">kqcircuits.elements.chip_frame</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.circular_capacitor.html">kqcircuits.elements.circular_capacitor</a></li>
@@ -116,9 +120,8 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.launcher_dc.html">kqcircuits.elements.launcher_dc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.mask_marker_fc.html">kqcircuits.elements.mask_marker_fc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.meander.html">kqcircuits.elements.meander</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.smooth_capacitor.html">kqcircuits.elements.smooth_capacitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_polygon.html">kqcircuits.elements.spiral_resonator_polygon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_rectangle.html">kqcircuits.elements.spiral_resonator_rectangle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_rectangle_multiface.html">kqcircuits.elements.spiral_resonator_rectangle_multiface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html">kqcircuits.elements.waveguide_composite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar.html">kqcircuits.elements.waveguide_coplanar</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_curved.html">kqcircuits.elements.waveguide_coplanar_curved</a></li>
@@ -130,6 +133,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.masks.html">kqcircuits.masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.squids.html">kqcircuits.squids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.test_structures.html">kqcircuits.test_structures</a></li>
@@ -219,31 +223,31 @@
             
   <div class="section" id="module-kqcircuits.elements.airbridges.airbridge_rectangular">
 <span id="kqcircuits-elements-airbridges-airbridge-rectangular"></span><h1>kqcircuits.elements.airbridges.airbridge_rectangular<a class="headerlink" href="#module-kqcircuits.elements.airbridges.airbridge_rectangular" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular">
-<em class="property">class </em><code class="sig-prename descclassname">kqcircuits.elements.airbridges.airbridge_rectangular.</code><code class="sig-name descname">AirbridgeRectangular</code><a class="reference internal" href="../_modules/kqcircuits/elements/airbridges/airbridge_rectangular.html#AirbridgeRectangular"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.elements.airbridges.airbridge_rectangular.</span></span><span class="sig-name descname"><span class="pre">AirbridgeRectangular</span></span><a class="reference internal" href="../_modules/kqcircuits/elements/airbridges/airbridge_rectangular.html#AirbridgeRectangular"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="kqcircuits.elements.airbridges.airbridge.html#kqcircuits.elements.airbridges.airbridge.Airbridge" title="kqcircuits.elements.airbridges.airbridge.Airbridge"><code class="xref py py-class docutils literal notranslate"><span class="pre">kqcircuits.elements.airbridges.airbridge.Airbridge</span></code></a></p>
 <p>PCell declaration for a rectangular airbridge.</p>
 <p>Origin is at the geometric center. The airbridge is in vertical direction.</p>
 <p>Bottom parts of pads in bottom layer, bridge and top parts of pads in top layer. Pads and bridge are rectangular.
 Refpoints “port_a” and “port_b” at top pad points closest to origin.</p>
-<dl class="attribute">
-<dt id="kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular.default_type">
-<code class="sig-name descname">default_type</code><em class="property"> = 'Airbridge Rectangular'</em><a class="headerlink" href="#kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular.default_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular.default_type">
+<span class="sig-name descname"><span class="pre">default_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Airbridge</span> <span class="pre">Rectangular'</span></em><a class="headerlink" href="#kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular.default_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the default shape if not specified otherwise by the user.</p>
+</dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular.produce_impl">
-<code class="sig-name descname">produce_impl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/airbridges/airbridge_rectangular.html#AirbridgeRectangular.produce_impl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular.produce_impl" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method builds the PCell.</p>
-<p>Adds all refpoints to user properties and draws their names to the annotation layer.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/airbridges/airbridge_rectangular.html#AirbridgeRectangular.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.airbridges.airbridge_rectangular.AirbridgeRectangular.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Child classes re-define this method to build the PCell.</p>
 </dd></dl>
 
 </dd></dl>
 
 <strong>PCell parameters:</strong><div class="line"><br /></div>
 <ul class="simple">
-<li><p><strong>bridge_width</strong><em> (Double)</em><span> - Bridge width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">20</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>pad_extra</strong><em> (Double)</em><span> - Bottom pad extra</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">2</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 </ul>
 <img alt="../_images/kqcircuits.elements.airbridges.airbridge_rectangular.png" src="../_images/kqcircuits.elements.airbridges.airbridge_rectangular.png" />
 </div>
@@ -262,7 +266,7 @@ Refpoints “port_a” and “port_b” at top pad points closest to origin.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

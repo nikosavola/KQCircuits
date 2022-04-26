@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.chips.multi_face.lithography_test_twoface &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.chips.multi_face.lithography_test_twoface &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../libraries/index.html">Libraries</a></li>
@@ -178,11 +183,9 @@
 <span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
 
 
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.chips.lithography_test</span> <span class="kn">import</span> <span class="n">LithographyTest</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.chips.multi_face.multi_face</span> <span class="kn">import</span> <span class="n">MultiFace</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
 
 
 <div class="viewcode-block" id="LithographyTestTwoface"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.lithography_test_twoface.html#kqcircuits.chips.multi_face.lithography_test_twoface.LithographyTestTwoface">[docs]</a><span class="k">class</span> <span class="nc">LithographyTestTwoface</span><span class="p">(</span><span class="n">MultiFace</span><span class="p">):</span>
@@ -192,7 +195,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">create_pattern</span> <span class="o">=</span> <span class="n">LithographyTest</span><span class="o">.</span><span class="n">create_pattern</span>
 
-<div class="viewcode-block" id="LithographyTestTwoface.produce_impl"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.lithography_test_twoface.html#kqcircuits.chips.multi_face.lithography_test_twoface.LithographyTestTwoface.produce_impl">[docs]</a>    <span class="k">def</span> <span class="nf">produce_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="LithographyTestTwoface.build"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.lithography_test_twoface.html#kqcircuits.chips.multi_face.lithography_test_twoface.LithographyTestTwoface.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">cell_horizontal_1</span><span class="p">,</span> <span class="n">cell_vertical_1</span><span class="p">,</span> <span class="n">cell_diagonal_1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_pattern</span><span class="p">(</span><span class="n">num_stripes</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
                                                                                   <span class="n">min_width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                                                                                   <span class="n">max_width</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
@@ -230,7 +233,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">cell_diagonal_3</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">7500</span><span class="p">,</span> <span class="mi">1800</span><span class="p">)</span> <span class="o">*</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="o">.</span><span class="n">M90</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">cell_diagonal_4</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">6200</span><span class="p">,</span> <span class="mi">1800</span><span class="p">)</span> <span class="o">*</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="o">.</span><span class="n">M90</span><span class="p">)</span>
 
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">produce_impl</span><span class="p">()</span></div></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">()</span></div></div>
 </pre></div>
 
            </div>
@@ -242,7 +245,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

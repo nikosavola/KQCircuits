@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.chips.sample_holder_test &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.chips.sample_holder_test &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
@@ -184,7 +189,6 @@
 
 <span class="kn">from</span> <span class="nn">kqcircuits.chips.chip</span> <span class="kn">import</span> <span class="n">Chip</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.waveguide_composite</span> <span class="kn">import</span> <span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">Node</span>
-<span class="n">version</span> <span class="o">=</span> <span class="mi">1</span>
 
 
 <div class="viewcode-block" id="SampleHolderTest"><a class="viewcode-back" href="../../../api/kqcircuits.chips.sample_holder_test.html#kqcircuits.chips.sample_holder_test.SampleHolderTest">[docs]</a><span class="nd">@logged</span>
@@ -198,12 +202,12 @@
     <span class="n">n_launchers</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeInt</span><span class="p">,</span> <span class="s2">&quot;Number of launchers&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
     <span class="n">launcher_pitch</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Launcher pitch&quot;</span><span class="p">,</span> <span class="mi">635</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;[μm]&quot;</span><span class="p">)</span>
     <span class="n">launcher_width</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Launcher width&quot;</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;[μm]&quot;</span><span class="p">)</span>
+    <span class="n">launcher_gap</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Launcher gap&quot;</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;[μm]&quot;</span><span class="p">)</span>
     <span class="n">launcher_indent</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Launcher indent from edge&quot;</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;[μm]&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="SampleHolderTest.produce_impl"><a class="viewcode-back" href="../../../api/kqcircuits.chips.sample_holder_test.html#kqcircuits.chips.sample_holder_test.SampleHolderTest.produce_impl">[docs]</a>    <span class="k">def</span> <span class="nf">produce_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">launcher_assignments</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">launchers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">produce_n_launchers</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_launchers</span><span class="p">,</span> <span class="s2">&quot;RF&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">launcher_width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">launcher_indent</span><span class="p">,</span>
-                                             <span class="n">launcher_assignments</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">launcher_pitch</span><span class="p">)</span>
+<div class="viewcode-block" id="SampleHolderTest.build"><a class="viewcode-back" href="../../../api/kqcircuits.chips.sample_holder_test.html#kqcircuits.chips.sample_holder_test.SampleHolderTest.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">produce_n_launchers</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_launchers</span><span class="p">,</span> <span class="s2">&quot;RF&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">launcher_width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">launcher_gap</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">launcher_indent</span><span class="p">,</span>
+                                 <span class="bp">self</span><span class="o">.</span><span class="n">launcher_pitch</span><span class="p">)</span>
 
         <span class="n">nr_pads_per_side</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_launchers</span> <span class="o">/</span> <span class="mf">4.</span><span class="p">)</span>
 
@@ -213,7 +217,7 @@
                 <span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">_port_corner&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">straight_distance</span><span class="p">)),</span>
                 <span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">_port_corner&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="n">straight_distance</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
                 <span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">_port&#39;</span><span class="p">]),</span>
-            <span class="p">],</span> <span class="n">a</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+            <span class="p">])</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">__log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: Waveguide </span><span class="si">%d</span><span class="s2">-</span><span class="si">%d</span><span class="s2"> length: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name_chip</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">length</span><span class="p">())</span>
@@ -226,7 +230,7 @@
                         <span class="nb">range</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">nr_pads_per_side</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">nr_pads_per_side</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)):</span>
             <span class="n">_produce_waveguide</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">1200</span><span class="p">)</span>
 
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">produce_impl</span><span class="p">()</span></div></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">()</span></div></div>
 </pre></div>
 
            </div>
@@ -238,7 +242,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

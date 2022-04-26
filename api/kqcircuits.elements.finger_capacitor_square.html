@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.elements.finger_capacitor_square &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.elements.finger_capacitor_square &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
@@ -99,7 +104,6 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.f2f_connectors.html">kqcircuits.elements.f2f_connectors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.fluxlines.html">kqcircuits.elements.fluxlines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.markers.html">kqcircuits.elements.markers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.qubits.html">kqcircuits.elements.qubits</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.airbridge_connection.html">kqcircuits.elements.airbridge_connection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.chip_frame.html">kqcircuits.elements.chip_frame</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.circular_capacitor.html">kqcircuits.elements.circular_capacitor</a></li>
@@ -111,9 +115,8 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.launcher_dc.html">kqcircuits.elements.launcher_dc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.mask_marker_fc.html">kqcircuits.elements.mask_marker_fc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.meander.html">kqcircuits.elements.meander</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.smooth_capacitor.html">kqcircuits.elements.smooth_capacitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_polygon.html">kqcircuits.elements.spiral_resonator_polygon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_rectangle.html">kqcircuits.elements.spiral_resonator_rectangle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_rectangle_multiface.html">kqcircuits.elements.spiral_resonator_rectangle_multiface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html">kqcircuits.elements.waveguide_composite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar.html">kqcircuits.elements.waveguide_coplanar</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_curved.html">kqcircuits.elements.waveguide_coplanar_curved</a></li>
@@ -125,6 +128,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.masks.html">kqcircuits.masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.squids.html">kqcircuits.squids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.test_structures.html">kqcircuits.test_structures</a></li>
@@ -212,66 +216,74 @@
             
   <div class="section" id="module-kqcircuits.elements.finger_capacitor_square">
 <span id="kqcircuits-elements-finger-capacitor-square"></span><h1>kqcircuits.elements.finger_capacitor_square<a class="headerlink" href="#module-kqcircuits.elements.finger_capacitor_square" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare">
-<em class="property">class </em><code class="sig-prename descclassname">kqcircuits.elements.finger_capacitor_square.</code><code class="sig-name descname">FingerCapacitorSquare</code><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.elements.finger_capacitor_square.</span></span><span class="sig-name descname"><span class="pre">FingerCapacitorSquare</span></span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="kqcircuits.elements.element.html#kqcircuits.elements.element.Element" title="kqcircuits.elements.element.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">kqcircuits.elements.element.Element</span></code></a></p>
 <p>The PCell declaration for a square finger capacitor.</p>
 <p>Two ports with reference points. The arm leading to the finger has the same width as fingers. The feedline has
 the same length as the width of the ground gap around the coupler.</p>
-<dl class="method">
-<dt id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.can_create_from_shape_impl">
-<code class="sig-name descname">can_create_from_shape_impl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.can_create_from_shape_impl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.can_create_from_shape_impl" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.can_create_from_shape_impl">
+<span class="sig-name descname"><span class="pre">can_create_from_shape_impl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.can_create_from_shape_impl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.can_create_from_shape_impl" title="Permalink to this definition">¶</a></dt>
 <dd><p>default implementation</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.produce_impl">
-<code class="sig-name descname">produce_impl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.produce_impl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.produce_impl" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method builds the PCell.</p>
-<p>Adds all refpoints to user properties and draws their names to the annotation layer.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Child classes re-define this method to build the PCell.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.get_ground_region">
-<code class="sig-name descname">get_ground_region</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.get_ground_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.get_ground_region" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.get_ground_region">
+<span class="sig-name descname"><span class="pre">get_ground_region</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.get_ground_region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.get_ground_region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the ground region for the finger capacitor.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.finger_area_width">
-<code class="sig-name descname">finger_area_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.finger_area_width"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.finger_area_width" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.finger_area_width">
+<span class="sig-name descname"><span class="pre">finger_area_width</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.finger_area_width"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.finger_area_width" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.finger_area_length">
-<code class="sig-name descname">finger_area_length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.finger_area_length"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.finger_area_length" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.finger_area_length">
+<span class="sig-name descname"><span class="pre">finger_area_length</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.finger_area_length"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.finger_area_length" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.cut_region">
-<code class="sig-name descname">cut_region</code><span class="sig-paren">(</span><em class="sig-param">region</em>, <em class="sig-param">x_max</em>, <em class="sig-param">y_max</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.cut_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.cut_region" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.cut_region">
+<span class="sig-name descname"><span class="pre">cut_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.cut_region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.cut_region" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.add_waveguides">
-<code class="sig-name descname">add_waveguides</code><span class="sig-paren">(</span><em class="sig-param">region</em>, <em class="sig-param">x_end</em>, <em class="sig-param">y_left</em>, <em class="sig-param">y_right</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.add_waveguides"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.add_waveguides" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.add_waveguides">
+<span class="sig-name descname"><span class="pre">add_waveguides</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_right</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/finger_capacitor_square.html#FingerCapacitorSquare.add_waveguides"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.finger_capacitor_square.FingerCapacitorSquare.add_waveguides" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <strong>PCell parameters:</strong><div class="line"><br /></div>
 <ul class="simple">
-<li><p><strong>a2</strong><em> (Double)</em><span> - Width of center conductor on the other end</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>b2</strong><em> (Double)</em><span> - Width of gap on the other end</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">6</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>a2</strong><em> (Double)</em><span> - Non-physical value ‘-1’ means that the default size ‘a’ is used.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">-1</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>b2</strong><em> (Double)</em><span> - Non-physical value ‘-1’ means that the default size ‘b’ is used.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">-1</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>finger_gap_end</strong><em> (Double)</em><span> - Gap between the finger and other pad</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">3</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>ground_padding</strong><em> (Double)</em><span> - Ground plane padding</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">20</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>fixed_length</strong><em> (Double)</em><span> - Fixed length of element, 0 for auto-length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>ground_gap_ratio</strong><em> (Double)</em><span> - Ground connection width per gap ratio</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>a</strong><em> (Double)</em><span> - Width of center conductor</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>b</strong><em> (Double)</em><span> - Width of gap</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">6</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>n</strong><em> (Int)</em><span> - Number of points on turns</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">64</span></code></p></li>
+<li><p><strong>r</strong><em> (Double)</em><span> - Turn radius</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>margin</strong><em> (Double)</em><span> - Margin of the protection layer</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">5</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>face_ids</strong><em> (List)</em><span> - Chip face IDs, list of b | t | c</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['b',</span> <span class="pre">'t',</span> <span class="pre">'c']</span></code></p></li>
+<li><p><strong>display_name</strong><em> (String)</em><span> - Name displayed in GUI (empty for default)</span><em>, default=</em><code class="docutils literal notranslate"></code></p></li>
+<li><p><strong>protect_opposite_face</strong><em> (Boolean)</em><span> - Add opposite face protection too</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>finger_number</strong><em> (Int)</em><span> - Number of fingers</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
 <li><p><strong>finger_width</strong><em> (Double)</em><span> - Width of a finger</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">5</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>finger_gap_side</strong><em> (Double)</em><span> - Gap between the fingers</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">3</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>finger_gap_end</strong><em> (Double)</em><span> - Gap between the finger and other pad</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">3</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>finger_gap</strong><em> (Double)</em><span> - Gap between the fingers</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">3</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>finger_length</strong><em> (Double)</em><span> - Length of the fingers</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">20</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>ground_padding</strong><em> (Double)</em><span> - Ground plane padding</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">20</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>corner_r</strong><em> (Double)</em><span> - Corner radius</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">2</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>fixed_length</strong><em> (Double)</em><span> - Fixed length of element, 0 for auto-length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 </ul>
 <img alt="../_images/kqcircuits.elements.finger_capacitor_square.png" src="../_images/kqcircuits.elements.finger_capacitor_square.png" />
 </div>
@@ -290,7 +302,7 @@ the same length as the width of the ground gap around the coupler.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

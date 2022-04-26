@@ -31,7 +31,7 @@ Create an instance of ``Simulation``::
 
 The ``simulation`` object is needed for Ansys export and Sonnet export (more details in following sections). Alternatively, run following macros in Klayout:
 
-* ``scripts/macros/export/ansys_sonnet.lym``
+* ``scripts/macros/export/export_ansys.lym``
 * ``scripts/macros/export/export_sonnet.lym``
 
 Geometry from KQCircuits library
@@ -96,7 +96,8 @@ The primary use case is to estimate capacitive couplings between different eleme
 of interest has a port in the simulation. The capacitances are represented as a matrix, where the *Cij* is the
 capacitance between two ports *i* and *j*, and *Cii* is the capacitance between port *i* and ground.
 
-Available scripts:
+Main scripts:
+"""""""""""""
 
 * ``import_simulation_geometry.py``
 
@@ -130,6 +131,35 @@ Available scripts:
 
   Performs the full simulation sequence including running the three other scripts, saving the project, and running the simulation.
 
+
+Additional scripts for use cases other than capacitive coupling exist.
+These are enabled in ``import_and_simulate.py`` with a list of strings as parameters to ``export_ansys``,
+e.g., to enable exporting Time Domain Reflectometry (TDR) and non-de-embedded Touchstone (``.sNp``) files::
+
+    export_ansys(..., export_processing=['tdr', 'snp_no_deembed'])
+
+The optional scripts are listed below.
+
+Optional scripts:
+"""""""""""""""""
+
+* ``export_snp_no_deembed.py``
+
+  No argument.
+
+  Disables de-embedding and exports the :math:`S`-matrix network data to a Touchstone (``.sNp``) file.
+
+  Works only in HFSS.
+
+* ``export_tdr.py``
+
+  No argument.
+
+  Creates a Time Domain Reflectometry report using ``TDRZt(port)`` for all ports and exports the data to a ``.csv``.
+
+  Works only in HFSS.
+
+
 Sonnet export
 -------------
 
@@ -142,3 +172,23 @@ Once the ``simulation`` object is created, call function ``export_sonnet_son`` t
 Multiple simulations can be exported by calling ``export_sonnet``. The function takes list of simulations as it's first parameter::
 
     sons = export_sonnet([simulation], path)
+
+
+Gmsh export
+-----------
+
+The ``simulation`` object can be used to export an FEM mesh using Gmsh calling function ``export_simulation_gmsh``.
+There is an automatized simulation example at 'klayout_package/python/scripts/simulations' that creates a mesh using Gmsh and 
+computes the capacitance matrix using Elmer and visualizes the results using Paraview.
+
+Please note that the example requires the installation of
+
+* gmsh python api
+  ``pip install gmsh``
+* Elmerfem solver
+  see https://github.com/ElmerCSC/elmerfem
+* Paraview
+  https://www.paraview.org/
+
+Gmsh api suffices if one needs to generate the mesh only.
+

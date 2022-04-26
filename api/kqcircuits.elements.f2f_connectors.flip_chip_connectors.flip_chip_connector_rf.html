@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
@@ -104,7 +109,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.fluxlines.html">kqcircuits.elements.fluxlines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.markers.html">kqcircuits.elements.markers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.qubits.html">kqcircuits.elements.qubits</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.airbridge_connection.html">kqcircuits.elements.airbridge_connection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.chip_frame.html">kqcircuits.elements.chip_frame</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.circular_capacitor.html">kqcircuits.elements.circular_capacitor</a></li>
@@ -116,9 +120,8 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.launcher_dc.html">kqcircuits.elements.launcher_dc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.mask_marker_fc.html">kqcircuits.elements.mask_marker_fc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.meander.html">kqcircuits.elements.meander</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.smooth_capacitor.html">kqcircuits.elements.smooth_capacitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_polygon.html">kqcircuits.elements.spiral_resonator_polygon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_rectangle.html">kqcircuits.elements.spiral_resonator_rectangle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_rectangle_multiface.html">kqcircuits.elements.spiral_resonator_rectangle_multiface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html">kqcircuits.elements.waveguide_composite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar.html">kqcircuits.elements.waveguide_coplanar</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_curved.html">kqcircuits.elements.waveguide_coplanar_curved</a></li>
@@ -130,6 +133,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.masks.html">kqcircuits.masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.squids.html">kqcircuits.squids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.test_structures.html">kqcircuits.test_structures</a></li>
@@ -221,40 +225,25 @@
             
   <div class="section" id="module-kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf">
 <span id="kqcircuits-elements-f2f-connectors-flip-chip-connectors-flip-chip-connector-rf"></span><h1>kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf<a class="headerlink" href="#module-kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf">
-<em class="property">class </em><code class="sig-prename descclassname">kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.</code><code class="sig-name descname">FlipChipConnectorRf</code><a class="reference internal" href="../_modules/kqcircuits/elements/f2f_connectors/flip_chip_connectors/flip_chip_connector_rf.html#FlipChipConnectorRf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.</span></span><span class="sig-name descname"><span class="pre">FlipChipConnectorRf</span></span><a class="reference internal" href="../_modules/kqcircuits/elements/f2f_connectors/flip_chip_connectors/flip_chip_connector_rf.html#FlipChipConnectorRf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector.html#kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector.FlipChipConnector" title="kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector.FlipChipConnector"><code class="xref py py-class docutils literal notranslate"><span class="pre">kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector.FlipChipConnector</span></code></a></p>
 <p>PCell declaration for an inter-chip rf connector.</p>
 <p>Flip chip connector with two coplanar waveguide connections and different ground bump configurations.
 The input port is on the first face and on the left. The output port is on the second face and rotated as chosen.</p>
-<dl class="attribute">
-<dt>
-<code class="sig-name descname">connector_type choices</code></dt>
-<dd><ul class="simple">
+<dl class="simple">
+<dt>About connector_type choices:</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">single</span></code>: the bump connects the two sides</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">GSG</span></code>: ground-signal-ground indium bumps</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Coax</span></code>: signal transmitting bump is surrounded by four ground bumps</p></li>
 </ul>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf.inter_bump_distance">
-<code class="sig-name descname">inter_bump_distance</code><a class="headerlink" href="#kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf.inter_bump_distance" title="Permalink to this definition">¶</a></dt>
-<dd><p>distance between ground bumps</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf.output_rotation">
-<code class="sig-name descname">output_rotation</code><a class="headerlink" href="#kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf.output_rotation" title="Permalink to this definition">¶</a></dt>
-<dd><p>rotation of the output port w.r.t. the input port</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf.produce_impl">
-<code class="sig-name descname">produce_impl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/f2f_connectors/flip_chip_connectors/flip_chip_connector_rf.html#FlipChipConnectorRf.produce_impl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf.produce_impl" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method builds the PCell.</p>
-<p>Adds all refpoints to user properties and draws their names to the annotation layer.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/f2f_connectors/flip_chip_connectors/flip_chip_connector_rf.html#FlipChipConnectorRf.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.FlipChipConnectorRf.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Child classes re-define this method to build the PCell.</p>
 </dd></dl>
 
 </dd></dl>
@@ -262,8 +251,10 @@ The input port is on the first face and on the left. The output port is on the s
 <strong>PCell parameters:</strong><div class="line"><br /></div>
 <ul class="simple">
 <li><p><strong>connector_type</strong><em> (String)</em><span> - Connector type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Coax</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['Single',</span> <span class="pre">'GSG',</span> <span class="pre">'Coax']</span></code></p></li>
-<li><p><strong>inter_bump_distance</strong><em> (Double)</em><span> - Distance between In bumps </span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>inter_bump_distance</strong><em> (Double)</em><span> - Distance between In bumps</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>output_rotation</strong><em> (Double)</em><span> - Rotation of output port w.r.t. input port</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">180</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">degrees</span></code></p></li>
+<li><p><strong>connector_a</strong><em> (Double)</em><span> - Conductor width at the connector area</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">40</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>connector_b</strong><em> (Double)</em><span> - Gap width at the connector area</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">40</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 </ul>
 <img alt="../_images/kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.png" src="../_images/kqcircuits.elements.f2f_connectors.flip_chip_connectors.flip_chip_connector_rf.png" />
 </div>
@@ -282,7 +273,7 @@ The input port is on the first face and on the left. The output port is on the s
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

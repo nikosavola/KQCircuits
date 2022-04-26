@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.elements.waveguide_coplanar_curved &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.elements.waveguide_coplanar_curved &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
@@ -99,7 +104,6 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.f2f_connectors.html">kqcircuits.elements.f2f_connectors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.fluxlines.html">kqcircuits.elements.fluxlines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.markers.html">kqcircuits.elements.markers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.qubits.html">kqcircuits.elements.qubits</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.airbridge_connection.html">kqcircuits.elements.airbridge_connection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.chip_frame.html">kqcircuits.elements.chip_frame</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.circular_capacitor.html">kqcircuits.elements.circular_capacitor</a></li>
@@ -111,9 +115,8 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.launcher_dc.html">kqcircuits.elements.launcher_dc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.mask_marker_fc.html">kqcircuits.elements.mask_marker_fc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.meander.html">kqcircuits.elements.meander</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.smooth_capacitor.html">kqcircuits.elements.smooth_capacitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_polygon.html">kqcircuits.elements.spiral_resonator_polygon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_rectangle.html">kqcircuits.elements.spiral_resonator_rectangle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_rectangle_multiface.html">kqcircuits.elements.spiral_resonator_rectangle_multiface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html">kqcircuits.elements.waveguide_composite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar.html">kqcircuits.elements.waveguide_coplanar</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">kqcircuits.elements.waveguide_coplanar_curved</a></li>
@@ -125,6 +128,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.masks.html">kqcircuits.masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.squids.html">kqcircuits.squids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.test_structures.html">kqcircuits.test_structures</a></li>
@@ -212,38 +216,37 @@
             
   <div class="section" id="module-kqcircuits.elements.waveguide_coplanar_curved">
 <span id="kqcircuits-elements-waveguide-coplanar-curved"></span><h1>kqcircuits.elements.waveguide_coplanar_curved<a class="headerlink" href="#module-kqcircuits.elements.waveguide_coplanar_curved" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="kqcircuits.elements.waveguide_coplanar_curved.up_mod">
-<code class="sig-prename descclassname">kqcircuits.elements.waveguide_coplanar_curved.</code><code class="sig-name descname">up_mod</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">per</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#up_mod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.up_mod" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.elements.waveguide_coplanar_curved.up_mod">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.elements.waveguide_coplanar_curved.</span></span><span class="sig-name descname"><span class="pre">up_mod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#up_mod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.up_mod" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.elements.waveguide_coplanar_curved.arc">
-<code class="sig-prename descclassname">kqcircuits.elements.waveguide_coplanar_curved.</code><code class="sig-name descname">arc</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">start</em>, <em class="sig-param">stop</em>, <em class="sig-param">n</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#arc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.arc" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.elements.waveguide_coplanar_curved.arc">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.elements.waveguide_coplanar_curved.</span></span><span class="sig-name descname"><span class="pre">arc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#arc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.arc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="class">
-<dt id="kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved">
-<em class="property">class </em><code class="sig-prename descclassname">kqcircuits.elements.waveguide_coplanar_curved.</code><code class="sig-name descname">WaveguideCoplanarCurved</code><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#WaveguideCoplanarCurved"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.elements.waveguide_coplanar_curved.</span></span><span class="sig-name descname"><span class="pre">WaveguideCoplanarCurved</span></span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#WaveguideCoplanarCurved"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="kqcircuits.elements.element.html#kqcircuits.elements.element.Element" title="kqcircuits.elements.element.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">kqcircuits.elements.element.Element</span></code></a></p>
 <p>The PCell declaration of a curved segment of a coplanar waveguide.</p>
 <p>Coordinate origin is left at the center of the arc.</p>
-<dl class="method">
-<dt id="kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.coerce_parameters_impl">
-<code class="sig-name descname">coerce_parameters_impl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#WaveguideCoplanarCurved.coerce_parameters_impl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.coerce_parameters_impl" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.coerce_parameters_impl">
+<span class="sig-name descname"><span class="pre">coerce_parameters_impl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#WaveguideCoplanarCurved.coerce_parameters_impl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.coerce_parameters_impl" title="Permalink to this definition">¶</a></dt>
 <dd><p>default implementation</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.produce_impl">
-<code class="sig-name descname">produce_impl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#WaveguideCoplanarCurved.produce_impl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.produce_impl" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method builds the PCell.</p>
-<p>Adds all refpoints to user properties and draws their names to the annotation layer.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#WaveguideCoplanarCurved.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Child classes re-define this method to build the PCell.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.create_curve_arcs">
-<em class="property">static </em><code class="sig-name descname">create_curve_arcs</code><span class="sig-paren">(</span><em class="sig-param">elem</em>, <em class="sig-param">angle</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#WaveguideCoplanarCurved.create_curve_arcs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.create_curve_arcs" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.create_curve_arcs">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_curve_arcs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#WaveguideCoplanarCurved.create_curve_arcs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.create_curve_arcs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates arcs of points for a curved waveguide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -259,9 +262,9 @@ left_gap_outer, right_gap_inner, right_gap_outer, left_protection, right_protect
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.produce_curve_termination">
-<em class="property">static </em><code class="sig-name descname">produce_curve_termination</code><span class="sig-paren">(</span><em class="sig-param">elem</em>, <em class="sig-param">angle</em>, <em class="sig-param">term_len</em>, <em class="sig-param">trans</em>, <em class="sig-param">face_index=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#WaveguideCoplanarCurved.produce_curve_termination"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.produce_curve_termination" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.produce_curve_termination">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">produce_curve_termination</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">term_len</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">face_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_coplanar_curved.html#WaveguideCoplanarCurved.produce_curve_termination"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_coplanar_curved.WaveguideCoplanarCurved.produce_curve_termination" title="Permalink to this definition">¶</a></dt>
 <dd><p>Produces termination for a curved waveguide.</p>
 <p>The termination consists of a rectangular polygon in the metal gap layer, and grid avoidance around it.
 The termination is placed at the position where a curved waveguide with alpha=angle and trans=trans would end.</p>
@@ -302,7 +305,7 @@ The termination is placed at the position where a curved waveguide with alpha=an
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

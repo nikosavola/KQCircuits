@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.simulations.simulation &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.simulations.simulation &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
@@ -181,15 +186,16 @@
 <span class="kn">import</span> <span class="nn">abc</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 
-<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_layers</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.elements.waveguide_coplanar</span> <span class="kn">import</span> <span class="n">WaveguideCoplanar</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.airbridges.airbridge</span> <span class="kn">import</span> <span class="n">Airbridge</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.elements.element</span> <span class="kn">import</span> <span class="n">Element</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.waveguide_composite</span> <span class="kn">import</span> <span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">Node</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span><span class="p">,</span> <span class="n">add_parameters_from</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.elements.element</span> <span class="kn">import</span> <span class="n">Element</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.simulations.port</span> <span class="kn">import</span> <span class="n">Port</span><span class="p">,</span> <span class="n">InternalPort</span><span class="p">,</span> <span class="n">EdgePort</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.util.geometry_helper</span> <span class="kn">import</span> <span class="n">region_with_merged_polygons</span><span class="p">,</span> <span class="n">region_with_merged_points</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span><span class="p">,</span> <span class="n">add_parameters_from</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.simulations.export.util</span> <span class="kn">import</span> <span class="n">find_edge_from_point_in_cell</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.simulations.export.util</span> <span class="kn">import</span> <span class="n">get_enclosing_polygon</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.util.groundgrid</span> <span class="kn">import</span> <span class="n">make_grid</span>
 
 
 <div class="viewcode-block" id="Simulation"><a class="viewcode-back" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation">[docs]</a><span class="nd">@add_parameters_from</span><span class="p">(</span><span class="n">Element</span><span class="p">)</span>
@@ -203,16 +209,20 @@
 <span class="sd">    existing cell. In this case no ports will be added.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">LIBRARY_NAME</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># This is needed by some methods inherited from Element.</span>
+
     <span class="c1"># Metadata associated with simulation</span>
     <span class="n">ports</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Port</span><span class="p">]</span>
 
     <span class="c1"># Parameters</span>
     <span class="n">box</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeShape</span><span class="p">,</span> <span class="s2">&quot;Border&quot;</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DBox</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)))</span>
+    <span class="n">ground_grid_box</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeShape</span><span class="p">,</span> <span class="s2">&quot;Border&quot;</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DBox</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)))</span>
+    <span class="n">with_grid</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeBoolean</span><span class="p">,</span> <span class="s2">&quot;Make ground plane grid&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeString</span><span class="p">,</span> <span class="s2">&quot;Name of the simulation&quot;</span><span class="p">,</span> <span class="s2">&quot;Simulation&quot;</span><span class="p">)</span>
 
     <span class="n">use_ports</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeBoolean</span><span class="p">,</span> <span class="s2">&quot;Turn off to disable all ports (for debugging)&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
     <span class="n">use_internal_ports</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeBoolean</span><span class="p">,</span> <span class="s2">&quot;Use internal (lumped) ports. The alternative is wave ports.&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-    <span class="n">port_width</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Width (um) of wave ports&quot;</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">)</span>
+    <span class="n">port_size</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Width (um) of wave ports&quot;</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">)</span>
 
     <span class="n">box_height</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Height (um) of vacuum above chip in case of single chip.&quot;</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">)</span>
     <span class="n">substrate_height</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Height (um) of the bottom substrate.&quot;</span><span class="p">,</span> <span class="mf">550.0</span><span class="p">)</span>
@@ -251,15 +261,14 @@
 <span class="sd">                used as the top cell for the simulation. Otherwise, a new cell will be created. See</span>
 <span class="sd">                `Simulation.from_cell` for creating simulations from existing cells.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">if</span> <span class="n">layout</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">Layout</span><span class="p">):</span>
             <span class="n">error_text</span> <span class="o">=</span> <span class="s2">&quot;Cannot create simulation with invalid or nil layout.&quot;</span>
             <span class="n">error</span> <span class="o">=</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_text</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__log</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">error_text</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
             <span class="k">raise</span> <span class="n">error</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span>
         <span class="n">schema</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_schema</span><span class="p">()</span>
 
         <span class="c1"># Apply kwargs or default value</span>
@@ -323,6 +332,7 @@
     <span class="n">get_refpoints</span> <span class="o">=</span> <span class="n">Element</span><span class="o">.</span><span class="n">get_refpoints</span>
     <span class="n">add_element</span> <span class="o">=</span> <span class="n">Element</span><span class="o">.</span><span class="n">add_element</span>
     <span class="n">get_layer</span> <span class="o">=</span> <span class="n">Element</span><span class="o">.</span><span class="n">get_layer</span>
+    <span class="n">pcell_params_by_name</span> <span class="o">=</span> <span class="n">Element</span><span class="o">.</span><span class="n">pcell_params_by_name</span>
 
 <div class="viewcode-block" id="Simulation.create_simulation_layers"><a class="viewcode-back" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation.create_simulation_layers">[docs]</a>    <span class="k">def</span> <span class="nf">create_simulation_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create the layers used for simulation export.</span>
@@ -350,12 +360,17 @@
 
         <span class="k">def</span> <span class="nf">insert_region</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">face_id</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;Merges points in the `region` and inserts the result in a target layer.&quot;&quot;&quot;</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">shapes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">face</span><span class="p">(</span><span class="n">face_id</span><span class="p">)[</span><span class="n">layer_name</span><span class="p">]))</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
-               <span class="n">region_with_merged_points</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">minimum_point_spacing</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">layer_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">face</span><span class="p">(</span><span class="n">face_id</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">shapes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">face</span><span class="p">(</span><span class="n">face_id</span><span class="p">)[</span><span class="n">layer_name</span><span class="p">]))</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+                   <span class="n">region_with_merged_points</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">minimum_point_spacing</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">))</span>
 
         <span class="k">for</span> <span class="n">face_id</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_grid</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">produce_ground_on_face_grid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ground_grid_box</span><span class="p">,</span> <span class="n">face_id</span><span class="p">)</span>
+
             <span class="n">ground_box_region</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">))</span>
             <span class="n">lithography_region</span> <span class="o">=</span> <span class="n">merged_region_from_layer</span><span class="p">(</span><span class="n">face_id</span><span class="p">,</span> <span class="s2">&quot;base_metal_gap_wo_grid&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">over_etching</span><span class="p">)</span>
+            <span class="n">tolerance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">minimum_point_spacing</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span>
 
             <span class="k">if</span> <span class="n">lithography_region</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
                 <span class="n">sim_region</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">()</span>
@@ -372,19 +387,55 @@
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_ports</span><span class="p">:</span>
                     <span class="k">for</span> <span class="n">port</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ports</span><span class="p">:</span>
                         <span class="k">if</span> <span class="n">port</span><span class="o">.</span><span class="n">face</span> <span class="o">==</span> <span class="n">face_id</span><span class="p">:</span>
-                            <span class="n">location_itype</span> <span class="o">=</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
-                            <span class="n">ground_region</span> <span class="o">-=</span> <span class="n">ground_region</span><span class="o">.</span><span class="n">interacting</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">location_itype</span><span class="p">,</span> <span class="n">location_itype</span><span class="p">))</span>
+                            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s1">&#39;ground_location&#39;</span><span class="p">):</span>
+                                <span class="n">v_unit</span> <span class="o">=</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">-</span><span class="n">port</span><span class="o">.</span><span class="n">ground_location</span>
+                                <span class="n">v_unit</span> <span class="o">=</span> <span class="n">v_unit</span><span class="o">/</span><span class="n">v_unit</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+                                <span class="n">signal_location</span> <span class="o">=</span> <span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">+</span><span class="n">tolerance</span><span class="o">*</span><span class="n">v_unit</span><span class="p">)</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
+                                <span class="n">ground_region</span> <span class="o">-=</span> <span class="n">ground_region</span><span class="o">.</span><span class="n">interacting</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">signal_location</span><span class="p">,</span> <span class="n">signal_location</span><span class="p">))</span>
+
+                                <span class="n">ground_location</span> <span class="o">=</span> <span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">ground_location</span><span class="o">-</span><span class="n">tolerance</span><span class="o">*</span><span class="n">v_unit</span><span class="p">)</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
+                                <span class="n">ground_region</span> <span class="o">+=</span> <span class="n">sim_region</span><span class="o">.</span><span class="n">interacting</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">ground_location</span><span class="p">,</span> <span class="n">ground_location</span><span class="p">))</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">signal_location</span> <span class="o">=</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
+                                <span class="n">ground_region</span> <span class="o">-=</span> <span class="n">ground_region</span><span class="o">.</span><span class="n">interacting</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">signal_location</span><span class="p">,</span> <span class="n">signal_location</span><span class="p">))</span>
+
                 <span class="n">ground_region</span><span class="o">.</span><span class="n">merge</span><span class="p">()</span>
                 <span class="n">sim_region</span> <span class="o">-=</span> <span class="n">ground_region</span>
 
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_grid</span><span class="p">:</span>
+                <span class="n">region_ground_grid</span> <span class="o">=</span> <span class="n">merged_region_from_layer</span><span class="p">(</span><span class="n">face_id</span><span class="p">,</span><span class="s2">&quot;ground_grid&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">over_etching</span><span class="p">)</span>
+                <span class="n">sim_gap_region</span> <span class="o">=</span> <span class="n">ground_box_region</span> <span class="o">-</span> <span class="n">sim_region</span> <span class="o">-</span> <span class="n">ground_region</span>
+                <span class="n">ground_region</span> <span class="o">-=</span> <span class="n">region_ground_grid</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sim_gap_region</span> <span class="o">=</span> <span class="n">ground_box_region</span> <span class="o">-</span> <span class="n">sim_region</span> <span class="o">-</span> <span class="n">ground_region</span>
+
             <span class="n">insert_region</span><span class="p">(</span><span class="n">sim_region</span><span class="p">,</span> <span class="n">face_id</span><span class="p">,</span> <span class="s2">&quot;simulation_signal&quot;</span><span class="p">)</span>
             <span class="n">insert_region</span><span class="p">(</span><span class="n">ground_region</span><span class="p">,</span> <span class="n">face_id</span><span class="p">,</span> <span class="s2">&quot;simulation_ground&quot;</span><span class="p">)</span>
+            <span class="n">insert_region</span><span class="p">(</span><span class="n">sim_gap_region</span><span class="p">,</span> <span class="n">face_id</span><span class="p">,</span> <span class="s2">&quot;simulation_gap&quot;</span><span class="p">)</span>
 
-        <span class="c1"># Export airbridge regions as merged simple polygons</span>
-        <span class="n">insert_region</span><span class="p">(</span><span class="n">merged_region_from_layer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;airbridge_flyover&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;simulation_airbridge_flyover&quot;</span><span class="p">)</span>
-        <span class="n">insert_region</span><span class="p">(</span><span class="n">merged_region_from_layer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;airbridge_pads&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;simulation_airbridge_pads&quot;</span><span class="p">)</span></div>
+            <span class="c1"># Export airbridge regions as merged simple polygons</span>
+            <span class="n">insert_region</span><span class="p">(</span><span class="n">merged_region_from_layer</span><span class="p">(</span><span class="n">face_id</span><span class="p">,</span> <span class="s2">&quot;airbridge_flyover&quot;</span><span class="p">),</span>
+                    <span class="n">face_id</span><span class="p">,</span> <span class="s2">&quot;simulation_airbridge_flyover&quot;</span><span class="p">)</span>
+            <span class="n">insert_region</span><span class="p">(</span><span class="n">merged_region_from_layer</span><span class="p">(</span><span class="n">face_id</span><span class="p">,</span> <span class="s2">&quot;airbridge_pads&quot;</span><span class="p">),</span>
+                    <span class="n">face_id</span><span class="p">,</span> <span class="s2">&quot;simulation_airbridge_pads&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Simulation.produce_waveguide_to_port"><a class="viewcode-back" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation.produce_waveguide_to_port">[docs]</a>    <span class="k">def</span> <span class="nf">produce_waveguide_to_port</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">towards</span><span class="p">,</span> <span class="n">port_nr</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span>
+<div class="viewcode-block" id="Simulation.produce_ground_on_face_grid"><a class="viewcode-back" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation.produce_ground_on_face_grid">[docs]</a>    <span class="k">def</span> <span class="nf">produce_ground_on_face_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">face_id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Produces ground grid in the given face of the chip.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            box: pya.DBox within which the grid is created</span>
+<span class="sd">            face_id (str): ID of the face where the grid is created</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">grid_area</span> <span class="o">=</span> <span class="n">box</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
+        <span class="n">protection</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">)))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
+        <span class="n">grid_mag_factor</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">region_ground_grid</span> <span class="o">=</span> <span class="n">make_grid</span><span class="p">(</span><span class="n">grid_area</span><span class="p">,</span> <span class="n">protection</span><span class="p">,</span>
+                                       <span class="n">grid_step</span><span class="o">=</span><span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span> <span class="o">*</span> <span class="n">grid_mag_factor</span><span class="p">,</span>
+                                       <span class="n">grid_size</span><span class="o">=</span><span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span> <span class="o">*</span> <span class="n">grid_mag_factor</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">shapes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;ground_grid&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">))</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">region_ground_grid</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Simulation.produce_waveguide_to_port"><a class="viewcode-back" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation.produce_waveguide_to_port">[docs]</a>    <span class="k">def</span> <span class="nf">produce_waveguide_to_port</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">towards</span><span class="p">,</span> <span class="n">port_nr</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                                   <span class="n">use_internal_ports</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">waveguide_length</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                                   <span class="n">term1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">turn_radius</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                                   <span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">over_etching</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -419,7 +470,8 @@
 <span class="sd">            face: face to place waveguide and port on. Either 0 (default) or 1, for bottom or top face.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="n">waveguide_safety_overlap</span> <span class="o">=</span> <span class="mf">0.005</span>  <span class="c1"># Extend waveguide by this amount to avoid gaps due to nm-scale rounding errors</span>
+        <span class="n">waveguide_safety_overlap</span> <span class="o">=</span> <span class="mf">0.005</span>  <span class="c1"># Extend waveguide by this amount to avoid gaps due to nm-scale rounding</span>
+                                          <span class="c1"># errors</span>
         <span class="n">waveguide_gap_extension</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Extend gaps beyond waveguides into ground plane to define the ground port edge</span>
 
         <span class="k">if</span> <span class="n">turn_radius</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -465,6 +517,8 @@
             <span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">corner_point</span> <span class="o">=</span> <span class="n">location</span> <span class="o">+</span> <span class="p">(</span><span class="n">waveguide_length</span> <span class="o">+</span> <span class="n">turn_radius</span><span class="p">)</span> <span class="o">*</span> <span class="n">direction</span>
+            <span class="k">if</span> <span class="n">side</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Waveport side in the arguments of `produce_waveguide_to_ports` is not specified&quot;</span><span class="p">)</span>
             <span class="n">port_edge_point</span> <span class="o">=</span> <span class="p">{</span>
                 <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">corner_point</span><span class="o">.</span><span class="n">y</span><span class="p">),</span>
                 <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">corner_point</span><span class="o">.</span><span class="n">y</span><span class="p">),</span>
@@ -525,7 +579,123 @@
 <span class="sd">                 [p1 - d, p2 + d]: list of extended end points.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">over_etching</span> <span class="o">/</span> <span class="n">p1</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p2</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">p2</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">p1</span> <span class="o">-</span> <span class="n">d</span><span class="p">,</span> <span class="n">p2</span> <span class="o">+</span> <span class="n">d</span><span class="p">]</span></div></div>
+        <span class="k">return</span> <span class="p">[</span><span class="n">p1</span> <span class="o">-</span> <span class="n">d</span><span class="p">,</span> <span class="n">p2</span> <span class="o">+</span> <span class="n">d</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Simulation.get_port_data"><a class="viewcode-back" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation.get_port_data">[docs]</a>    <span class="k">def</span> <span class="nf">get_port_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Return the port data in dictionary form and add the information of port polygon</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                port_data(list): list of port data dictionaries</span>
+
+<span class="sd">                    * Items from `Port` instance</span>
+<span class="sd">                    * polygon: point coordinates of the port polygon</span>
+<span class="sd">                    * signal_edge: point coordinates of the signal edge</span>
+<span class="sd">                    * ground_edge: point coordinates of the ground edge</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">simulation</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="c1"># gather port data</span>
+        <span class="n">port_data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">simulation</span><span class="o">.</span><span class="n">use_ports</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">port</span> <span class="ow">in</span> <span class="n">simulation</span><span class="o">.</span><span class="n">ports</span><span class="p">:</span>
+                <span class="c1"># Basic data from Port</span>
+                <span class="n">p_data</span> <span class="o">=</span> <span class="n">port</span><span class="o">.</span><span class="n">as_dict</span><span class="p">()</span>
+
+                <span class="c1"># Define a 3D polygon for each port</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">EdgePort</span><span class="p">):</span>
+
+                    <span class="k">if</span> <span class="n">simulation</span><span class="o">.</span><span class="n">wafer_stack_type</span> <span class="o">==</span> <span class="s2">&quot;multiface&quot;</span><span class="p">:</span>
+                        <span class="n">port_top_height</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">substrate_height_top</span> <span class="o">+</span> <span class="n">simulation</span><span class="o">.</span><span class="n">chip_distance</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">port_top_height</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">box_height</span>
+
+                    <span class="c1"># Determine which edge this port is on</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">simulation</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">left</span>
+                            <span class="ow">or</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">simulation</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">right</span><span class="p">):</span>
+                        <span class="n">p_data</span><span class="p">[</span><span class="s1">&#39;polygon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                            <span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">simulation</span><span class="o">.</span><span class="n">port_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                             <span class="o">-</span><span class="n">simulation</span><span class="o">.</span><span class="n">substrate_height</span><span class="p">],</span>
+                            <span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">simulation</span><span class="o">.</span><span class="n">port_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                             <span class="o">-</span><span class="n">simulation</span><span class="o">.</span><span class="n">substrate_height</span><span class="p">],</span>
+                            <span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">simulation</span><span class="o">.</span><span class="n">port_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                                <span class="n">port_top_height</span><span class="p">],</span>
+                            <span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">simulation</span><span class="o">.</span><span class="n">port_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+                                <span class="n">port_top_height</span><span class="p">]</span>
+                        <span class="p">]</span>
+
+                    <span class="k">elif</span> <span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">simulation</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">top</span>
+                          <span class="ow">or</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">simulation</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">bottom</span><span class="p">):</span>
+                        <span class="n">p_data</span><span class="p">[</span><span class="s1">&#39;polygon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                            <span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">simulation</span><span class="o">.</span><span class="n">port_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+                             <span class="o">-</span><span class="n">simulation</span><span class="o">.</span><span class="n">substrate_height</span><span class="p">],</span>
+                            <span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">simulation</span><span class="o">.</span><span class="n">port_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+                             <span class="o">-</span><span class="n">simulation</span><span class="o">.</span><span class="n">substrate_height</span><span class="p">],</span>
+                            <span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">simulation</span><span class="o">.</span><span class="n">port_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+                                <span class="n">port_top_height</span><span class="p">],</span>
+                            <span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">simulation</span><span class="o">.</span><span class="n">port_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+                                <span class="n">port_top_height</span><span class="p">]</span>
+                        <span class="p">]</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Port </span><span class="si">{</span><span class="n">port</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2"> is an EdgePort but not on the edge of the simulation box&quot;</span><span class="p">)</span>
+
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">InternalPort</span><span class="p">):</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">signal_edge</span> <span class="o">=</span> <span class="n">find_edge_from_point_in_cell</span><span class="p">(</span>
+                            <span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span>
+                            <span class="n">simulation</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s1">&#39;simulation_signal&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">),</span>
+                            <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="p">,</span>
+                            <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
+                    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Signal edge of port </span><span class="si">{}</span><span class="s1"> on layer </span><span class="si">{}</span><span class="s1"> not found at </span><span class="se">\</span>
+<span class="s1">                                location (</span><span class="si">{:.3f}</span><span class="s1">, </span><span class="si">{:.3f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">port</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+                            <span class="n">simulation</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s1">&#39;simulation_signal&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">),</span>
+                            <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+                            <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span>
+                        <span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">ground_edge</span> <span class="o">=</span> <span class="n">find_edge_from_point_in_cell</span><span class="p">(</span>
+                            <span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span>
+                            <span class="n">simulation</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s1">&#39;simulation_ground&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">),</span>
+                            <span class="n">port</span><span class="o">.</span><span class="n">ground_location</span><span class="p">,</span>
+                            <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
+                    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Ground edge of port </span><span class="si">{}</span><span class="s1"> on layer </span><span class="si">{}</span><span class="s1"> not found at </span><span class="se">\</span>
+<span class="s1">                                location (</span><span class="si">{:.3f}</span><span class="s1">, </span><span class="si">{:.3f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">port</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+                            <span class="n">simulation</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s1">&#39;simulation_signal&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">),</span>
+                            <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+                            <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">y</span>
+                        <span class="p">))</span> <span class="kn">from</span> <span class="nn">e</span>
+
+                    <span class="n">port_z</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">chip_distance</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;t&#39;</span> <span class="k">else</span> <span class="mi">0</span>
+                    <span class="n">p_data</span><span class="p">[</span><span class="s1">&#39;polygon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_enclosing_polygon</span><span class="p">(</span>
+                        <span class="p">[[</span><span class="n">signal_edge</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">signal_edge</span><span class="o">.</span><span class="n">y1</span><span class="p">,</span> <span class="n">port_z</span><span class="p">],</span> <span class="p">[</span><span class="n">signal_edge</span><span class="o">.</span><span class="n">x2</span><span class="p">,</span> <span class="n">signal_edge</span><span class="o">.</span><span class="n">y2</span><span class="p">,</span> <span class="n">port_z</span><span class="p">],</span>
+                         <span class="p">[</span><span class="n">ground_edge</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">ground_edge</span><span class="o">.</span><span class="n">y1</span><span class="p">,</span> <span class="n">port_z</span><span class="p">],</span> <span class="p">[</span><span class="n">ground_edge</span><span class="o">.</span><span class="n">x2</span><span class="p">,</span> <span class="n">ground_edge</span><span class="o">.</span><span class="n">y2</span><span class="p">,</span> <span class="n">port_z</span><span class="p">]])</span>
+                    <span class="n">p_data</span><span class="p">[</span><span class="s1">&#39;signal_edge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">signal_edge</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">signal_edge</span><span class="o">.</span><span class="n">y1</span><span class="p">,</span> <span class="n">port_z</span><span class="p">),</span>
+                                             <span class="p">(</span><span class="n">signal_edge</span><span class="o">.</span><span class="n">x2</span><span class="p">,</span> <span class="n">signal_edge</span><span class="o">.</span><span class="n">y2</span><span class="p">,</span> <span class="n">port_z</span><span class="p">))</span>
+                    <span class="n">p_data</span><span class="p">[</span><span class="s1">&#39;ground_edge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">ground_edge</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">ground_edge</span><span class="o">.</span><span class="n">y1</span><span class="p">,</span> <span class="n">port_z</span><span class="p">),</span>
+                                             <span class="p">(</span><span class="n">ground_edge</span><span class="o">.</span><span class="n">x2</span><span class="p">,</span> <span class="n">ground_edge</span><span class="o">.</span><span class="n">y2</span><span class="p">,</span> <span class="n">port_z</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Port </span><span class="si">{}</span><span class="s2"> has unsupported port class </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">number</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">port</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+
+                <span class="n">port_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p_data</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">port_data</span></div>
+
+<div class="viewcode-block" id="Simulation.delete_instances"><a class="viewcode-back" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation.delete_instances">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">delete_instances</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,)):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Allows for deleting a sub-cell of the top &#39;cell&#39; with a specific &#39;name&#39;. The &#39;index&#39; argument can be used to</span>
+<span class="sd">            access more than one sub-cell sharing the same &#39;name&#39;, but with different appended &#39;index&#39; to the &#39;name&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">index</span><span class="p">:</span>
+            <span class="n">index_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+            <span class="n">cell_to_be_deleted</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">layout</span><span class="p">()</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}{</span><span class="n">index_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">cell_to_be_deleted</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">cell_to_be_deleted</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span></div></div>
 </pre></div>
 
            </div>
@@ -537,7 +707,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

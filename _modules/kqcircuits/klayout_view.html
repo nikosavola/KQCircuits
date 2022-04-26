@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.klayout_view &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.klayout_view &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../libraries/index.html">Libraries</a></li>
@@ -182,8 +187,8 @@
 
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
 
-<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_layers</span><span class="p">,</span> <span class="n">default_png_dimensions</span><span class="p">,</span> <span class="n">mask_bitmap_export_layers</span><span class="p">,</span> <span class="n">all_layers_bitmap_hide_layers</span><span class="p">,</span> \
-    <span class="n">default_faces</span><span class="p">,</span> <span class="n">SRC_PATHS</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_layers</span><span class="p">,</span> <span class="n">default_png_dimensions</span><span class="p">,</span> <span class="n">mask_bitmap_export_layers</span><span class="p">,</span> \
+    <span class="n">all_layers_bitmap_hide_layers</span><span class="p">,</span> <span class="n">default_faces</span><span class="p">,</span> <span class="n">SRC_PATHS</span>
 
 
 <div class="viewcode-block" id="resolve_default_layer_info"><a class="viewcode-back" href="../../api/kqcircuits.klayout_view.html#kqcircuits.klayout_view.resolve_default_layer_info">[docs]</a><span class="nd">@traced</span>
@@ -214,7 +219,6 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">pya</span><span class="p">,</span> <span class="s2">&quot;Application&quot;</span><span class="p">):</span>
             <span class="n">error</span> <span class="o">=</span> <span class="n">MissingUILibraryException</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__log</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Cannot find KLayout UI library.&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
             <span class="k">raise</span> <span class="n">error</span>
         <span class="k">if</span> <span class="n">view</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">current</span> <span class="ow">or</span> <span class="n">pya</span><span class="o">.</span><span class="n">LayoutView</span><span class="o">.</span><span class="n">current</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -225,7 +229,6 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">layout_view</span> <span class="o">=</span> <span class="n">view</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">error</span> <span class="o">=</span> <span class="n">InvalidViewException</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__log</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;The view is not an instance of pya.LayoutView&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
                 <span class="k">raise</span> <span class="n">error</span>
         <span class="k">if</span> <span class="n">initialize</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_default_layers</span><span class="p">()</span>
@@ -264,16 +267,17 @@
 
 <div class="viewcode-block" id="KLayoutView.export_layers_bitmaps"><a class="viewcode-back" href="../../api/kqcircuits.klayout_view.html#kqcircuits.klayout_view.KLayoutView.export_layers_bitmaps">[docs]</a>    <span class="k">def</span> <span class="nf">export_layers_bitmaps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">layers_set</span><span class="o">=</span><span class="n">mask_bitmap_export_layers</span><span class="p">,</span>
                               <span class="n">face_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># pylint: disable=dangerous-default-value</span>
         <span class="k">if</span> <span class="n">filename</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
             <span class="n">filename</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">name</span>
         <span class="k">for</span> <span class="n">layer_name</span> <span class="ow">in</span> <span class="n">layers_set</span><span class="p">:</span>
             <span class="n">layer_info</span> <span class="o">=</span> <span class="n">resolve_default_layer_info</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">face_id</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_export_bitmap</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">layers_set</span><span class="o">=</span><span class="p">[</span><span class="n">layer_info</span><span class="p">],</span> <span class="n">face_id</span><span class="o">=</span><span class="n">face_id</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_export_bitmap</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">layers_set</span><span class="o">=</span><span class="p">[</span><span class="n">layer_info</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="KLayoutView.export_all_layers_bitmap"><a class="viewcode-back" href="../../api/kqcircuits.klayout_view.html#kqcircuits.klayout_view.KLayoutView.export_all_layers_bitmap">[docs]</a>    <span class="k">def</span> <span class="nf">export_all_layers_bitmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="KLayoutView.export_all_layers_bitmap"><a class="viewcode-back" href="../../api/kqcircuits.klayout_view.html#kqcircuits.klayout_view.KLayoutView.export_all_layers_bitmap">[docs]</a>    <span class="k">def</span> <span class="nf">export_all_layers_bitmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">filename</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
             <span class="n">filename</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_export_bitmap</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">layers_set</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">face_id</span><span class="o">=</span><span class="n">face_id</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_export_bitmap</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">layers_set</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="KLayoutView.export_pcell_png"><a class="viewcode-back" href="../../api/kqcircuits.klayout_view.html#kqcircuits.klayout_view.KLayoutView.export_pcell_png">[docs]</a>    <span class="k">def</span> <span class="nf">export_pcell_png</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">max_size</span><span class="o">=</span><span class="n">default_png_dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
         <span class="sd">&quot;&quot;&quot;Exports pcell to .png file no bigger than max_size at either dimension.&quot;&quot;&quot;</span>
@@ -291,7 +295,8 @@
     <span class="c1"># ********************************************************************************</span>
 
     <span class="k">def</span> <span class="nf">_export_bitmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">cell</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">layers_set</span><span class="o">=</span><span class="n">mask_bitmap_export_layers</span><span class="p">,</span>
-                       <span class="n">z_box</span><span class="o">=</span><span class="n">pya</span><span class="o">.</span><span class="n">DBox</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">face_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pngsize</span><span class="o">=</span><span class="n">default_png_dimensions</span><span class="p">):</span>
+                       <span class="n">z_box</span><span class="o">=</span><span class="n">pya</span><span class="o">.</span><span class="n">DBox</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pngsize</span><span class="o">=</span><span class="n">default_png_dimensions</span><span class="p">):</span>
+        <span class="c1"># pylint: disable=dangerous-default-value</span>
         <span class="k">if</span> <span class="n">cell</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Cannot export bitmap of unspecified cell. Defaulting to active cell in view.&quot;</span><span class="p">)</span>
             <span class="n">cell</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">CellView</span><span class="o">.</span><span class="n">active</span><span class="p">()</span><span class="o">.</span><span class="n">cell</span>
@@ -312,7 +317,7 @@
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">layers_set</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">layer_str</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">layers_set</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">layer_str</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">face_id</span> <span class="k">if</span> <span class="n">face_id</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="n">layer_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="n">cell_png_name</span> <span class="o">=</span> <span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2">.png&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">layer_str</span><span class="p">)</span>
 
         <span class="c1"># first make all layers visible, then take a screenshot</span>
@@ -394,7 +399,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

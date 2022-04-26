@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.chips.single_xmons &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.chips.single_xmons &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
@@ -178,20 +183,19 @@
 <span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
 
 
-<span class="kn">from</span> <span class="nn">autologging</span> <span class="kn">import</span> <span class="n">traced</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 
-<span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span>
+<span class="kn">from</span> <span class="nn">autologging</span> <span class="kn">import</span> <span class="n">traced</span>
 
 <span class="kn">from</span> <span class="nn">kqcircuits.chips.chip</span> <span class="kn">import</span> <span class="n">Chip</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.meander</span> <span class="kn">import</span> <span class="n">Meander</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.elements.qubits.swissmon</span> <span class="kn">import</span> <span class="n">Swissmon</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.qubits.swissmon</span> <span class="kn">import</span> <span class="n">Swissmon</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.waveguide_coplanar</span> <span class="kn">import</span> <span class="n">WaveguideCoplanar</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.waveguide_coplanar_tcross</span> <span class="kn">import</span> <span class="n">WaveguideCoplanarTCross</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.squids</span> <span class="kn">import</span> <span class="n">squid_type_choices</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.util.coupler_lib</span> <span class="kn">import</span> <span class="n">produce_library_capacitor</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_squid_type</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.util.coupler_lib</span> <span class="kn">import</span> <span class="n">cap_params</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span><span class="p">,</span> <span class="n">add_parameters_from</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.squids.squid</span> <span class="kn">import</span> <span class="n">Squid</span>
 
 
 <span class="k">def</span> <span class="nf">_get_num_meanders</span><span class="p">(</span><span class="n">meander_length</span><span class="p">,</span> <span class="n">turn_radius</span><span class="p">,</span> <span class="n">meander_min_width</span><span class="p">):</span>
@@ -201,6 +205,7 @@
 
 
 <div class="viewcode-block" id="SingleXmons"><a class="viewcode-back" href="../../../api/kqcircuits.chips.single_xmons.html#kqcircuits.chips.single_xmons.SingleXmons">[docs]</a><span class="nd">@traced</span>
+<span class="nd">@add_parameters_from</span><span class="p">(</span><span class="n">Squid</span><span class="p">,</span> <span class="s2">&quot;squid_type&quot;</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">SingleXmons</span><span class="p">(</span><span class="n">Chip</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;The PCell declaration for a SingleXmons chip.</span>
 
@@ -226,13 +231,12 @@
     <span class="n">l_fingers</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeList</span><span class="p">,</span> <span class="s2">&quot;Length of fingers for test resonator couplers&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mf">23.1</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">,</span> <span class="mf">14.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">])</span>
     <span class="n">type_coupler</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeList</span><span class="p">,</span> <span class="s2">&quot;Coupler type for test resonator couplers&quot;</span><span class="p">,</span>
                          <span class="p">[</span><span class="s2">&quot;interdigital&quot;</span><span class="p">,</span> <span class="s2">&quot;interdigital&quot;</span><span class="p">,</span> <span class="s2">&quot;interdigital&quot;</span><span class="p">,</span> <span class="s2">&quot;gap&quot;</span><span class="p">])</span>
-    <span class="n">squid_type</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeString</span><span class="p">,</span> <span class="s2">&quot;SQUID Type&quot;</span><span class="p">,</span> <span class="n">default_squid_type</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">squid_type_choices</span><span class="p">)</span>
 
-<div class="viewcode-block" id="SingleXmons.produce_impl"><a class="viewcode-back" href="../../../api/kqcircuits.chips.single_xmons.html#kqcircuits.chips.single_xmons.SingleXmons.produce_impl">[docs]</a>    <span class="k">def</span> <span class="nf">produce_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SingleXmons.build"><a class="viewcode-back" href="../../../api/kqcircuits.chips.single_xmons.html#kqcircuits.chips.single_xmons.SingleXmons.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Produces a SingleXmons PCell.&quot;&quot;&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">produce_junction_tests</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">squid_type</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">launchers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">produce_launchers_SMA8</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;WN&quot;</span><span class="p">,</span> <span class="s2">&quot;EN&quot;</span><span class="p">,</span> <span class="s2">&quot;NE&quot;</span><span class="p">,</span> <span class="s2">&quot;NW&quot;</span><span class="p">,</span> <span class="s2">&quot;SW&quot;</span><span class="p">,</span> <span class="s2">&quot;WS&quot;</span><span class="p">,</span> <span class="s2">&quot;SE&quot;</span><span class="p">,</span> <span class="s2">&quot;ES&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">launchers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">produce_launchers</span><span class="p">(</span><span class="s2">&quot;SMA8&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">qubits_refpoints</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_produce_qubits</span><span class="p">()</span>
 
         <span class="n">feedline_x_distance</span> <span class="o">=</span> <span class="mi">1200</span>
@@ -243,7 +247,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_produce_readout_resonators</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_produce_chargelines</span><span class="p">()</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">produce_impl</span><span class="p">()</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_produce_waveguide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">term2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">turn_radius</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Produces a coplanar waveguide that follows the given path.</span>
@@ -263,7 +267,6 @@
             <span class="n">path</span><span class="o">=</span><span class="n">pya</span><span class="o">.</span><span class="n">DPath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
             <span class="n">r</span><span class="o">=</span><span class="n">turn_radius</span><span class="p">,</span>
             <span class="n">term2</span><span class="o">=</span><span class="n">term2</span><span class="p">,</span>
-            <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">waveguide</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">waveguide</span>
@@ -283,7 +286,7 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">qubit_trans</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="n">rotation</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">center_x</span><span class="p">,</span> <span class="n">center_y</span><span class="p">)</span>
-        <span class="n">qubit_inst</span><span class="p">,</span> <span class="n">refpoints_abs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">qubit_cell</span><span class="p">,</span> <span class="n">qubit_trans</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">rec_levels</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">refpoints_abs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">qubit_cell</span><span class="p">,</span> <span class="n">qubit_trans</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">rec_levels</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">refpoints_abs</span>
 
     <span class="k">def</span> <span class="nf">_produce_qubits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -304,13 +307,11 @@
             <span class="n">arm_length</span><span class="o">=</span><span class="p">[</span><span class="mi">146</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span>
             <span class="n">arm_width</span><span class="o">=</span><span class="p">[</span><span class="mi">24</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span>
             <span class="n">gap_width</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span>
-            <span class="n">corner_r</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">island_r</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
             <span class="n">cpl_length</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
             <span class="n">cpl_width</span><span class="o">=</span><span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
             <span class="n">cpl_gap</span><span class="o">=</span><span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">110</span><span class="p">],</span>
             <span class="n">cl_offset</span><span class="o">=</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
-            <span class="n">squid_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">squid_type</span><span class="p">,</span>
-            <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">qubit_spacing_x</span> <span class="o">=</span> <span class="mi">1100</span>  <span class="c1"># shortest x-distance between qubit centers on different sides of the feedline</span>
         <span class="n">qubit_spacing_y</span> <span class="o">=</span> <span class="mi">2600</span>  <span class="c1"># shortest y-distance between qubit centers on different sides of the feedline</span>
@@ -370,7 +371,6 @@
             <span class="n">length</span><span class="o">=</span><span class="n">meander_length</span><span class="p">,</span>
             <span class="n">meanders</span><span class="o">=</span><span class="n">num_meanders</span><span class="p">,</span>
             <span class="n">r</span><span class="o">=</span><span class="n">turn_radius</span><span class="p">,</span>
-            <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_produce_readout_resonators</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -439,7 +439,6 @@
             <span class="n">length</span><span class="o">=</span><span class="n">meander_length</span><span class="p">,</span>
             <span class="n">meanders</span><span class="o">=</span><span class="n">num_meanders</span><span class="p">,</span>
             <span class="n">r</span><span class="o">=</span><span class="n">turn_radius</span><span class="p">,</span>
-            <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_produce_feedline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_distance</span><span class="p">):</span>
@@ -492,13 +491,13 @@
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
             <span class="c1"># Cross</span>
             <span class="n">cross_trans</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">),</span> <span class="kc">False</span><span class="p">,</span> <span class="n">test_resonator_positions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="n">inst_cross</span><span class="p">,</span> <span class="n">ref_cross</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">cell_cross</span><span class="p">,</span> <span class="n">cross_trans</span><span class="p">)</span>
+            <span class="n">inst_cross</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">cell_cross</span><span class="p">,</span> <span class="n">cross_trans</span><span class="p">)</span>
             <span class="n">inst_crosses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inst_cross</span><span class="p">)</span>
             <span class="n">cross_refpoints_abs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_refpoints</span><span class="p">(</span><span class="n">cell_cross</span><span class="p">,</span> <span class="n">inst_crosses</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">dtrans</span><span class="p">)</span>
 
             <span class="c1"># Coupler</span>
-            <span class="n">cplr</span> <span class="o">=</span> <span class="n">produce_library_capacitor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_fingers</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">l_fingers</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
-                                             <span class="bp">self</span><span class="o">.</span><span class="n">type_coupler</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+            <span class="n">cplr_params</span> <span class="o">=</span> <span class="n">cap_params</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_fingers</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">l_fingers</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">type_coupler</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">cplr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="o">**</span><span class="n">cplr_params</span><span class="p">)</span>
             <span class="n">cplr_refpoints_rel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_refpoints</span><span class="p">(</span><span class="n">cplr</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">cplr_pos</span> <span class="o">=</span> <span class="n">cross_refpoints_abs</span><span class="p">[</span><span class="s2">&quot;port_bottom&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="o">.</span><span class="n">R90</span> <span class="o">*</span> <span class="n">cplr_refpoints_rel</span><span class="p">[</span><span class="s2">&quot;port_b&quot;</span><span class="p">]</span>
@@ -546,7 +545,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.util.netlist_extraction &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.util.netlist_extraction &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -41,7 +45,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="kqcircuits.util.parameter_helper" href="kqcircuits.util.parameter_helper.html" />
+    <link rel="next" title="kqcircuits.util.netlist_graph" href="kqcircuits.util.netlist_graph.html" />
     <link rel="prev" title="kqcircuits.util.merge" href="kqcircuits.util.merge.html" /> 
 </head>
 
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
@@ -96,10 +101,13 @@
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.chips.html">kqcircuits.chips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.elements.html">kqcircuits.elements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.masks.html">kqcircuits.masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.squids.html">kqcircuits.squids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.test_structures.html">kqcircuits.test_structures</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="kqcircuits.util.html">kqcircuits.util</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.area.html">kqcircuits.util.area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.count_instances.html">kqcircuits.util.count_instances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.coupler_lib.html">kqcircuits.util.coupler_lib</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.deep_delete.html">kqcircuits.util.deep_delete</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a></li>
@@ -107,13 +115,16 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.geometry_helper.html">kqcircuits.util.geometry_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.library_helper.html">kqcircuits.util.library_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.log_router.html">kqcircuits.util.log_router</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.macro_prepare.html">kqcircuits.util.macro_prepare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.merge.html">kqcircuits.util.merge</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">kqcircuits.util.netlist_extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.parameter_helper.html">kqcircuits.util.parameter_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.parameters.html">kqcircuits.util.parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.replace_squids.html">kqcircuits.util.replace_squids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.html#module-kqcircuits.util">Module contents</a></li>
 </ul>
@@ -201,10 +212,26 @@
             
   <div class="section" id="module-kqcircuits.util.netlist_extraction">
 <span id="kqcircuits-util-netlist-extraction"></span><h1>kqcircuits.util.netlist_extraction<a class="headerlink" href="#module-kqcircuits.util.netlist_extraction" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="kqcircuits.util.netlist_extraction.export_cell_netlist">
-<code class="sig-prename descclassname">kqcircuits.util.netlist_extraction.</code><code class="sig-name descname">export_cell_netlist</code><span class="sig-paren">(</span><em class="sig-param">cell</em>, <em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/netlist_extraction.html#export_cell_netlist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.util.netlist_extraction.export_cell_netlist" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.util.netlist_extraction.export_cell_netlist">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.netlist_extraction.</span></span><span class="sig-name descname"><span class="pre">export_cell_netlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/netlist_extraction.html#export_cell_netlist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.netlist_extraction.export_cell_netlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports netlist into <cite>filename</cite> in JSON</p>
+<p>The file will have three sections: <code class="docutils literal notranslate"><span class="pre">{&quot;nets&quot;:</span> <span class="pre">{...},</span> <span class="pre">&quot;subcircuits&quot;:</span> <span class="pre">{...},</span> <span class="pre">&quot;circuits&quot;:</span> <span class="pre">{...}}</span></code></p>
+<p>KLayout’s <a class="reference external" href="https://www.klayout.de/doc-qt5/manual/lvs_overview.html">terminology</a> differs
+from the one used in typical EDA tools where we have components (resistors, capacitors, etc.),
+pins (the endpoints of components) and nets (i.e. wires between pins). Components are PCell
+instances, a.k.a. cells, these are called subcircuits in the netlist file.</p>
+<p>The main conceptual difference is that waveguides, that would be analogous to wires, are also
+treated as components. Consequently, a net in the <code class="docutils literal notranslate"><span class="pre">nets</span></code> section usually contains exactly two
+overlapping pins that belong to two different components each identified by a unique
+<code class="docutils literal notranslate"><span class="pre">subcircuit_id</span></code>. One of these is almost always a waveguide. Unconnected pins are not shown
+except for Launchers.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">subcircuits</span></code> section is a dictionary of the used cells: <code class="docutils literal notranslate"><span class="pre">&lt;subcircuit_id&gt;:</span> <span class="pre">{&quot;cell_name&quot;:</span>
+<span class="pre">&quot;...&quot;,</span> <span class="pre">&quot;subcircuit_location&quot;:</span> <span class="pre">[&lt;x&gt;,</span> <span class="pre">&lt;y&gt;]}</span></code>. Where <code class="docutils literal notranslate"><span class="pre">cell_name</span></code> is the name of the used Element
+optionally appended with <code class="docutils literal notranslate"><span class="pre">$&lt;n&gt;</span></code> if there are more than one Elements of the same type.
+Different instances of the same cell will have different <code class="docutils literal notranslate"><span class="pre">subcircuit_id</span></code> but identical
+<code class="docutils literal notranslate"><span class="pre">cell_name</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">circuits</span></code> section maps <code class="docutils literal notranslate"><span class="pre">cell_name</span></code> to a dictionary of the named Element’s parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -215,9 +242,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.util.netlist_extraction.export_netlist">
-<code class="sig-prename descclassname">kqcircuits.util.netlist_extraction.</code><code class="sig-name descname">export_netlist</code><span class="sig-paren">(</span><em class="sig-param">circuit</em>, <em class="sig-param">filename</em>, <em class="sig-param">internal_layout</em>, <em class="sig-param">original_layout</em>, <em class="sig-param">cell_mapping</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/netlist_extraction.html#export_netlist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.util.netlist_extraction.export_netlist" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.util.netlist_extraction.export_netlist">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.netlist_extraction.</span></span><span class="sig-name descname"><span class="pre">export_netlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">internal_layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_mapping</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/netlist_extraction.html#export_netlist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.netlist_extraction.export_netlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports <cite>circuit</cite> into <cite>filename</cite> in JSON</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -232,20 +259,15 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.util.netlist_extraction.extract_subcircuit">
-<code class="sig-prename descclassname">kqcircuits.util.netlist_extraction.</code><code class="sig-name descname">extract_subcircuit</code><span class="sig-paren">(</span><em class="sig-param">internal_layout</em>, <em class="sig-param">subcircuit</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/netlist_extraction.html#extract_subcircuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.util.netlist_extraction.extract_subcircuit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="kqcircuits.util.netlist_extraction.extract_nets">
-<code class="sig-prename descclassname">kqcircuits.util.netlist_extraction.</code><code class="sig-name descname">extract_nets</code><span class="sig-paren">(</span><em class="sig-param">net</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/netlist_extraction.html#extract_nets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.util.netlist_extraction.extract_nets" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.util.netlist_extraction.extract_nets">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.netlist_extraction.</span></span><span class="sig-name descname"><span class="pre">extract_nets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">net</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/netlist_extraction.html#extract_nets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.netlist_extraction.extract_nets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract dictionary for net for JSON export</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.util.netlist_extraction.extract_circuits">
-<code class="sig-prename descclassname">kqcircuits.util.netlist_extraction.</code><code class="sig-name descname">extract_circuits</code><span class="sig-paren">(</span><em class="sig-param">cell_mapping</em>, <em class="sig-param">internal_cell</em>, <em class="sig-param">layout</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/netlist_extraction.html#extract_circuits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.util.netlist_extraction.extract_circuits" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.util.netlist_extraction.extract_circuits">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.netlist_extraction.</span></span><span class="sig-name descname"><span class="pre">extract_circuits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_mapping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">internal_cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/netlist_extraction.html#extract_circuits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.netlist_extraction.extract_circuits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract dictionary for circuit for JSON export</p>
 </dd></dl>
 
@@ -258,7 +280,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="kqcircuits.util.parameter_helper.html" class="btn btn-neutral float-right" title="kqcircuits.util.parameter_helper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="kqcircuits.util.netlist_graph.html" class="btn btn-neutral float-right" title="kqcircuits.util.netlist_graph" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="kqcircuits.util.merge.html" class="btn btn-neutral float-left" title="kqcircuits.util.merge" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
@@ -266,7 +288,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

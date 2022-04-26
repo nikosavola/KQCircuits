@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.chips.multi_face.crossing_twoface &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.chips.multi_face.crossing_twoface &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../libraries/index.html">Libraries</a></li>
@@ -178,16 +183,10 @@
 <span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
 
 
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span>
-
 <span class="kn">from</span> <span class="nn">kqcircuits.chips.multi_face.multi_face</span> <span class="kn">import</span> <span class="n">MultiFace</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.waveguide_composite</span> <span class="kn">import</span> <span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">Node</span>
-
-
-<span class="n">version</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span>
 
 
 <div class="viewcode-block" id="CrossingTwoface"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.crossing_twoface.html#kqcircuits.chips.multi_face.crossing_twoface.CrossingTwoface">[docs]</a><span class="k">class</span> <span class="nc">CrossingTwoface</span><span class="p">(</span><span class="n">MultiFace</span><span class="p">):</span>
@@ -207,10 +206,10 @@
     <span class="n">meander_face</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeString</span><span class="p">,</span> <span class="s2">&quot;Meander face on right side&quot;</span><span class="p">,</span> <span class="s2">&quot;single&quot;</span><span class="p">,</span>
                          <span class="n">choices</span><span class="o">=</span><span class="p">[[</span><span class="s2">&quot;Single&quot;</span><span class="p">,</span> <span class="s2">&quot;Single&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Two Face&quot;</span><span class="p">,</span> <span class="s2">&quot;Two Face&quot;</span><span class="p">]])</span>
 
-<div class="viewcode-block" id="CrossingTwoface.produce_impl"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.crossing_twoface.html#kqcircuits.chips.multi_face.crossing_twoface.CrossingTwoface.produce_impl">[docs]</a>    <span class="k">def</span> <span class="nf">produce_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">launchers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">produce_launchers_SMA8</span><span class="p">()</span>
+<div class="viewcode-block" id="CrossingTwoface.build"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.crossing_twoface.html#kqcircuits.chips.multi_face.crossing_twoface.CrossingTwoface.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">launchers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">produce_launchers</span><span class="p">(</span><span class="s2">&quot;SMA8&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_produce_transmission_lines</span><span class="p">(</span><span class="n">launchers</span><span class="p">)</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">produce_impl</span><span class="p">()</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_produce_transmission_lines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">launchers</span><span class="p">):</span>
         <span class="n">distance</span> <span class="o">=</span> <span class="mi">700</span>
@@ -228,7 +227,7 @@
                  <span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;SW_port&quot;</span><span class="p">])</span>
                  <span class="p">]</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">connector_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">connector_type</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">margin</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">)</span>
 
         <span class="c1"># Right transmission line</span>
         <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;NE_port&quot;</span><span class="p">]),</span>
@@ -242,7 +241,7 @@
                  <span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;SE_port&quot;</span><span class="p">])</span>
                  <span class="p">]</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">connector_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">connector_type</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">margin</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">)</span>
 
         <span class="c1"># Crossing transmission line</span>
         <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;WN_port&quot;</span><span class="p">]),</span>
@@ -268,17 +267,10 @@
             <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">((</span><span class="n">ref_x_1</span><span class="p">,</span> <span class="n">last_y</span><span class="p">),</span> <span class="n">face_id</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">))</span>
             <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">((</span><span class="n">ref_x</span> <span class="o">-</span> <span class="n">wiggle</span><span class="p">,</span> <span class="n">last_y</span><span class="p">)))</span>
             <span class="n">last_y</span> <span class="o">-=</span> <span class="n">step</span>
-        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">face1_box</span><span class="o">.</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;WS_port&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">),</span>
-                          <span class="n">a</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)),</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">face1_box</span><span class="o">.</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;WS_port&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="n">a</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">))</span>
         <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;WS_port_corner&quot;</span><span class="p">]))</span>
         <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;WS_port&quot;</span><span class="p">]))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">WaveguideComposite</span><span class="p">,</span>
-                         <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span>
-                         <span class="n">connector_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">connector_type</span><span class="p">,</span>
-                         <span class="n">margin</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">margin</span><span class="p">,</span>
-                         <span class="n">a</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span>
-                         <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span>
-                         <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">)</span>
 
         <span class="c1"># cross_talk</span>
         <span class="n">ref_x</span> <span class="o">=</span> <span class="n">right_tr_x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cross_talk_distance</span> <span class="o">+</span> <span class="n">wiggle</span>
@@ -305,7 +297,7 @@
                           <span class="n">a</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">))</span>
         <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;ES_port_corner&quot;</span><span class="p">]))</span>
         <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;ES_port&quot;</span><span class="p">]))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">connector_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">connector_type</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">margin</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
@@ -317,7 +309,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Point-and-click workflow tutorial &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>Point-and-click workflow tutorial &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -41,7 +45,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Macro development" href="macro_workflow.html" />
+    <link rel="next" title="Python workflow tutorial" href="python_workflow.html" />
     <link rel="prev" title="GUI Features" href="gui_features.html" /> 
 </head>
 
@@ -89,9 +93,11 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="gui_features.html">GUI Features</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Point-and-click workflow tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_workflow.html">Python workflow tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macro_workflow.html">Macro development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="export/index.html">Exports</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xsection.html">Creating cross section images</a></li>
@@ -181,7 +187,7 @@ already installed.</p>
 <p>Do not assume all of the GUI makes sense. At the moment KLayout is
 version 0.27! It is already quite powerful, but most features make sense
 only after you know the API.</p>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p><strong>Generate Demo chip</strong></p>
 <ol class="arabic simple">
 <li><p>Run KLayout Editor. On Windows you should have separate shortcuts
@@ -217,19 +223,6 @@ appear there.</p></li>
 <li><p>Drag the new node with the mouse. The waveguide should change
 shape.</p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul class="simple">
-<li><p>You may still see also the old waveguide shape, because of how chips are
-currently implemented in KQC. To hide it, hide the “b base metal gap”
-layer in the <em>Layers</em> panel to the right.</p></li>
-<li><p>Some other waveguides in the demo chip are “composite waveguides”,
-which contain both “simple waveguides” and other types of elements,
-such as airbridges. Their shape cannot be modified in the same way.
-They can be converted to static cells and then the shapes of the simple
-waveguide cells inside them can be modified.</p></li>
-</ul>
-</div>
 </li>
 <li><p><strong>Change a location of a qubit.</strong></p>
 <ol class="arabic simple">
@@ -283,7 +276,7 @@ plane grid</em>. It may take some time to generate.</p></li>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="macro_workflow.html" class="btn btn-neutral float-right" title="Macro development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="python_workflow.html" class="btn btn-neutral float-right" title="Python workflow tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="gui_features.html" class="btn btn-neutral float-left" title="GUI Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
@@ -291,7 +284,7 @@ plane grid</em>. It may take some time to generate.</p></li>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

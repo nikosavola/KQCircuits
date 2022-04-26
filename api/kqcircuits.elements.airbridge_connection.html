@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.elements.airbridge_connection &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.elements.airbridge_connection &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -42,7 +46,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="kqcircuits.elements.chip_frame" href="kqcircuits.elements.chip_frame.html" />
-    <link rel="prev" title="kqcircuits.elements.qubits.swissmon" href="kqcircuits.elements.qubits.swissmon.html" /> 
+    <link rel="prev" title="kqcircuits.elements.markers.marker_standard" href="kqcircuits.elements.markers.marker_standard.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
@@ -99,7 +104,6 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.f2f_connectors.html">kqcircuits.elements.f2f_connectors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.fluxlines.html">kqcircuits.elements.fluxlines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.markers.html">kqcircuits.elements.markers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.qubits.html">kqcircuits.elements.qubits</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">kqcircuits.elements.airbridge_connection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.chip_frame.html">kqcircuits.elements.chip_frame</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.circular_capacitor.html">kqcircuits.elements.circular_capacitor</a></li>
@@ -111,9 +115,8 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.launcher_dc.html">kqcircuits.elements.launcher_dc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.mask_marker_fc.html">kqcircuits.elements.mask_marker_fc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.meander.html">kqcircuits.elements.meander</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.smooth_capacitor.html">kqcircuits.elements.smooth_capacitor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_polygon.html">kqcircuits.elements.spiral_resonator_polygon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_rectangle.html">kqcircuits.elements.spiral_resonator_rectangle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.spiral_resonator_rectangle_multiface.html">kqcircuits.elements.spiral_resonator_rectangle_multiface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html">kqcircuits.elements.waveguide_composite</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar.html">kqcircuits.elements.waveguide_coplanar</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_curved.html">kqcircuits.elements.waveguide_coplanar_curved</a></li>
@@ -125,6 +128,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.masks.html">kqcircuits.masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.squids.html">kqcircuits.squids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.test_structures.html">kqcircuits.test_structures</a></li>
@@ -212,16 +216,15 @@
             
   <div class="section" id="module-kqcircuits.elements.airbridge_connection">
 <span id="kqcircuits-elements-airbridge-connection"></span><h1>kqcircuits.elements.airbridge_connection<a class="headerlink" href="#module-kqcircuits.elements.airbridge_connection" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="kqcircuits.elements.airbridge_connection.AirbridgeConnection">
-<em class="property">class </em><code class="sig-prename descclassname">kqcircuits.elements.airbridge_connection.</code><code class="sig-name descname">AirbridgeConnection</code><a class="reference internal" href="../_modules/kqcircuits/elements/airbridge_connection.html#AirbridgeConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.airbridge_connection.AirbridgeConnection" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="kqcircuits.elements.airbridge_connection.AirbridgeConnection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.elements.airbridge_connection.</span></span><span class="sig-name descname"><span class="pre">AirbridgeConnection</span></span><a class="reference internal" href="../_modules/kqcircuits/elements/airbridge_connection.html#AirbridgeConnection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.airbridge_connection.AirbridgeConnection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="kqcircuits.elements.element.html#kqcircuits.elements.element.Element" title="kqcircuits.elements.element.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">kqcircuits.elements.element.Element</span></code></a></p>
 <p>The PCell declaration of an Airbridge with tapered waveguides in both ends.</p>
-<dl class="method">
-<dt id="kqcircuits.elements.airbridge_connection.AirbridgeConnection.produce_impl">
-<code class="sig-name descname">produce_impl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/airbridge_connection.html#AirbridgeConnection.produce_impl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.elements.airbridge_connection.AirbridgeConnection.produce_impl" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method builds the PCell.</p>
-<p>Adds all refpoints to user properties and draws their names to the annotation layer.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.airbridge_connection.AirbridgeConnection.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/airbridge_connection.html#AirbridgeConnection.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.airbridge_connection.AirbridgeConnection.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Child classes re-define this method to build the PCell.</p>
 </dd></dl>
 
 </dd></dl>
@@ -230,8 +233,16 @@
 <ul class="simple">
 <li><p><strong>with_side_airbridges</strong><em> (Boolean)</em><span> - With airbridges on the sides</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 <li><p><strong>with_right_waveguide</strong><em> (Boolean)</em><span> - With waveguide on right side</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><strong>waveguide_separation</strong><em> (Double)</em><span> - Distance between waveguide center conductors</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">60</span></code></p></li>
-<li><p><strong>airbridge_type</strong><em> (String)</em><span> - Airbridge type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Airbridge</span> <span class="pre">Rectangular</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['Airbridge</span> <span class="pre">Rectangular']</span></code></p></li>
+<li><p><strong>gap_between_bridges</strong><em> (Double)</em><span> - Inner distance between adjacent bridges</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">20</span></code></p></li>
+<li><p><strong>waveguide_extra</strong><em> (Double)</em><span> - Waveguide extra length below airbridge</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p><strong>a</strong><em> (Double)</em><span> - Width of center conductor</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>b</strong><em> (Double)</em><span> - Width of gap</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">6</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>n</strong><em> (Int)</em><span> - Number of points on turns</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">64</span></code></p></li>
+<li><p><strong>r</strong><em> (Double)</em><span> - Turn radius</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>margin</strong><em> (Double)</em><span> - Margin of the protection layer</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">5</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>face_ids</strong><em> (List)</em><span> - Chip face IDs, list of b | t | c</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['b',</span> <span class="pre">'t',</span> <span class="pre">'c']</span></code></p></li>
+<li><p><strong>display_name</strong><em> (String)</em><span> - Name displayed in GUI (empty for default)</span><em>, default=</em><code class="docutils literal notranslate"></code></p></li>
+<li><p><strong>protect_opposite_face</strong><em> (Boolean)</em><span> - Add opposite face protection too</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>taper_length</strong><em> (Double)</em><span> - Taper length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">31.41592653589793</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>a1</strong><em> (Double)</em><span> - Width of left waveguide center conductor</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>b1</strong><em> (Double)</em><span> - Width of left waveguide gap</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">6</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
@@ -239,11 +250,10 @@
 <li><p><strong>a2</strong><em> (Double)</em><span> - Width of right waveguide center conductor</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">20</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>b2</strong><em> (Double)</em><span> - Width of right waveguide gap</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">12</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>m2</strong><em> (Double)</em><span> - Margin of right waveguide protection layer</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>airbridge_type</strong><em> (String)</em><span> - Airbridge type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Airbridge</span> <span class="pre">Rectangular</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['Airbridge</span> <span class="pre">Rectangular']</span></code></p></li>
 <li><p><strong>bridge_width</strong><em> (Double)</em><span> - Bridge width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">20</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>pad_width</strong><em> (Double)</em><span> - Pad width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">20</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>pad_length</strong><em> (Double)</em><span> - Pad length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">14</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>pad_extra</strong><em> (Double)</em><span> - Bottom pad extra</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">2</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>bridge_length</strong><em> (Double)</em><span> - Bridge length (from pad to pad)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">48</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>pad_length</strong><em> (Double)</em><span> - Pad length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">18</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>bridge_length</strong><em> (Double)</em><span> - Bridge length (from pad to pad)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">44</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 </ul>
 <img alt="../_images/kqcircuits.elements.airbridge_connection.png" src="../_images/kqcircuits.elements.airbridge_connection.png" />
 </div>
@@ -255,14 +265,14 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="kqcircuits.elements.chip_frame.html" class="btn btn-neutral float-right" title="kqcircuits.elements.chip_frame" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="kqcircuits.elements.qubits.swissmon.html" class="btn btn-neutral float-left" title="kqcircuits.elements.qubits.swissmon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kqcircuits.elements.markers.marker_standard.html" class="btn btn-neutral float-left" title="kqcircuits.elements.markers.marker_standard" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

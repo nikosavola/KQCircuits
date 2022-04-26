@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.util.dependencies &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.util.dependencies &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a></li>
@@ -177,7 +182,7 @@
 <span class="c1"># (meetiqm.com/developers/osstmpolicy). IQM welcomes contributions to the code. Please see our contribution agreements</span>
 <span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
 
-<span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">util</span><span class="p">,</span> <span class="n">import_module</span>
 
 <span class="c1"># Record dependencies in setup.py too</span>
 <span class="n">kqc_python_dependencies</span> <span class="o">=</span> <span class="p">{</span>
@@ -187,25 +192,41 @@
     <span class="s2">&quot;tqdm&quot;</span><span class="p">:</span> <span class="s2">&quot;tqdm&gt;=4.61&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 
+
 <div class="viewcode-block" id="install_kqc_dependencies"><a class="viewcode-back" href="../../../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies">[docs]</a><span class="k">def</span> <span class="nf">install_kqc_dependencies</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Check KQCircuits&#39; dependencies and install if missing.</span>
+    <span class="sd">&quot;&quot;&quot;Check KQCircuits&#39; dependencies and install/upgrade if missing.</span>
 
 <span class="sd">    This is *only* for KLayout. Stand-alone mode needs manual pip install, preferably in a venv.</span>
 <span class="sd">    This function should run only once at KLayout startup.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># pylint: disable=import-outside-toplevel</span>
+
+    <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
+    <span class="c1"># Skip installation in stand-alone python package mode</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">pya</span><span class="p">,</span> <span class="s1">&#39;MessageBox&#39;</span><span class="p">):</span>
+        <span class="k">return</span>
 
     <span class="n">missing_pkgs</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">for</span> <span class="n">pkg</span> <span class="ow">in</span> <span class="n">kqc_python_dependencies</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">pkg</span><span class="p">,</span> <span class="n">pkg_ver</span> <span class="ow">in</span> <span class="n">kqc_python_dependencies</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="n">pkg</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">missing_pkgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pkg</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">mod</span> <span class="o">=</span> <span class="n">import_module</span><span class="p">(</span><span class="n">pkg</span><span class="p">)</span>
+            <span class="n">v_inst</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))))</span>
+            <span class="n">v_reqd</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="p">(</span><span class="n">pkg_ver</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))))</span>
+            <span class="k">if</span> <span class="n">v_reqd</span> <span class="o">&gt;</span> <span class="n">v_inst</span><span class="p">:</span>
+                <span class="n">missing_pkgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pkg</span><span class="p">)</span>
+
     <span class="k">if</span> <span class="ow">not</span> <span class="n">missing_pkgs</span><span class="p">:</span>
         <span class="k">return</span>
 
     <span class="c1"># Install missing modules inside KLayout.</span>
-    <span class="kn">import</span> <span class="nn">pya</span>
     <span class="kn">from</span> <span class="nn">pip</span> <span class="kn">import</span> <span class="n">__main__</span>
-    <span class="n">main</span> <span class="o">=</span> <span class="n">__main__</span><span class="o">.</span><span class="n">_main</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">__main__</span><span class="p">,</span> <span class="s2">&quot;_main&quot;</span><span class="p">):</span>
+        <span class="n">main</span> <span class="o">=</span> <span class="n">__main__</span><span class="o">.</span><span class="n">_main</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">pip._internal.cli.main</span> <span class="kn">import</span> <span class="n">main</span>
 
     <span class="n">ask</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">MessageBox</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Install packages?&quot;</span><span class="p">,</span> <span class="s2">&quot;Install missing packages using &#39;pip&#39;: &quot;</span> <span class="o">+</span>
                                  <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing_pkgs</span><span class="p">),</span> <span class="n">pya</span><span class="o">.</span><span class="n">MessageBox</span><span class="o">.</span><span class="n">Yes</span> <span class="o">+</span> <span class="n">pya</span><span class="o">.</span><span class="n">MessageBox</span><span class="o">.</span><span class="n">No</span><span class="p">)</span>
@@ -222,7 +243,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

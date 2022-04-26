@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.elements.fluxlines.fluxline &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.elements.fluxlines.fluxline &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../libraries/index.html">Libraries</a></li>
@@ -185,6 +190,7 @@
 <span class="kn">from</span> <span class="nn">kqcircuits.util.library_helper</span> <span class="kn">import</span> <span class="n">load_libraries</span><span class="p">,</span> <span class="n">to_library_name</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.element</span> <span class="kn">import</span> <span class="n">Element</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_fluxline_type</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.elements.fluxlines</span> <span class="kn">import</span> <span class="n">fluxline_type_choices</span>
 
 
 <div class="viewcode-block" id="Fluxline"><a class="viewcode-back" href="../../../../api/kqcircuits.elements.fluxlines.fluxline.html#kqcircuits.elements.fluxlines.fluxline.Fluxline">[docs]</a><span class="nd">@traced</span>
@@ -192,15 +198,12 @@
 <span class="k">class</span> <span class="nc">Fluxline</span><span class="p">(</span><span class="n">Element</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Base class for fluxline objects without actual produce function.&quot;&quot;&quot;</span>
 
-    <span class="c1"># Parameters defined here will be inherited by Qubit, and are to be common for multiple fluxlines.  Subclasses of</span>
-    <span class="c1"># Fluxline should override the defaults (of any parameters they use) with a suitable default value for the</span>
-    <span class="c1"># particular design.The default value here should be a special &quot;unphysical&quot; value, e.g. 0, which indicates that the</span>
-    <span class="c1"># default of the particular Fluxline subclass should be used.</span>
-    <span class="n">fluxline_width</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Fluxline width&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
-    <span class="n">fluxline_gap_width</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Fluxline gap width&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
+    <span class="n">fluxline_type</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeString</span><span class="p">,</span> <span class="s2">&quot;Fluxline Type&quot;</span><span class="p">,</span> <span class="n">default_fluxline_type</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">fluxline_type_choices</span><span class="p">)</span>
+    <span class="n">fluxline_width</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Fluxline width&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
+    <span class="n">fluxline_gap_width</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Fluxline gap width&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Fluxline.create"><a class="viewcode-back" href="../../../../api/kqcircuits.elements.fluxlines.fluxline.html#kqcircuits.elements.fluxlines.fluxline.Fluxline.create">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">fluxline_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">parameters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fluxline_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">parameters</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a Fluxline cell in layout.</span>
 
 <span class="sd">        If fluxline_type is unknown the default is returned.</span>
@@ -209,6 +212,7 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">            layout: pya.Layout object where this cell is created</span>
+<span class="sd">            library: LIBRARY_NAME of the calling PCell instance</span>
 <span class="sd">            fluxline_type (str): name of the Fluxline subclass or manually designed cell</span>
 <span class="sd">            **parameters: PCell parameters for the element as keyword arguments</span>
 
@@ -222,11 +226,11 @@
         <span class="n">library_layout</span> <span class="o">=</span> <span class="p">(</span><span class="n">load_libraries</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">LIBRARY_PATH</span><span class="p">)[</span><span class="bp">cls</span><span class="o">.</span><span class="n">LIBRARY_NAME</span><span class="p">])</span><span class="o">.</span><span class="n">layout</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">fluxline_type</span> <span class="ow">in</span> <span class="n">library_layout</span><span class="o">.</span><span class="n">pcell_names</span><span class="p">():</span>   <span class="c1">#code generated</span>
             <span class="n">pcell_class</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">library_layout</span><span class="o">.</span><span class="n">pcell_declaration</span><span class="p">(</span><span class="n">fluxline_type</span><span class="p">))</span>
-            <span class="k">return</span> <span class="n">Element</span><span class="o">.</span><span class="n">_create_cell</span><span class="p">(</span><span class="n">pcell_class</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Element</span><span class="o">.</span><span class="n">_create_cell</span><span class="p">(</span><span class="n">pcell_class</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span> <span class="o">**</span><span class="n">parameters</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">library_layout</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">fluxline_type</span><span class="p">):</span>    <span class="c1"># manually designed</span>
             <span class="k">return</span> <span class="n">layout</span><span class="o">.</span><span class="n">create_cell</span><span class="p">(</span><span class="n">fluxline_type</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">LIBRARY_NAME</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>   <span class="c1"># fallback is the default</span>
-            <span class="k">return</span> <span class="n">Fluxline</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">fluxline_type</span><span class="o">=</span><span class="n">default_fluxline_type</span><span class="p">,</span> <span class="o">**</span><span class="n">parameters</span><span class="p">)</span></div>
+            <span class="k">return</span> <span class="n">Fluxline</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span> <span class="n">fluxline_type</span><span class="o">=</span><span class="n">default_fluxline_type</span><span class="p">,</span> <span class="o">**</span><span class="n">parameters</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">_insert_fluxline_shapes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_gap</span><span class="p">,</span> <span class="n">right_gap</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Inserts the gap shapes to the cell.</span>
@@ -252,8 +256,7 @@
 <span class="sd">            port_ref (DPoint): position of &quot;port_flux&quot; in fluxline coordinates</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;origin_fluxline&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_port</span><span class="p">(</span><span class="s2">&quot;flux&quot;</span><span class="p">,</span> <span class="n">port_ref</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">produce_impl</span><span class="p">()</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_port</span><span class="p">(</span><span class="s2">&quot;flux&quot;</span><span class="p">,</span> <span class="n">port_ref</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span></div>
 </pre></div>
 
            </div>
@@ -265,7 +268,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

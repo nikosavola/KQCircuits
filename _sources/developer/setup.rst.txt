@@ -12,11 +12,6 @@ Developer setup may be done independently from the GUI based installation of the
 package. But you should not do both without removing the other one. Otherwise there will be
 duplicate macros and possibly other problems.
 
-.. note::
-    You must open KLayout at least once before installing KQCircuits, because the KLayout python
-    folder ``~/.klayout/python`` is only created then. The documentation uses Linux paths unless
-    explicitely mentioned otherwise.
-
 Python
 ^^^^^^
 
@@ -32,9 +27,11 @@ Successfully tested versions:
 Sources
 -------
 
-Get KQCircuits' sources with::
+Get KQCircuits' sources with:
 
-    git clone https://github.com/iqm-finland/KQCircuits
+.. parsed-literal::
+
+    git clone |GIT_CLONE_URL|
 
 Alternatively, you may re-use the Salt package itself for quick tests, it is under the
 ``.klayout/salt/KQCircuits`` directory. In this case creating symbolic links or installing some
@@ -49,8 +46,9 @@ are automatically installed in the default locations where KLayout looks for
 them. If you want to have more control over the installation process, see the
 next section.
 
-Open a command line / terminal (in Windows you must open it with
-administrator privileges) and ``cd`` to your KQCircuits folder. Then write::
+Open a command line / terminal and ``cd`` to your KQCircuits folder.
+**In Windows you must open the terminal with administrator privileges**.
+Then write::
 
     python3 setup_within_klayout.py
 
@@ -65,6 +63,31 @@ Note, that KLayout will run macros with it's own Python version, ignoring
 virtualenv settings. KLayout is linked together with libpython*.so on Linux and
 libpython*.dll on Windows.
 
+.. note::
+   If KQCircuits is not working properly after installation (KQC libraries
+   not visible, running any macro gives an error, etc.), there might be some
+   problem with the specific KLayout version/build you are using, see
+   :ref:`installation_issues` section for possible solutions.
+
+Secondary install
+-----------------
+
+.. warning::
+     Don't do it, unless you really need multiple parallel environments.
+
+It is possible to work with several independent KQC instances simultaneously. You only need to check
+out KQCircuits under some different name::
+
+    git clone https://github.com/iqm-finland/KQCircuits KQC_2nd
+
+KLayout needs to know about this secondary environment, run it with ``startkl.py`` or by manualy
+setting the environment variable ``KLAYOUT_HOME``::
+
+    KLAYOUT_HOME=~/.klayout_alt/KQC_2nd klayout
+
+Remember to set up a new ``venv`` before attempting :ref:`standalone` in this directory. Otherwise
+your secondary environment may get mixed up with the primary one.
+
 Manual installation
 -------------------
 
@@ -78,10 +101,10 @@ automatically do the same steps as explained below.
 Linux or MacOS
 ^^^^^^^^^^^^^^
 
-Create a symlink from KLayout to the  kqcircuits package and scripts::
+Create a symlink from KLayout to the kqcircuits package and scripts::
 
-    ln -s /Path_to_KQCircuits/python/ksqcircuits ~/.klayout/python/kqcircuits
-    ln -s /Path_to_KQCircuits/python/scripts ~/.klayout/python/kqcircuits_scripts
+    ln -s /Path_to_KQCircuits/klayout_package/python/kqcircuits ~/.klayout/python/kqcircuits
+    ln -s /Path_to_KQCircuits/klayout_package/python/scripts ~/.klayout/python/kqcircuits_scripts
 
 To install the required packages, open a terminal in your KQCircuits folder
 (which contains ``requirements_within_klayout_unix.txt``), and write::
@@ -99,9 +122,9 @@ Windows
 Create a symlink from KLayout to kqcircuits by opening a command prompt with
 administrator privileges, and do::
 
-    cd %HOMEPATH%\KLayout\python
-    mklink /D 'kqcircuits' "Path_to_KQCircuits\python\kqcircuits"
-    mklink /D 'kqcircuits_scripts' "Path_to_KQCircuits\python\scripts"
+    cd %HOMEPATH%\KLayout\klayout_package\python
+    mklink /D 'kqcircuits' "Path_to_KQCircuits\klayout_package\python\kqcircuits"
+    mklink /D 'kqcircuits_scripts' "Path_to_KQCircuits\klayout_package\python\scripts"
 
 Install the required packages by opening command prompt in your KQCircuits
 folder (which contains ``requirements_within_klayout_windows.txt``), and writing::

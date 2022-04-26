@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Chips &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>Chips &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
@@ -197,8 +202,6 @@
 <ul class="simple">
 <li><p><strong>crossings</strong><em> (Int)</em><span> - Number of pairs of airbridge crossings</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
 <li><p><strong>b_number</strong><em> (Int)</em><span> - Number of airbridges in one element of the mechanical test array</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">5</span></code></p></li>
-<li><p><strong>bridge_width</strong><em> (Double)</em><span> - Crossing airbridge width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">20</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
-<li><p><strong>bridge_length</strong><em> (Double)</em><span> - Crossing airbridge length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">48</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="airbridgedctest">
@@ -219,11 +222,18 @@ corners.</p>
 <ul class="simple">
 <li><p><strong>box</strong><em> (Shape)</em><span> - Border</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">(0,0;10000,10000)</span></code></p></li>
 <li><p><strong>with_grid</strong><em> (Boolean)</em><span> - Make ground plane grid</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>merge_base_metal_gap</strong><em> (Boolean)</em><span> - Merge grid and other gaps into base_metal_gap layer</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>dice_width</strong><em> (Double)</em><span> - Dicing width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">200</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
 <li><p><strong>name_mask</strong><em> (String)</em><span> - Name of the mask</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">M99</span></code></p></li>
 <li><p><strong>name_chip</strong><em> (String)</em><span> - Name of the chip</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">CTest</span></code></p></li>
 <li><p><strong>name_copy</strong><em> (String)</em><span> - Name of the copy</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>dice_grid_margin</strong><em> (Double)</em><span> - Margin between dicing edge and ground grid</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
+<li><p><strong>marker_types</strong><em> (List)</em><span> - Marker type for each chip corner, starting from lower left and going clockwise</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard']</span></code></p></li>
+<li><p><strong>with_gnd_tsvs</strong><em> (Boolean)</em><span> - Make ground TSVs</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>tsv_grid_spacing</strong><em> (Double)</em><span> - TSV grid distance (center to center)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">300</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>tsv_edge_to_tsv_edge_separation</strong><em> (Double)</em><span> - Ground TSV clearance to manually placed TSVs (edge to edge)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">250</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>tsv_edge_to_nearest_element</strong><em> (Double)</em><span> - Ground TSV clearance to other elements (edge to edge)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>edge_from_tsv</strong><em> (Double)</em><span> - Ground TSV center clearance to chip edge</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">550</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
 </ul>
 <p><strong>Origin:</strong> Center of the cross.</p>
 <img alt="chipbase" src="../_images/chipbase.png" />
@@ -240,9 +250,9 @@ corners.</p>
 <h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <strong>PCell parameters:</strong><div class="line"><br /></div>
 <ul class="simple">
-<li><p><strong>name_chip</strong><em> (String)</em><span> - Name of the chip</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Demo</span></code></p></li>
 <li><p><strong>readout_res_lengths</strong><em> (List)</em><span> - Readout resonator lengths</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[5000,</span> <span class="pre">5100,</span> <span class="pre">5200,</span> <span class="pre">5300]</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
 <li><p><strong>include_couplers</strong><em> (Boolean)</em><span> - Include couplers between qubits</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><strong>name_chip</strong><em> (String)</em><span> - Name of the chip</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Demo</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="empty">
@@ -264,8 +274,9 @@ corners.</p>
 <ul class="simple">
 <li><p><strong>pad_width</strong><em> (Double)</em><span> - Pad Width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">500</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
 <li><p><strong>junctions_horizontal</strong><em> (Boolean)</em><span> - Horizontal (True) or vertical (False) junctions</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><strong>squid_type</strong><em> (String)</em><span> - SQUID Type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">QCD1</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['NoSquid',</span> <span class="pre">'QCD1',</span> <span class="pre">'QCD2',</span> <span class="pre">'QCD3',</span> <span class="pre">'Sim',</span> <span class="pre">'SIM1']</span></code></p></li>
 <li><p><strong>pad_spacing</strong><em> (Double)</em><span> - Spacing between different pad pairs</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>marker_types</strong><em> (List)</em><span> - Marker type for each chip corner, starting from lower left and going clockwise</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard']</span></code></p></li>
+<li><p><strong>squid_type</strong><em> (String)</em><span> - SQUID Type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">QCD1</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['NoSquid',</span> <span class="pre">'QCD1',</span> <span class="pre">'QCD2',</span> <span class="pre">'QCD3',</span> <span class="pre">'Sim',</span> <span class="pre">'SIM1']</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="lithographytest">
@@ -280,11 +291,16 @@ launchers in “b”-face, connectors between “b” and “t” faces, and def
 the connectors.</p>
 <strong>PCell parameters:</strong><div class="line"><br /></div>
 <ul class="simple">
-<li><p><strong>face1_box</strong><em> (Shape)</em><span> - Border of Face 1</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">(1500,1500;8500,8500)</span></code></p></li>
-<li><p><strong>with_gnd_bumps</strong><em> (Boolean)</em><span> - Make ground bumps</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>a_capped</strong><em> (Double)</em><span> - Width of center conductor in the capped region [μm]</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
 <li><p><strong>b_capped</strong><em> (Double)</em><span> - Width of gap in the capped region </span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
 <li><p><strong>connector_type</strong><em> (String)</em><span> - Connector type for CPW waveguides</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Coax</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['Single',</span> <span class="pre">'GSG',</span> <span class="pre">'Coax']</span></code></p></li>
+<li><p><strong>face1_box</strong><em> (Shape)</em><span> - Border of Face 1</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">(1500,1500;8500,8500)</span></code></p></li>
+<li><p><strong>with_face1_gnd_tsvs</strong><em> (Boolean)</em><span> - Make ground TSVs on the top face</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>with_gnd_bumps</strong><em> (Boolean)</em><span> - Make ground bumps</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>bump_grid_spacing</strong><em> (Double)</em><span> - Bump grid distance (center to center)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">120</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>bump_edge_to_bump_edge_separation</strong><em> (Double)</em><span> - In bump clearance to manually placed Bumps (edge to edge)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">95</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>edge_from_bump</strong><em> (Double)</em><span> - Spacing between bump and chip edge</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">550</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>face1_marker_types</strong><em> (List)</em><span> - Marker type for each top face corner, starting from lower right and going anticlockwise</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard']</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="crossingtwoface">
@@ -333,9 +349,15 @@ represents non-crossing transmission lines.</p>
 <li><p><strong>n_ab</strong><em> (List)</em><span> - Number of resonator airbridges</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">0,</span> <span class="pre">5,</span> <span class="pre">5,</span> <span class="pre">5,</span> <span class="pre">5]</span></code></p></li>
 <li><p><strong>res_term</strong><em> (List)</em><span> - Resonator termination type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['galvanic',</span> <span class="pre">'galvanic',</span> <span class="pre">'galvanic',</span> <span class="pre">'airbridge',</span> <span class="pre">'airbridge',</span> <span class="pre">'airbridge']</span></code></p></li>
 <li><p><strong>res_beg</strong><em> (List)</em><span> - Resonator beginning type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['galvanic',</span> <span class="pre">'galvanic',</span> <span class="pre">'galvanic',</span> <span class="pre">'airbridge',</span> <span class="pre">'airbridge',</span> <span class="pre">'airbridge']</span></code></p></li>
-<li><p><strong>res_a</strong><em> (Double)</em><span> - Resonator waveguide center conductor width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
-<li><p><strong>res_b</strong><em> (Double)</em><span> - Resonator waveguide gap width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">6</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>res_a</strong><em> (List)</em><span> - Width of the center conductor in the resonators [μm]</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">5,</span> <span class="pre">10,</span> <span class="pre">20]</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>res_b</strong><em> (List)</em><span> - Width of the gap in the resonators [μm]</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">6,</span> <span class="pre">12,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">12]</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
 <li><p><strong>tl_airbridges</strong><em> (Boolean)</em><span> - Airbridges on transmission line</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><strong>launcher_top_dist</strong><em> (Double)</em><span> - Launcher distance from top</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">2800</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>launcher_indent</strong><em> (Double)</em><span> - Launcher indentation from edge</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">800</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>marker_safety</strong><em> (Double)</em><span> - Distance between launcher and first curve</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">1000</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>resonators_both_sides</strong><em> (Boolean)</em><span> - Place resonators on both sides of feedline</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>max_res_len</strong><em> (Double)</em><span> - Resonators exceeding this length become meandering</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">1e+30</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>box</strong><em> (Shape)</em><span> - Border</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">(0,0;10000,10000)</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="shaping">
@@ -381,7 +403,7 @@ resonators between the qubits.</p>
 <li><p><strong>arm_width_b</strong><em> (Double)</em><span> - Qubit 2 arm width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">24</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
 <li><p><strong>rr_cpl_width</strong><em> (List)</em><span> - RR to QB coupler width (um for each RR)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[24,</span> <span class="pre">24,</span> <span class="pre">24]</span></code></p></li>
 <li><p><strong>squid_type</strong><em> (String)</em><span> - SQUID Type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">QCD1</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['NoSquid',</span> <span class="pre">'QCD1',</span> <span class="pre">'QCD2',</span> <span class="pre">'QCD3',</span> <span class="pre">'Sim',</span> <span class="pre">'SIM1']</span></code></p></li>
-<li><p><strong>fluxline_type</strong><em> (String)</em><span> - Fluxline Type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Fluxline</span> <span class="pre">Standard</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['Fluxline</span> <span class="pre">Standard',</span> <span class="pre">'Fluxline</span> <span class="pre">Straight']</span></code></p></li>
+<li><p><strong>fluxline_type</strong><em> (String)</em><span> - Fluxline Type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Fluxline</span> <span class="pre">Standard</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['none',</span> <span class="pre">'Fluxline</span> <span class="pre">Standard',</span> <span class="pre">'Fluxline</span> <span class="pre">Straight']</span></code></p></li>
 </ul>
 </div>
 </div>
@@ -400,7 +422,7 @@ resonators between the qubits.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

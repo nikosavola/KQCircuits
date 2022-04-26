@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Test structures &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>Test structures &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
@@ -194,12 +199,15 @@
 <li><p><strong>pad_width</strong><em> (Double)</em><span> - Pad width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">500</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>area_height</strong><em> (Double)</em><span> - Area height</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">1900</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>area_width</strong><em> (Double)</em><span> - Area width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">1300</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>squid_type</strong><em> (String)</em><span> - SQUID Type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">QCD1</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['NoSquid',</span> <span class="pre">'QCD1',</span> <span class="pre">'QCD2',</span> <span class="pre">'QCD3',</span> <span class="pre">'Sim',</span> <span class="pre">'SIM1']</span></code></p></li>
 <li><p><strong>junctions_horizontal</strong><em> (Boolean)</em><span> - Horizontal (True) or vertical (False) junctions</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 <li><p><strong>pad_spacing</strong><em> (Double)</em><span> - Spacing between different pad pairs</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>only_pads</strong><em> (Boolean)</em><span> - Only produce pads, no junctions</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>pad_configuration</strong><em> (String)</em><span> - Pad configuration</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">2-port</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['2-port',</span> <span class="pre">'4-port']</span></code></p></li>
-<li><p><strong>junction_width</strong><em> (Double)</em><span> - Junction width (only used for code generated squids)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.02</span></code></p></li>
+<li><p><strong>junction_width_steps</strong><em> (List)</em><span> - Automatically generate junction widths [start, step]</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0]</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm,</span> <span class="pre">μm]</span></code></p></li>
+<li><p><strong>junction_widths</strong><em> (List)</em><span> - Override the junction widths with these values.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
+<li><p><strong>mirror_squid</strong><em> (Boolean)</em><span> - Mirror SQUID by its Y axis</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>junction_width</strong><em> (Double)</em><span> - Junction width (only used for code generated squids)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.02</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>squid_type</strong><em> (String)</em><span> - SQUID Type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">QCD1</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['NoSquid',</span> <span class="pre">'QCD1',</span> <span class="pre">'QCD2',</span> <span class="pre">'QCD3',</span> <span class="pre">'Sim',</span> <span class="pre">'SIM1']</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="tsvtestpattern">
@@ -211,7 +219,6 @@
 <li><p><strong>ver_distance</strong><em> (Double)</em><span> - Vertical pitch on TSV</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">500</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>tsv_diameter</strong><em> (Double)</em><span> - TSV diameter</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>tsv_type</strong><em> (String)</em><span> - TSV type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">circular</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['circular',</span> <span class="pre">'oval']</span></code></p></li>
-<li><p><strong>tsv_ellipse_width</strong><em> (Double)</em><span> - Oval TSV width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">30</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>tsv_array_form</strong><em> (List)</em><span> - TSV test layout</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">6,</span> <span class="pre">6,</span> <span class="pre">2,</span> <span class="pre">6,</span> <span class="pre">6,</span> <span class="pre">2]</span></code></p></li>
 </ul>
 </div>
@@ -242,7 +249,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

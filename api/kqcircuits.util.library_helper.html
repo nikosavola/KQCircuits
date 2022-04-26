@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.util.library_helper &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.util.library_helper &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -42,7 +46,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="kqcircuits.util.log_router" href="kqcircuits.util.log_router.html" />
-    <link rel="prev" title="kqcircuits.util.groundgrid" href="kqcircuits.util.groundgrid.html" /> 
+    <link rel="prev" title="kqcircuits.util.layout_to_code" href="kqcircuits.util.layout_to_code.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
@@ -96,10 +101,13 @@
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.chips.html">kqcircuits.chips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.elements.html">kqcircuits.elements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.masks.html">kqcircuits.masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.squids.html">kqcircuits.squids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.test_structures.html">kqcircuits.test_structures</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="kqcircuits.util.html">kqcircuits.util</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.area.html">kqcircuits.util.area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.count_instances.html">kqcircuits.util.count_instances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.coupler_lib.html">kqcircuits.util.coupler_lib</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.deep_delete.html">kqcircuits.util.deep_delete</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a></li>
@@ -107,13 +115,16 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.geometry_helper.html">kqcircuits.util.geometry_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">kqcircuits.util.library_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.log_router.html">kqcircuits.util.log_router</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.macro_prepare.html">kqcircuits.util.macro_prepare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.merge.html">kqcircuits.util.merge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.netlist_extraction.html">kqcircuits.util.netlist_extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.parameter_helper.html">kqcircuits.util.parameter_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.parameters.html">kqcircuits.util.parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.replace_squids.html">kqcircuits.util.replace_squids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.html#module-kqcircuits.util">Module contents</a></li>
 </ul>
@@ -201,9 +212,17 @@
             
   <div class="section" id="module-kqcircuits.util.library_helper">
 <span id="kqcircuits-util-library-helper"></span><h1>kqcircuits.util.library_helper<a class="headerlink" href="#module-kqcircuits.util.library_helper" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="kqcircuits.util.library_helper.load_libraries">
-<code class="sig-prename descclassname">kqcircuits.util.library_helper.</code><code class="sig-name descname">load_libraries</code><span class="sig-paren">(</span><em class="sig-param">flush=False</em>, <em class="sig-param">path=''</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/library_helper.html#load_libraries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.util.library_helper.load_libraries" title="Permalink to this definition">¶</a></dt>
+<p>Helper module for building KLayout libraries.</p>
+<p>Typical usage example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kqcircuits.elements.airbridges</span> <span class="kn">import</span> <span class="n">Airbridge</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.util.library_helper</span> <span class="kn">import</span> <span class="n">load_libraries</span>
+<span class="n">load_libraries</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">Airbridge</span><span class="o">.</span><span class="n">LIBRARY_PATH</span><span class="p">)</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">Airbridge</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.util.library_helper.load_libraries">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.library_helper.</span></span><span class="sig-name descname"><span class="pre">load_libraries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flush</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/library_helper.html#load_libraries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.library_helper.load_libraries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load all KQCircuits libraries from the given path.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -219,15 +238,15 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.util.library_helper.delete_all_libraries">
-<code class="sig-prename descclassname">kqcircuits.util.library_helper.</code><code class="sig-name descname">delete_all_libraries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/library_helper.html#delete_all_libraries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.util.library_helper.delete_all_libraries" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.util.library_helper.delete_all_libraries">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.library_helper.</span></span><span class="sig-name descname"><span class="pre">delete_all_libraries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/library_helper.html#delete_all_libraries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.library_helper.delete_all_libraries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete all KQCircuits libraries from KLayout memory.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.util.library_helper.delete_library">
-<code class="sig-prename descclassname">kqcircuits.util.library_helper.</code><code class="sig-name descname">delete_library</code><span class="sig-paren">(</span><em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/library_helper.html#delete_library"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.util.library_helper.delete_library" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.util.library_helper.delete_library">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.library_helper.</span></span><span class="sig-name descname"><span class="pre">delete_library</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/library_helper.html#delete_library"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.library_helper.delete_library" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete a KQCircuits library.</p>
 <p>Calls library.delete() and removes the library from _kqc_libraries dict. Also deletes any libraries which have this
 library as a dependency.</p>
@@ -238,9 +257,9 @@ library as a dependency.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.util.library_helper.to_module_name">
-<code class="sig-prename descclassname">kqcircuits.util.library_helper.</code><code class="sig-name descname">to_module_name</code><span class="sig-paren">(</span><em class="sig-param">class_name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/library_helper.html#to_module_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.util.library_helper.to_module_name" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.util.library_helper.to_module_name">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.library_helper.</span></span><span class="sig-name descname"><span class="pre">to_module_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/library_helper.html#to_module_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.library_helper.to_module_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts class name to module name.</p>
 <p>Converts PascalCase class name to module name
 with each word lowercase and separated by space.</p>
@@ -261,9 +280,9 @@ with each word lowercase and separated by space.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.util.library_helper.to_library_name">
-<code class="sig-prename descclassname">kqcircuits.util.library_helper.</code><code class="sig-name descname">to_library_name</code><span class="sig-paren">(</span><em class="sig-param">class_name=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/library_helper.html#to_library_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.util.library_helper.to_library_name" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.util.library_helper.to_library_name">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.library_helper.</span></span><span class="sig-name descname"><span class="pre">to_library_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/library_helper.html#to_library_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.library_helper.to_library_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts class name to library name.</p>
 <p>Converts PascalCase class name to library name
 with each word titled and separated by space.
@@ -295,14 +314,14 @@ Single letter words are attached to the following word.</p>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="kqcircuits.util.log_router.html" class="btn btn-neutral float-right" title="kqcircuits.util.log_router" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="kqcircuits.util.groundgrid.html" class="btn btn-neutral float-left" title="kqcircuits.util.groundgrid" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kqcircuits.util.layout_to_code.html" class="btn btn-neutral float-left" title="kqcircuits.util.layout_to_code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

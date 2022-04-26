@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.chips.multi_face.demo_twoface &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.chips.multi_face.demo_twoface &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../../../../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -87,6 +91,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../libraries/index.html">Libraries</a></li>
@@ -178,19 +183,16 @@
 <span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
 
 
-<span class="kn">import</span> <span class="nn">sys</span>
-
 <span class="kn">from</span> <span class="nn">kqcircuits.chips.multi_face.multi_face</span> <span class="kn">import</span> <span class="n">MultiFace</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_layers</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.finger_capacitor_square</span> <span class="kn">import</span> <span class="n">FingerCapacitorSquare</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.finger_capacitor_taper</span> <span class="kn">import</span> <span class="n">FingerCapacitorTaper</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.meander</span> <span class="kn">import</span> <span class="n">Meander</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.elements.qubits.swissmon</span> <span class="kn">import</span> <span class="n">Swissmon</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.qubits.swissmon</span> <span class="kn">import</span> <span class="n">Swissmon</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.waveguide_composite</span> <span class="kn">import</span> <span class="n">WaveguideComposite</span><span class="p">,</span> <span class="n">Node</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.waveguide_coplanar_tcross</span> <span class="kn">import</span> <span class="n">WaveguideCoplanarTCross</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.util.geometry_helper</span> <span class="kn">import</span> <span class="n">point_shift_along_vector</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span>
 
 
 <div class="viewcode-block" id="DemoTwoface"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.demo_twoface.html#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface">[docs]</a><span class="k">class</span> <span class="nc">DemoTwoface</span><span class="p">(</span><span class="n">MultiFace</span><span class="p">):</span>
@@ -200,7 +202,7 @@
     <span class="n">readout_res_lengths</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeList</span><span class="p">,</span> <span class="s2">&quot;Readout resonator lengths&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">5100</span><span class="p">,</span> <span class="mi">5200</span><span class="p">,</span> <span class="mi">5300</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;[μm]&quot;</span><span class="p">)</span>
     <span class="n">include_couplers</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeBoolean</span><span class="p">,</span> <span class="s2">&quot;Include couplers between qubits&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
-<div class="viewcode-block" id="DemoTwoface.produce_impl"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.demo_twoface.html#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_impl">[docs]</a>    <span class="k">def</span> <span class="nf">produce_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DemoTwoface.build"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.demo_twoface.html#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="n">launcher_assignments</span> <span class="o">=</span> <span class="p">{</span>
             <span class="c1"># N</span>
@@ -220,7 +222,7 @@
             <span class="mi">19</span><span class="p">:</span> <span class="s2">&quot;DL-QB3&quot;</span><span class="p">,</span>
             <span class="mi">24</span><span class="p">:</span> <span class="s2">&quot;DL-QB1&quot;</span><span class="p">,</span>
         <span class="p">}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">produce_launchers_ARD24</span><span class="p">(</span><span class="n">launcher_assignments</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">produce_launchers</span><span class="p">(</span><span class="s2">&quot;ARD24&quot;</span><span class="p">,</span> <span class="n">launcher_assignments</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">produce_qubits</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">include_couplers</span><span class="p">:</span>
@@ -229,7 +231,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">produce_readout_structures</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">produce_probelines</span><span class="p">()</span>
 
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">produce_impl</span><span class="p">()</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="DemoTwoface.produce_qubits"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.demo_twoface.html#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_qubits">[docs]</a>    <span class="k">def</span> <span class="nf">produce_qubits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">dist_x</span> <span class="o">=</span> <span class="mi">2000</span>  <span class="c1"># distance from bottom chip edge</span>
@@ -339,8 +341,7 @@
         <span class="p">)</span>
         <span class="n">tcross_ref_rel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_refpoints</span><span class="p">(</span><span class="n">tcross_cell</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="n">tcross_rot</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
         <span class="n">tcross_trans</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="n">tcross_rot</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">cap_ref_abs</span><span class="p">[</span><span class="s2">&quot;port_b&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">tcross_ref_rel</span><span class="p">[</span><span class="s2">&quot;port_bottom&quot;</span><span class="p">])</span>
-        <span class="n">_</span><span class="p">,</span> <span class="n">tcross_ref_abs_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">tcross_cell</span><span class="p">,</span> <span class="n">tcross_trans</span><span class="p">,</span> <span class="n">inst_name</span><span class="o">=</span><span class="s2">&quot;RO</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">qubit_nr</span><span class="p">),</span>
-                                              <span class="n">label_trans</span><span class="o">=</span><span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">tcross_cell</span><span class="p">,</span> <span class="n">tcross_trans</span><span class="p">,</span> <span class="n">inst_name</span><span class="o">=</span><span class="s2">&quot;RO</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">qubit_nr</span><span class="p">),</span> <span class="n">label_trans</span><span class="o">=</span><span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="DemoTwoface.produce_probelines"><a class="viewcode-back" href="../../../../api/kqcircuits.chips.multi_face.demo_twoface.html#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_probelines">[docs]</a>    <span class="k">def</span> <span class="nf">produce_probelines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">produce_probeline</span><span class="p">(</span><span class="s2">&quot;RO-A&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -401,7 +402,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

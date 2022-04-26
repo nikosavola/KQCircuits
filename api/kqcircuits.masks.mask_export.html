@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.masks.mask_export &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.masks.mask_export &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
@@ -102,6 +107,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.masks.html#module-kqcircuits.masks">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.squids.html">kqcircuits.squids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.test_structures.html">kqcircuits.test_structures</a></li>
@@ -189,27 +195,28 @@
             
   <div class="section" id="module-kqcircuits.masks.mask_export">
 <span id="kqcircuits-masks-mask-export"></span><h1>kqcircuits.masks.mask_export<a class="headerlink" href="#module-kqcircuits.masks.mask_export" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="kqcircuits.masks.mask_export.export">
-<code class="sig-prename descclassname">kqcircuits.masks.mask_export.</code><code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param">mask_set</em>, <em class="sig-param">path</em>, <em class="sig-param">view</em>, <em class="sig-param">export_drc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export" title="Permalink to this definition">¶</a></dt>
+<p>Functions for exporting mask sets.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.masks.mask_export.export_mask_set">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.masks.mask_export.</span></span><span class="sig-name descname"><span class="pre">export_mask_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_mask_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_mask_set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports the designs, bitmap and documentation for the mask_set.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.masks.mask_export.export_designs">
-<code class="sig-prename descclassname">kqcircuits.masks.mask_export.</code><code class="sig-name descname">export_designs</code><span class="sig-paren">(</span><em class="sig-param">mask_set</em>, <em class="sig-param">export_dir</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_designs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_designs" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.masks.mask_export.export_designs">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.masks.mask_export.</span></span><span class="sig-name descname"><span class="pre">export_designs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_designs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_designs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports .oas and .gds files of the mask_set.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.masks.mask_export.export_chip">
-<code class="sig-prename descclassname">kqcircuits.masks.mask_export.</code><code class="sig-name descname">export_chip</code><span class="sig-paren">(</span><em class="sig-param">cell</em>, <em class="sig-param">chip_name</em>, <em class="sig-param">export_dir</em>, <em class="sig-param">layout</em>, <em class="sig-param">mask_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_chip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_chip" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.masks.mask_export.export_chip">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.masks.mask_export.</span></span><span class="sig-name descname"><span class="pre">export_chip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chip_cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chip_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chip_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_drc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_chip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_chip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports a chip used in a maskset.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.masks.mask_export.export_masks_of_face">
-<code class="sig-prename descclassname">kqcircuits.masks.mask_export.</code><code class="sig-name descname">export_masks_of_face</code><span class="sig-paren">(</span><em class="sig-param">export_dir</em>, <em class="sig-param">mask_layout</em>, <em class="sig-param">mask_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_masks_of_face"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_masks_of_face" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.masks.mask_export.export_masks_of_face">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.masks.mask_export.</span></span><span class="sig-name descname"><span class="pre">export_masks_of_face</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">export_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_masks_of_face"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_masks_of_face" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports masks for layers of a single face of a mask_set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -222,15 +229,15 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.masks.mask_export.export_mask">
-<code class="sig-prename descclassname">kqcircuits.masks.mask_export.</code><code class="sig-name descname">export_mask</code><span class="sig-paren">(</span><em class="sig-param">export_dir</em>, <em class="sig-param">layer_name</em>, <em class="sig-param">mask_layout</em>, <em class="sig-param">mask_set</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_mask" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.masks.mask_export.export_mask">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.masks.mask_export.</span></span><span class="sig-name descname"><span class="pre">export_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">export_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports a mask from a single layer of a single face of a mask set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>export_dir</strong> – directory for the files</p></li>
-<li><p><strong>layer_name</strong> – name of the layer exported as a mask</p></li>
+<li><p><strong>layer_name</strong> – name of the layer exported as a mask, if starts with ‘-‘ then it will be inverted</p></li>
 <li><p><strong>mask_layout</strong> – MaskLayout object for the cell and face reference</p></li>
 <li><p><strong>mask_set</strong> – MaskSet object for the name and version attributes to be included in the filename</p></li>
 </ul>
@@ -238,23 +245,22 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.masks.mask_export.export_docs">
-<code class="sig-prename descclassname">kqcircuits.masks.mask_export.</code><code class="sig-name descname">export_docs</code><span class="sig-paren">(</span><em class="sig-param">mask_set</em>, <em class="sig-param">export_dir</em>, <em class="sig-param">filename='Mask_Documentation.md'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_docs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_docs" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.masks.mask_export.export_docs">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.masks.mask_export.</span></span><span class="sig-name descname"><span class="pre">export_docs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Mask_Documentation.md'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_docs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_docs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports mask documentation containing mask layouts and parameters of all chips in the mask_set.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.masks.mask_export.export_bitmaps">
-<code class="sig-prename descclassname">kqcircuits.masks.mask_export.</code><code class="sig-name descname">export_bitmaps</code><span class="sig-paren">(</span><em class="sig-param">mask_set, export_dir, view, spec_layers=['mask_graphical_rep']</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_bitmaps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_bitmaps" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.masks.mask_export.export_bitmaps">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.masks.mask_export.</span></span><span class="sig-name descname"><span class="pre">export_bitmaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['mask_graphical_rep']</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_bitmaps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_bitmaps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports bitmaps for the mask_set.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="kqcircuits.masks.mask_export.export_drc_reports">
-<code class="sig-prename descclassname">kqcircuits.masks.mask_export.</code><code class="sig-name descname">export_drc_reports</code><span class="sig-paren">(</span><em class="sig-param">mask_set</em>, <em class="sig-param">export_dir</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_drc_reports"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_drc_reports" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exports KLayout DRC report files for the mask_set.</p>
-</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.masks.mask_export.export_drc_report">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.masks.mask_export.</span></span><span class="sig-name descname"><span class="pre">export_drc_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/masks/mask_export.html#export_drc_report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.masks.mask_export.export_drc_report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <img alt="../_images/kqcircuits.masks.mask_export.png" src="../_images/kqcircuits.masks.mask_export.png" />
 </div>
@@ -273,7 +279,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>

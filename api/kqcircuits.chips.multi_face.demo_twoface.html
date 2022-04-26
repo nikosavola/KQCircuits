@@ -7,15 +7,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.chips.multi_face.demo_twoface &mdash; KQCircuits 3.4.0 documentation</title>
+  <title>kqcircuits.chips.multi_face.demo_twoface &mdash; KQCircuits  documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
   
 
   
@@ -30,10 +34,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -89,6 +93,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
@@ -112,10 +117,12 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.empty.html">kqcircuits.chips.empty</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.junction_test.html">kqcircuits.chips.junction_test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.junction_test2.html">kqcircuits.chips.junction_test2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.launchers.html">kqcircuits.chips.launchers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.lithography_test.html">kqcircuits.chips.lithography_test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.sample_holder_test.html">kqcircuits.chips.sample_holder_test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.shaping.html">kqcircuits.chips.shaping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.simple.html">kqcircuits.chips.simple</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.single_xmons.html">kqcircuits.chips.single_xmons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.stripes.html">kqcircuits.chips.stripes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.tsv_test.html">kqcircuits.chips.tsv_test</a></li>
@@ -125,6 +132,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.elements.html">kqcircuits.elements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.masks.html">kqcircuits.masks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.squids.html">kqcircuits.squids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.test_structures.html">kqcircuits.test_structures</a></li>
@@ -214,71 +222,70 @@
             
   <div class="section" id="module-kqcircuits.chips.multi_face.demo_twoface">
 <span id="kqcircuits-chips-multi-face-demo-twoface"></span><h1>kqcircuits.chips.multi_face.demo_twoface<a class="headerlink" href="#module-kqcircuits.chips.multi_face.demo_twoface" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface">
-<em class="property">class </em><code class="sig-prename descclassname">kqcircuits.chips.multi_face.demo_twoface.</code><code class="sig-name descname">DemoTwoface</code><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.chips.multi_face.demo_twoface.</span></span><span class="sig-name descname"><span class="pre">DemoTwoface</span></span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="kqcircuits.chips.multi_face.multi_face.html#kqcircuits.chips.multi_face.multi_face.MultiFace" title="kqcircuits.chips.multi_face.multi_face.MultiFace"><code class="xref py py-class docutils literal notranslate"><span class="pre">kqcircuits.chips.multi_face.multi_face.MultiFace</span></code></a></p>
 <p>Demonstration chip for 3D-integration (multi-face) features.</p>
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_impl">
-<code class="sig-name descname">produce_impl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_impl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_impl" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method builds the PCell.</p>
-<p>Adds all refpoints to user properties and draws their names to the annotation layer.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Child classes re-define this method to build the PCell.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_qubits">
-<code class="sig-name descname">produce_qubits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_qubits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_qubits" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_qubits">
+<span class="sig-name descname"><span class="pre">produce_qubits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_qubits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_qubits" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_qubit">
-<code class="sig-name descname">produce_qubit</code><span class="sig-paren">(</span><em class="sig-param">trans</em>, <em class="sig-param">inst_name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_qubit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_qubit" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_qubit">
+<span class="sig-name descname"><span class="pre">produce_qubit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inst_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_qubit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_qubit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_couplers">
-<code class="sig-name descname">produce_couplers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_couplers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_couplers" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_couplers">
+<span class="sig-name descname"><span class="pre">produce_couplers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_couplers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_couplers" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_coupler">
-<code class="sig-name descname">produce_coupler</code><span class="sig-paren">(</span><em class="sig-param">qubit_a_nr</em>, <em class="sig-param">qubit_b_nr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_coupler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_coupler" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_coupler">
+<span class="sig-name descname"><span class="pre">produce_coupler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qubit_a_nr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qubit_b_nr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_coupler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_coupler" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_control_lines">
-<code class="sig-name descname">produce_control_lines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_control_lines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_control_lines" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_control_lines">
+<span class="sig-name descname"><span class="pre">produce_control_lines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_control_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_control_lines" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_driveline">
-<code class="sig-name descname">produce_driveline</code><span class="sig-paren">(</span><em class="sig-param">qubit_nr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_driveline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_driveline" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_driveline">
+<span class="sig-name descname"><span class="pre">produce_driveline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qubit_nr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_driveline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_driveline" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_fluxline">
-<code class="sig-name descname">produce_fluxline</code><span class="sig-paren">(</span><em class="sig-param">qubit_nr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_fluxline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_fluxline" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_fluxline">
+<span class="sig-name descname"><span class="pre">produce_fluxline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qubit_nr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_fluxline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_fluxline" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_readout_structures">
-<code class="sig-name descname">produce_readout_structures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_readout_structures"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_readout_structures" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_readout_structures">
+<span class="sig-name descname"><span class="pre">produce_readout_structures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_readout_structures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_readout_structures" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_readout_structure">
-<code class="sig-name descname">produce_readout_structure</code><span class="sig-paren">(</span><em class="sig-param">qubit_nr</em>, <em class="sig-param">mirrored</em>, <em class="sig-param">cap_finger_nr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_readout_structure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_readout_structure" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_readout_structure">
+<span class="sig-name descname"><span class="pre">produce_readout_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qubit_nr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mirrored</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cap_finger_nr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_readout_structure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_readout_structure" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_probelines">
-<code class="sig-name descname">produce_probelines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_probelines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_probelines" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_probelines">
+<span class="sig-name descname"><span class="pre">produce_probelines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_probelines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_probelines" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_probeline">
-<code class="sig-name descname">produce_probeline</code><span class="sig-paren">(</span><em class="sig-param">probeline_name</em>, <em class="sig-param">qubit_a_nr</em>, <em class="sig-param">qubit_b_nr</em>, <em class="sig-param">mirrored</em>, <em class="sig-param">cap_finger_nr</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_probeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_probeline" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_probeline">
+<span class="sig-name descname"><span class="pre">produce_probeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">probeline_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qubit_a_nr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qubit_b_nr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mirrored</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cap_finger_nr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/chips/multi_face/demo_twoface.html#DemoTwoface.produce_probeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.chips.multi_face.demo_twoface.DemoTwoface.produce_probeline" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -306,7 +313,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021, IQM.
+        &#169; Copyright 2021-2022, IQM.
 
     </p>
   </div>
