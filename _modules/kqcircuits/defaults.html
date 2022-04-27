@@ -232,10 +232,19 @@
 
 <span class="c1"># project paths</span>
 <span class="n">ROOT_PATH</span> <span class="o">=</span> <span class="n">_kqcircuits_path</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="k">if</span> <span class="n">ROOT_PATH</span><span class="o">.</span><span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;salt&quot;</span><span class="p">:</span>  <span class="c1"># need different paths for KQC Salt package</span>
+<span class="k">if</span> <span class="n">ROOT_PATH</span><span class="o">.</span><span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;salt&quot;</span><span class="p">:</span>
+    <span class="c1"># need different paths for KQC Salt package</span>
     <span class="n">ROOT_PATH</span> <span class="o">=</span> <span class="n">_kqcircuits_path</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">PY_PATH</span> <span class="o">=</span> <span class="n">ROOT_PATH</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;python&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">_kqcircuits_path</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span> <span class="ow">and</span> <span class="n">_kqcircuits_path</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;KLayout&quot;</span><span class="p">,</span> <span class="s2">&quot;.klayout&quot;</span><span class="p">):</span>
+    <span class="c1"># allow using KQC by having kqcircuits and scripts folders directly in KLayout python folder</span>
+    <span class="k">if</span> <span class="n">_kqcircuits_path</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;KLayout&quot;</span><span class="p">:</span>
+        <span class="n">ROOT_PATH</span> <span class="o">=</span> <span class="n">ROOT_PATH</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;KLayout&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ROOT_PATH</span> <span class="o">=</span> <span class="n">ROOT_PATH</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;.klayout&quot;</span><span class="p">)</span>
+    <span class="n">PY_PATH</span> <span class="o">=</span> <span class="n">ROOT_PATH</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;python&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
+    <span class="c1"># for normal installation</span>
     <span class="n">PY_PATH</span> <span class="o">=</span> <span class="n">ROOT_PATH</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;klayout_package&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;python&quot;</span><span class="p">)</span>
 <span class="n">SRC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="n">PY_PATH</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;kqcircuits&quot;</span><span class="p">)]</span>
 <span class="n">TMP_PATH</span> <span class="o">=</span> <span class="n">ROOT_PATH</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;tmp&quot;</span><span class="p">)</span>
@@ -298,6 +307,7 @@
     <span class="s2">&quot;simulation_gap&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
     <span class="s2">&quot;simulation_airbridge_flyover&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">94</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
     <span class="s2">&quot;simulation_airbridge_pads&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="s2">&quot;simulation_indium_bump&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">98</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
 <span class="p">}</span>
 
 

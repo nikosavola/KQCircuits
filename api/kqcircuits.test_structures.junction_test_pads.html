@@ -205,7 +205,7 @@
 <p>Base class for junction test structures.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="kqcircuits.test_structures.junction_test_pads.JunctionTestPads.produce_squid">
-<span class="sig-name descname"><span class="pre">produce_squid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transf</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kqcircuits.test_structures.junction_test_pads.JunctionTestPads.produce_squid" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">produce_squid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_arms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kqcircuits.test_structures.junction_test_pads.JunctionTestPads.produce_squid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Produces the squid.</p>
 <p>Creates the squid cell and inserts it with the given transformation as a subcell. Also inserts the squid parts
 in “base_metal_gap_wo_grid”-layer to “base_metal_gap_for_EBL”-layer.</p>
@@ -214,6 +214,8 @@ in “base_metal_gap_wo_grid”-layer to “base_metal_gap_for_EBL”-layer.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>transf</strong> (<em>DCplxTrans</em>) – squid transformation</p></li>
 <li><p><strong>parameters</strong> – other parameters for the squid</p></li>
+<li><p><strong>only_arms</strong> – Boolean argument that allows to choose whether to create the arms and the squid device or only
+the arms</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -263,6 +265,7 @@ in “base_metal_gap_wo_grid”-layer to “base_metal_gap_for_EBL”-layer.</p>
 <li><p><strong>junction_widths</strong><em> (List)</em><span> - Override the junction widths with these values.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
 <li><p><strong>mirror_squid</strong><em> (Boolean)</em><span> - Mirror SQUID by its Y axis</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>junction_width</strong><em> (Double)</em><span> - Junction width (only used for code generated squids)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.02</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
+<li><p><strong>loop_area</strong><em> (Double)</em><span> - Loop area</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm^2</span></code></p></li>
 <li><p><strong>squid_type</strong><em> (String)</em><span> - SQUID Type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">QCD1</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['NoSquid',</span> <span class="pre">'QCD1',</span> <span class="pre">'QCD2',</span> <span class="pre">'QCD3',</span> <span class="pre">'Sim',</span> <span class="pre">'SIM1']</span></code></p></li>
 </ul>
 <img alt="../_images/kqcircuits.test_structures.junction_test_pads.png" src="../_images/kqcircuits.test_structures.junction_test_pads.png" />
