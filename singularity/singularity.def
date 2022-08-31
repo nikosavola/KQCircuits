@@ -2,10 +2,16 @@ BootStrap: debootstrap
 OSVersion: focal
 MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
+%help
+    This container can be used to run Elmer simulations for KQCircuits simulations
+
+%labels
+    org.opencontainers.image.authors "IQM"
+    org.opencontainers.image.source "https://github.com/iqm-finland/KQCircuits"
+    org.opencontainers.image.description "This container can be used to run Elmer simulations for KQCircuits simulations"
 
 %runscript
     echo "There is no runscript at the moment."
-
 
 %post
     sed -i 's/$/ universe/' /etc/apt/sources.list
