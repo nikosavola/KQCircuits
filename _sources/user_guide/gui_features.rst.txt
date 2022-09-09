@@ -1,6 +1,12 @@
 GUI Features
 ============
 
+The GUI usage of KQCircuits is mostly the same as in KLayout without KQCircuits,
+so it is recommended to read at least https://www.klayout.de/doc-qt5/manual/basic.html
+part of KLayout documentation. It explains for example cell hierarchy and
+other important concepts. In this section we explain KQCircuits-specific GUI
+features and highlight some useful features of the KLayout GUI.
+
 Useful hotkeys
 --------------
 - \* makes the full cell hierarchy visible. Otherwise only cell frames may be
@@ -61,7 +67,7 @@ PCell shape is updated after each change in the parameters.
 Converting elements placed in GUI into code
 -------------------------------------------
 
-KQCircuits includes a macro ``export_cells_as_code.lym`` that can be used to
+KQCircuits includes a macro :git_url:`export_cells_as_code.lym <klayout_package/python/scripts/macros/export/export_cells_as_code.lym>` that can be used to
 convert elements placed in GUI into code that can be used in chip PCells. For
 more information, see the docstring and comments in the macro. The following
 animation demonstrates how a chip is modified by placing elements in the GUI
@@ -69,11 +75,11 @@ and how to use this macro to include those elements in PCell generation code:
 
 .. image:: ../images/gui_workflows/converting_gui_elements_to_code.gif
 
-The macro has special handling for waveguides (of ``WaveguideCoplanar`` type).
+The macro has special handling for waveguides (of :class:`.WaveguideCoplanar` type).
 The code generated for them automatically detects nearby reference points of
 other elements, and uses these instead of hardcoded points as the positions
 of the waveguide nodes. See the :ref:`modifying_waveguides` section above for
-instructions on how to modify ``WaveguideCoplanar`` in GUI.
+instructions on how to modify :class:`.WaveguideCoplanar` in GUI.
 
 In order to make waveguides connect "nicely" to ports of other elements, most
 ports in KQC elements have an additional "corner refpoint". To connect a
@@ -82,3 +88,33 @@ two points at ``x_port_a`` and ``x_port_a_corner``. The corner point is not
 needed if the next point would anyway be in the direction of
 ``x_port_a_corner``, since the purpose of the corner point is only to make
 the direction of the first waveguide segment aligned with the port.
+
+
+Useful Menu Commands
+--------------------
+
+Several very useful macros are directly accessible from KLayout's "**KQCircuits**"
+drop-down menu:
+
+- **Fill with ground plane grid** -- Creates a ground plane grid covering the top cell bounding box,
+  except the parts in grid avoidance layer. Requires at least one cell to exist in the current
+  layout. Only creates the grid for "b"-face.  Remember to unhide the b_ground_grid layer to make it
+  visible.
+
+- **All chips in the library** -- Opens a new layout and puts all available chips there arranged in
+  a grid. Note that this operation may take several minutes.
+
+- **Empty layout with a top cell and default layers** -- A new layout in KLayout is empty and has no
+  assigned layers by default. This macro helps to create a more useful new layout with a predefined
+  top-cell and the default KQCircuits layers.
+
+- **Reload libraries** -- Reloads KQCircuits code from storage making it possible to modify elements
+  and see the change without having to restart KLayout and reload the edited elements. This is
+  illustrated in the end of previous section's video. Note that this macro does
+  not reload the KQCircuits :git_url:`defaults <klayout_package/python/kqcircuits/defaults.py>`
+  file.
+
+DRC scripts are accessible from KLayout's "**Tools -> DRC** drop-down menu:
+
+- **Area and Density** -- Calculate area and density for everything in view, in every layer.
+- **Waveguide** -- Detects Waveguides crossing anything in base_metal_gap_wo_grid layer.
