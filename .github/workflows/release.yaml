@@ -65,12 +65,10 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      - name: Install dependencies
+        run: apk update && apk add debootstrap perl
       - name: Build Container
         run: |
-          apk update && apk add python3 py3-pip debootstrap perl gcc \
-            gfortran build-base wget freetype-dev libpng-dev openblas-dev
-          ln -sf python3 /usr/bin/python
-          ci/init_kqc.sh
           cd singularity && ./singularity.sh
           echo "Tag is ${{ steps.meta.outputs.tags }}."
       - name: Login and Deploy Container
