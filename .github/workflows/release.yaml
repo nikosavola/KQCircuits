@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - 989-build-singularity-image-in-ci  # DEBUG
     tags:
       - v*
   pull_request:
