@@ -75,6 +75,6 @@ jobs:
       - name: Login and Deploy Container
         working-directory: ./singularity/libexec
         run: |         
-          echo ${{ secrets.GITHUB_TOKEN }} | singularity remote login -u ${{ github.repository_owner }} \
+          echo ${{ secrets.GITHUB_TOKEN }} | singularity remote login -i -u ${{ github.repository_owner }} \
             --password-stdin oras://ghcr.io
-          singularity push kqclib "oras://${{ steps.meta.outputs.tags }}-singularity"
+          singularity push -U kqclib "oras://${{ steps.meta.outputs.tags }}-singularity"
