@@ -76,4 +76,6 @@ jobs:
         run: |         
           echo ${{ secrets.GITHUB_TOKEN }} | singularity remote login -i -u ${{ github.repository_owner }} \
             --password-stdin oras://ghcr.io
-          singularity push -U kqclib "oras://${{ steps.meta.outputs.tags }}-singularity"
+          for remote in "${{ fromJSON(steps.meta.outputs.json).tags }}"; do
+            singularity push -U kqclib "oras://${remote}-singularity"
+          done
