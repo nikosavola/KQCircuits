@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - 1127-singularity-building-in-github-ci-failing-for-tags ## DEBUG
     tags:
       - v*
   pull_request:
