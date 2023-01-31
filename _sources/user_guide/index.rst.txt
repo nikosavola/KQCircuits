@@ -6,6 +6,7 @@ User Guide
 .. toctree::
     :glob:
 
+    usage
     gui_features
     gui_workflow
     python_workflow

@@ -93,31 +93,23 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../start/installation.html">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#klayout">KLayout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#basic-automatic-installation">Basic automatic installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#upgrading-salt-package">Upgrading Salt Package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#release-notes">Release Notes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#known-installation-issues">Known installation issues</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../start/installation.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#klayout">KLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#known-installation-issues">Known installation issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../start/usage.html">Usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../start/usage.html#modifying-or-creating-elements-or-chips">Modifying or Creating Elements or Chips</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gui_features.html">GUI Features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#useful-hotkeys">Useful hotkeys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gui_features.html#introduction-to-elements">Introduction to Elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#placing-elements">Placing Elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#modifying-element-parameters">Modifying Element parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#modifying-waveguides">Modifying waveguides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gui_features.html#editing-waveguidecomposite-nodes">Editing WaveguideComposite Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#converting-elements-placed-in-gui-into-code">Converting elements placed in GUI into code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#useful-menu-commands">Useful Menu Commands</a></li>
 </ul>
@@ -139,6 +131,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="python_workflow.html#refpoints">Refpoints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="python_workflow.html#faces">Faces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python_workflow.html#layer-configuration-files">Layer configuration files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="python_workflow.html#adding-a-new-face">Adding a new face</a></li>
 </ul>
 </li>
@@ -164,21 +157,33 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="simulations.html">External simulation tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="simulations.html#creating-simulation-object">Creating simulation object</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="simulations.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="simulations.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulation/simulation_object.html">Creating simulation object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation/simulation_object.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation/simulation_object.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="simulations.html#ansys-export">Ansys export</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="simulations.html#ansys-scripts">Ansys scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulation/ansys_export.html">Ansys export</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation/ansys_export.html#ansys-scripts">Ansys scripts</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="simulations.html#sonnet-export">Sonnet export</a></li>
-<li class="toctree-l3"><a class="reference internal" href="simulations.html#gmsh-elmer-export">Gmsh/Elmer export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulation/sonnet_export.html">Sonnet export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="xsection.html">Creating cross section images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xsection.html">Creating cross section images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="xsection.html#klayout-gui-xsection-tool">KLayout GUI XSection tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xsection.html#xsection-call-in-kqc-code">XSection call in KQC code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="xsection.html#process-files-xs">Process files (.xs)</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="terminology.html">Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../salt.html">Salt Package Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#user-specific-content">User Specific Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#release-notes">Release Notes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
@@ -317,9 +322,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.junction.html">kqcircuits.junctions.junction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.manhattan.html">kqcircuits.junctions.manhattan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.manhattan_single_junction.html">kqcircuits.junctions.manhattan_single_junction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.no_squid.html">kqcircuits.junctions.no_squid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.sim.html">kqcircuits.junctions.sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.squid.html">kqcircuits.junctions.squid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.html#module-kqcircuits.junctions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.layer_config.html">kqcircuits.layer_config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.layer_config.default_layer_config.html">kqcircuits.layer_config.default_layer_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.layer_config.example_layer_config.html">kqcircuits.layer_config.example_layer_config</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.masks.html">kqcircuits.masks</a><ul>
@@ -330,6 +341,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.double_pads.html">kqcircuits.qubits.double_pads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.double_pads_splines.html">kqcircuits.qubits.double_pads_splines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.qubit.html">kqcircuits.qubits.qubit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.swissmon.html">kqcircuits.qubits.swissmon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.html#module-kqcircuits.qubits">Module contents</a></li>
@@ -340,17 +353,21 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.ansys.html">kqcircuits.simulations.export.ansys</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.elmer.html">kqcircuits.simulations.export.elmer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.sonnet.html">kqcircuits.simulations.export.sonnet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.xsection.html">kqcircuits.simulations.export.xsection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.circular_capacitor_sim.html">kqcircuits.simulations.circular_capacitor_sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.cross_section_simulation.html">kqcircuits.simulations.cross_section_simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.double_pads_sim.html">kqcircuits.simulations.double_pads_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.empty_simulation.html">kqcircuits.simulations.empty_simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.finger_capacitor_sim.html">kqcircuits.simulations.finger_capacitor_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.flip_chip_connector_sim.html">kqcircuits.simulations.flip_chip_connector_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.port.html">kqcircuits.simulations.port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.simulation.html">kqcircuits.simulations.simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.single_xmon.html">kqcircuits.simulations.single_xmon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.single_xmons_full_chip_sim.html">kqcircuits.simulations.single_xmons_full_chip_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.waveguides_sim.html">kqcircuits.simulations.waveguides_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.xmons_direct_coupling_full_chip_sim.html">kqcircuits.simulations.xmons_direct_coupling_full_chip_sim</a></li>
@@ -379,10 +396,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.coupler_lib.html">kqcircuits.util.coupler_lib</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.deep_delete.html">kqcircuits.util.deep_delete</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.export_helper.html">kqcircuits.util.export_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.geometry_helper.html">kqcircuits.util.geometry_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.import_helper.html">kqcircuits.util.import_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.label.html">kqcircuits.util.label</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.library_helper.html">kqcircuits.util.library_helper</a></li>
@@ -393,6 +413,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.parameter_helper.html">kqcircuits.util.parameter_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.parameters.html">kqcircuits.util.parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.plugin_startup.html">kqcircuits.util.plugin_startup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.refpoints.html">kqcircuits.util.refpoints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.replace_squids.html">kqcircuits.util.replace_squids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a></li>
@@ -406,6 +427,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.html#module-kqcircuits">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../trademarks.html">Trademarks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">About</a><ul>
@@ -490,7 +512,11 @@ mask and the parameters of those chips. These scripts will export
 <code class="docutils literal notranslate"><span class="pre">.oas</span></code>/<code class="docutils literal notranslate"><span class="pre">.gds</span></code> files required for photomask production and possibly EBL,
 as well as auxiliary files such as netlists, images and automatic mask
 documentation. The mask scripts can be run either from the macro editor or
-from the command line using <code class="docutils literal notranslate"><span class="pre">klayout</span> <span class="pre">-z</span> <span class="pre">-r</span> <span class="pre">./scripts/masks/maskname.py</span></code>.</p>
+from the command line using <code class="docutils literal notranslate"><span class="pre">klayout</span> <span class="pre">-z</span> <span class="pre">-r</span> <span class="pre">./scripts/masks/maskname.py</span></code>.
+Masks also accept an optional <code class="docutils literal notranslate"><span class="pre">-d</span></code> switch to build the mask without KLayout
+and in a single process thus facilitating debugging mask issues. Please note
+that debug mode lacks certain features that are tied to the presence of
+KLayout.</p>
 <div class="section" id="tutorial">
 <h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basic-mask-script-and-export">
@@ -503,19 +529,15 @@ the <code class="docutils literal notranslate"><span class="pre">Python</span></
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports required for any mask</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">TMP_PATH</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.masks.mask_set</span> <span class="kn">import</span> <span class="n">MaskSet</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.klayout_view</span> <span class="kn">import</span> <span class="n">KLayoutView</span>
 <span class="c1"># Import chips required for this mask</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.chips.demo</span> <span class="kn">import</span> <span class="n">Demo</span>
 
-<span class="c1"># Get current view and layout</span>
-<span class="n">view</span> <span class="o">=</span> <span class="n">KLayoutView</span><span class="p">(</span><span class="n">current</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">initialize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">layout</span> <span class="o">=</span> <span class="n">KLayoutView</span><span class="o">.</span><span class="n">get_active_layout</span><span class="p">()</span>
 
 <span class="c1"># Initialize mask object.</span>
 <span class="c1"># &quot;name&quot; and &quot;version&quot; will be displayed in labels inside the mask</span>
 <span class="c1"># and in the names of the exported files.</span>
 <span class="c1"># &quot;with_grid&quot; determines if the ground plane grid is created.</span>
-<span class="n">test_mask</span> <span class="o">=</span> <span class="n">MaskSet</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">with_grid</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">test_mask</span> <span class="o">=</span> <span class="n">MaskSet</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">with_grid</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Add mask layouts.</span>
 <span class="c1"># A mask layout determines which chip is at each position. The chips are</span>
@@ -547,11 +569,11 @@ the <code class="docutils literal notranslate"><span class="pre">Python</span></
 <span class="c1"># ``add_mask_layout()`` and ``add_chip()`.</span>
 <span class="n">test_mask</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 <span class="c1"># Export the mask files to TMP_PATH</span>
-<span class="n">test_mask</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">TMP_PATH</span><span class="p">,</span> <span class="n">view</span><span class="p">)</span>
+<span class="n">test_mask</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">TMP_PATH</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Any mask script should follow roughly the same structure. The
-beginning and end of the script (getting the view, and exporting the
+beginning and end of the script (creating the MaskSet object, and exporting the
 mask) are generally the same for any mask.</p>
 </li>
 <li><p>(Optional) Open <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/scripts/macros/logging_setup.lym">kqcircuits_scripts/macros/logging_setup</a> and run it.
@@ -570,7 +592,7 @@ generated.</p>
 <p>The generated masks can include a ground plane grid, which automatically
 avoids other elements. To generate it, use <code class="docutils literal notranslate"><span class="pre">with_grid=True</span></code> in the mask object
 initialization:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test_mask</span> <span class="o">=</span> <span class="n">MaskSet</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">with_grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test_mask</span> <span class="o">=</span> <span class="n">MaskSet</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">with_grid</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Because the grid generation is slow, it is recommended to keep
@@ -607,8 +629,8 @@ defined in the previous step.</p></li>
 <h3>Multi-face masks<a class="headerlink" href="#multi-face-masks" title="Permalink to this headline">¶</a></h3>
 <p>The mask generated in the previous step contained “DemoTwoface” chips, which
 are supposed to have elements in two different chip faces for a flip-chip
-process. However, the generated mask only contained the parts in “bottom”
-face. To generate mask for also “top”-face chips, we need to add an
+process. However, the generated mask only contained the parts in “1t1”-face.
+To generate mask for also “2b1”-face chips, we need to add an
 additional <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/kqcircuits/masks/mask_layout.py">mask_layout</a></p>
 <ol class="arabic">
 <li><p>Add the following below the old <code class="docutils literal notranslate"><span class="pre">add_mask_layout()</span></code> call:</p>
@@ -634,19 +656,19 @@ additional <a class="reference external" href="https://github.com/iqm-finland/KQ
     <span class="p">[</span><span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">],</span>
     <span class="p">[</span><span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">],</span>
     <span class="p">[</span><span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">],</span>
-<span class="p">],</span> <span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="p">],</span> <span class="s2">&quot;2b1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Notice the “t” argument after the actual mask layout. This means that only
-elements which are in chip face “t” will be included in this mask layout.
-By default, the mask layout will use elements in chip face “b”, which is
+<p>Notice the “2b1” argument after the actual mask layout. This means that only
+elements which are in chip face “2b1” will be included in this mask layout.
+By default, the mask layout will use elements in chip face “1t1”, which is
 the case for the first mask layout in this script.</p>
 </li>
-<li><p>Generate the mask. In KLayout cell hierarchy, you should see both “Test b”
-and “Test t” cells. You can right click them and select “Show as new
-top” to verify that “Test b” contains the parts of DemoTwoface in “b”-face
-and “Test t” contains the parts of DemoTwoface in “t”-face (with proper
-mirroring and rotation).</p></li>
+<li><p>Generate the mask. In KLayout cell hierarchy, you should see both “Test 1t1”
+and “Test 2b1” cells. You can right click them and select “Show as new
+top” to verify that “Test 1t1” contains the parts of DemoTwoface in
+“1t1”-face and “Test 2b1” contains the parts of DemoTwoface in “2b1”-face
+(with proper mirroring and rotation).</p></li>
 </ol>
 </div>
 </div>
@@ -666,7 +688,7 @@ mirroring and rotation).</p></li>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021-2022, IQM.
+        &#169; Copyright 2021-2023, IQM.
 
     </p>
   </div>
