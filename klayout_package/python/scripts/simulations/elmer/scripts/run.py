@@ -146,10 +146,19 @@ elif 'palace' in tool:
     msh_file = f'{name}.msh'
     palace_json = f'{name}_palace.json'
     if workflow.get('run_gmsh', True):
-        produce_cross_section_mesh(json_data, path.joinpath(msh_file))
+        params = {}
+        if 'run_gmsh_gui' in workflow:
+            params['show'] = workflow['run_gmsh_gui']
+        if 'gmsh_n_threads' in workflow:
+            params['gmsh_n_threads'] = workflow['gmsh_n_threads']
+        msh_filepath, model_data = export_gmsh_msh(json_data, path, json_data['mesh_size'], **params)
+        json_data.update({**model_data})
+        with open(json_filename, 'w') as f:
+            print(model_data)
+            json.dump(json_data, f)  # Update JSON with mesh data
 
     if workflow.get('run_palace', True):
-        write_palace_json(json_data, palace_json)
+        write_palace_json(json_data, palace_json, msh_file)
         run_palace(palace_json, elmer_n_processes, path)
 
     # TODO support write_project_results_json

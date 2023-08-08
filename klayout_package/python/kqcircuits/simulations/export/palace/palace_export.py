@@ -49,19 +49,19 @@ def copy_palace_scripts_to_directory(path: Path):
 def export_palace_json(simulation: Simulation,
                       path: Path,
                       tool='capacitance',
-                      linear_system_method='bicgstab',
+                      linear_system_method='BoomerAMG',
                       p_element_order=1,
                       frequency=5,
                       mesh_size=None,
                       workflow=None):
     """
-    Export Elmer simulation into json and gds files.
+    Export Palace simulation into json and gds files.
 
     Args:
         simulation: The simulation to be exported.
         path: Location where to write json.
         tool(str): Available: "capacitance" and "wave_equation" (Default: capacitance)
-        linear_system_method(str): Available: 'bicgstab', 'mg' (Default: bicgstab)
+        linear_system_method(str): Preconditioning solver. See `Palace solver`_ for options (Default: BoomerAMG)
         p_element_order(int): polynomial order of p-elements (Default: 1)
         frequency: Units are in GHz. To set up multifrequency analysis, use list of numbers.
         mesh_size(dict): Parameters to determine mesh element sizes
@@ -69,6 +69,9 @@ def export_palace_json(simulation: Simulation,
 
     Returns:
          Path to exported json file.
+
+    .. _palace_solver https://awslabs.github.io/palace/stable/config/solver/#solver[%22Linear%22]
+
     """
     if simulation is None or not isinstance(simulation, Simulation):
         raise ValueError("Cannot export without simulation")
@@ -190,7 +193,7 @@ def export_palace_script(json_filenames, path: Path, workflow=None, file_prefix=
 def export_palace(simulations: List,
                  path: Path,
                  tool='capacitance',
-                 linear_system_method='bicgstab',
+                 linear_system_method='BoomerAMG',
                  p_element_order=1,
                  frequency=5,
                  file_prefix='simulation',
@@ -199,14 +202,14 @@ def export_palace(simulations: List,
                  workflow=None,
                  skip_errors=False):
     """
-    Exports an elmer simulation model to the simulation path.
+    Exports a Palace simulation model to the simulation path.
 
     Args:
 
         simulations(list(Simulation)): list of all the simulations
         path(Path): Location where to output the simulation model
         tool(str): Available: "capacitance" and "wave_equation" (Default: capacitance)
-        linear_system_method(str): Available: 'bicgstab', 'mg' (Default: bicgstab)
+        linear_system_method(str): Preconditioning solver. See `Palace solver`_ for options (Default: BoomerAMG)
         p_element_order(int): polynomial order of p-elements (Default: 1)
         frequency: Units are in GHz. To set up multifrequency analysis, use list of numbers.
         file_prefix: File prefix of the script file to be created.
@@ -223,6 +226,8 @@ def export_palace(simulations: List,
     Returns:
 
         Path to exported script file.
+
+    .. _palace_solver https://awslabs.github.io/palace/stable/config/solver/#solver[%22Linear%22]
     """
     parser = argparse.ArgumentParser()
 

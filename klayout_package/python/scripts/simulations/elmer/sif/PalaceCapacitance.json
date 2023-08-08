@@ -8,7 +8,7 @@
     "Model":
     {
       "Mesh": "#MESH",
-      "L0": 1.0e-6  // µm
+      "L0": 1.0e-6
     },
     "Domains":
     {
@@ -20,9 +20,9 @@
         },
         {
           "Attributes": [5],
-          "Permittivity": 11.4
+          "Permittivity": 11.45
         }
-      ],
+      ]
     },
     "Boundaries":
     {
@@ -34,39 +34,31 @@
       [
         {
           "Index": 1,
-          "Attributes": [1]  // Sphere A
+          "Attributes": [1]
         },
         {
           "Index": 2,
-          "Attributes": [2]  // Sphere B
-        },
-        {
-          "Index": 3,
-          "Attributes": [3]  // Sphere B
+          "Attributes": [2]
         }
       ],
-      "Postprocessing":  // Capacitance from charge instead of energy
+      "Postprocessing":
       {
         "Capacitance":
           [
             {
               "Index": 1,
-              "Attributes": [1]  // Sphere A
+              "Attributes": [1]
             },
             {
               "Index": 2,
-              "Attributes": [2]  // Sphere B
-            },
-            {
-              "Index": 3,
-              "Attributes": [3]  // Sphere B
+              "Attributes": [2]
             }
-          ],
+          ]
       }
     },
     "Solver":
     {
-      "Order": #P_ELEMENT_ORDER,
+      "Order": 1,
       "Electrostatic":
       {
         "Save": 2
@@ -75,8 +67,8 @@
       {
         "Type": "BoomerAMG",
         "KSPType": "CG",
-        "Tol": 1.0e-8,
-        "MaxIts": 100
+        "Tol": 1.0e-9,
+        "MaxIts": 200
       }
     }
   }

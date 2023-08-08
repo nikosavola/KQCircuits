@@ -17,39 +17,57 @@
 import json
 import shutil
 from pathlib import Path
+from typing import Any, Mapping, Union
+
+import gmsh
 
 
-def write_palace_json(json_data, palace_json):
+def write_palace_json(json_data: Mapping[str, Any], palace_json: Union[Path, str], msh_file: str):
 
-    shutil.copy(path.joinpath('sif/PalaceCapacitance.json'), palace_json)
-
-    with open(palace_json, 'r') as fp:
+    with open('sif/PalaceCapacitance.json', 'r') as fp:
         palace_json_data = json.load(fp)
 
+    palace_json_data['Model']['Mesh'] = msh_file
     palace_json_data['Domains']['Materials'] = [
       {
-        "Attributes": [vacuum],
+          "Attributes": [{v: k for k, v in json_data['model_data']['body_materials'].items()}['vacuum'][-1]],
         "Permittivity": 1.0
       },
       {
-        "Attributes": [substrate],
-        "Permittivity": 11.4
+          "Attributes": [{v: k for k, v in json_data['model_data']['body_materials'].items()}['dielectric'][-1]],
+        "Permittivity": json_data['model_data']['substrate_permittivity']
       }
     ]
 
-    palace_json_data['Boundaries']['Ground'] = {'Attributes': [7]}
+
+    gmsh.initialize()
+    gmsh.merge(msh_file)
+    surface_to_tag = {
+        gmsh.model.getPhysicalName(dim, tag): tag
+        for dim, tag in gmsh.model.getPhysicalGroups(dim = 2)
+    }
+    gmsh.finalize()
+
+
+    ports = [surface_to_tag[e] for e in json_data['model_data']['port_signal_names']]
+    ground = [surface_to_tag[e] for e in json_data['model_data']['ground_names']]
+    palace_json_data['Boundaries']['Ground'] = {'Attributes': ground}
     palace_json_data['Boundaries']['Terminal'] = [
       {
         "Index": i,
-        "Attributes": [port_mesh]
-      } for i, port in enumerate(ports)
+        "Attributes": [port_tag]
+      } for i, port_tag in enumerate(ports, 1)
     ]
     palace_json_data['Boundaries']['Postprocessing']['Capacitance'] = palace_json_data['Boundaries']['Terminal']
 
     palace_json_data['Solver']['Order'] = json_data['p_element_order']
+    palace_json_data['Solver']['Electrostatic']['Save'] = len(ports)
 
+    # TODO better naming for arg
+    if json_data.get('palace_linear_solver', None) is not None:
+        palace_json_data["Solver"]["Linear"] = {**palace_json_data["Solver"]["Linear"], **json_data['palace_linear_solver']}
 
     with open(palace_json, 'w') as fp:
-        json.dump(palace_json_data, fp)
+        fp.write(json.dumps(palace_json_data))
 
     return palace_json
