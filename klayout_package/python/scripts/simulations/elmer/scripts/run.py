@@ -21,7 +21,8 @@ import argparse
 
 from gmsh_helpers import export_gmsh_msh
 from elmer_helpers import export_elmer_sif, write_project_results_json
-from run_helpers import run_elmer_grid, run_elmer_solver, run_paraview, write_simulation_machine_versions_file
+from palace_helpers import write_palace_json    
+from run_helpers import run_elmer_grid, run_elmer_solver, run_paraview, run_palace, write_simulation_machine_versions_file
 from cross_section_helpers import produce_cross_section_mesh, produce_cross_section_sif_files, \
     get_cross_section_capacitance_and_inductance, get_interface_quality_factors
 
@@ -31,11 +32,13 @@ parser.add_argument('--skip-gmsh', action='store_true', help="Run everything els
 parser.add_argument('--skip-elmergrid', action='store_true', help="Run everything else but Elmergrid")
 parser.add_argument('--skip-elmer', action='store_true', help="Run everything else but Elmer")
 parser.add_argument('--skip-paraview', action='store_true', help="Run everything else but Paraview")
+parser.add_argument('--skip-palace', action='store_true', help="Run everything else but Palace")
 
 parser.add_argument('--only-gmsh', action='store_true', help="Run only Gmsh")
 parser.add_argument('--only-elmergrid', action='store_true', help="Run only Elmergrid")
 parser.add_argument('--only-elmer', action='store_true', help="Run only Elmer")
 parser.add_argument('--only-paraview', action='store_true', help="Run only Paraview")
+parser.add_argument('--only-palace', action='store_true', help="Run only Palace")
 
 parser.add_argument('-q', action='store_true', help="Quiet operation: no GUIs are launched")
 
@@ -74,18 +77,27 @@ if args.only_gmsh:
     args.skip_elmergrid = True
     args.skip_elmer = True
     args.skip_paraview = True
+    args.skip_palace = True
 elif args.only_elmergrid:
     args.skip_gmsh = True
     args.skip_elmer = True
     args.skip_paraview = True
+    args.skip_palace = True
 elif args.only_elmer:
     args.skip_gmsh = True
     args.skip_elmergrid = True
     args.skip_paraview = True
+    args.skip_palace = True
 elif args.only_paraview:
     args.skip_gmsh = True
     args.skip_elmergrid = True
     args.skip_elmer = True
+    args.skip_palace = True
+elif args.only_palace:
+    args.skip_gmsh = True
+    args.skip_elmergrid = True
+    args.skip_elmer = True
+    args.skip_paraview = True
 
 if args.skip_gmsh:
     workflow['run_gmsh'] = False
@@ -95,6 +107,8 @@ if args.skip_elmer:
     workflow['run_elmer'] = False
 if args.skip_paraview:
     workflow['run_paraview'] = False
+if args.skip_palace:
+    workflow['run_palace'] = False
 
 if args.q:
     workflow['run_paraview'] = False
@@ -126,6 +140,20 @@ if tool == 'cross-section':
             json.dump(res, f, indent=4)
     if workflow.get('run_paraview', False):
         run_paraview(name.joinpath('capacitance'), elmer_n_processes, path)
+
+elif 'palace' in tool:
+    # Generate mesh
+    msh_file = f'{name}.msh'
+    palace_json = f'{name}_palace.json'
+    if workflow.get('run_gmsh', True):
+        produce_cross_section_mesh(json_data, path.joinpath(msh_file))
+
+    if workflow.get('run_palace', True):
+        write_palace_json(json_data, palace_json)
+        run_palace(palace_json, elmer_n_processes, path)
+
+    # TODO support write_project_results_json
+
 else:
     # Generate mesh
     if workflow.get('run_gmsh', True):

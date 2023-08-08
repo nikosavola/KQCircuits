@@ -99,3 +99,13 @@ def run_paraview(result_path, n_processes, exec_path_override=None):
     else:
         logging.warning("Paraview was not found! Make sure you have it installed: https://www.paraview.org/")
         sys.exit()
+
+
+def run_palace(config_json, n_processes, exec_path_override=None):
+    palace_executable = shutil.which('palace')
+    if palace_executable:
+        subprocess.check_call([palace_executable, '-np', str(n_processes), config_json], cwd=exec_path_override)
+    else:
+        logging.warning("Palace was not found! Make sure you have it installed in your PATH. "
+                        "https://awslabs.github.io/palace")
+        sys.exit()

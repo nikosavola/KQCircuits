@@ -25,12 +25,13 @@ from kqcircuits.simulations.double_pads_sim import DoublePadsSim
 from kqcircuits.pya_resolver import pya
 from kqcircuits.simulations.export.ansys.ansys_export import export_ansys
 from kqcircuits.simulations.export.elmer.elmer_export import export_elmer
+from kqcircuits.simulations.export.palace.palace_export import export_palace
 from kqcircuits.simulations.export.simulation_export import export_simulation_oas
 from kqcircuits.util.export_helper import create_or_empty_tmp_directory, get_active_or_new_layout, \
     open_with_klayout_or_default_application
 
 
-sim_tools = ['elmer', 'eigenmode', 'q3d']
+sim_tools = ['elmer', 'eigenmode', 'q3d', 'palace']
 
 for sim_tool in sim_tools:
     # Simulation parameters
@@ -128,6 +129,22 @@ for sim_tool in sim_tools:
         }
     }
 
+    export_parameters_palace = {
+        'tool': 'capacitance_palace',
+        'workflow': {
+            'python_executable': 'python',
+            'n_workers': 4,
+            'elmer_n_processes': 4,
+            'gmsh_n_threads': 4,
+        },
+        'mesh_size': {
+            'global_max': 50.,
+            'gap&signal': [2., 4.],
+            'gap&ground': [2., 4.],
+            'port': [1., 4.],
+        }
+    }
+
     # Get layout
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     layout = get_active_or_new_layout()
@@ -168,6 +185,8 @@ for sim_tool in sim_tools:
 
     if sim_tool == 'elmer':
         export_elmer(simulations, dir_path, **export_parameters_elmer)
+    elif sim_tool == 'palace':
+        export_palace(simulations, dir_path, **export_parameters_palace)
     else:
         export_ansys(simulations, **export_parameters_ansys)
 

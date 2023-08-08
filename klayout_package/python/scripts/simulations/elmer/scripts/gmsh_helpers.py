@@ -943,6 +943,8 @@ def export_gmsh_msh(sim_data: dict, path: Path, mesh_size: dict, show: bool = Fa
         set_physical_name(dim_tag, ground_name)
         ground_names.append(ground_name)
 
+    if 'palace' in sim_data['tool']:  # Palace uses MFEM, which needs mesh format version 2.2
+        gmsh.option.setNumber('Mesh.MshFileVersion', 2.2)
     gmsh.model.mesh.generate(3)
     gmsh.write(str(filepath))
     if show:
