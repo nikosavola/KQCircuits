@@ -99,6 +99,16 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../salt.html">Getting started (Salt package)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#first-look-around">First look around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#setting-up-a-user-package-directory">Setting up a user package directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#defining-a-custom-element">Defining a custom element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#defining-a-custom-chip">Defining a custom chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#release-notes">Release Notes</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../user_guide/index.html">User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../user_guide/usage.html">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../user_guide/gui_features.html">GUI Features</a><ul>
@@ -115,9 +125,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../user_guide/gui_workflow.html">Point-and-click workflow tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../user_guide/python_workflow.html">Python workflow tutorial</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#file-system-hierarchy">File system hierarchy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#structure-of-pcell-code">Structure of  PCell code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#structure-of-element-code">Structure of Element code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#element-class"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> class</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#pcell-libraries">PCell Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#libraries">Libraries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#build">Build</a></li>
 </ul>
@@ -128,17 +138,23 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#refpoints">Refpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#faces">Faces</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#layer-configuration-files">Layer configuration files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#adding-a-new-face">Adding a new face</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/python_workflow.html#opening-element-or-chip-from-an-ide">Opening <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code> from an IDE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../user_guide/macro_workflow.html">Macro development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/macro_workflow.html#basic-workflow">Basic workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/macro_workflow.html#running-the-first-example">Running the first example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/macro_workflow.html#interacting-with-the-klayout-application">Interacting with the KLayout application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/macro_workflow.html#creating-a-new-panel">Creating a new panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/macro_workflow.html#accessing-the-currently-active-panel">Accessing the currently active panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/macro_workflow.html#using-klayoutview">Using <code class="docutils literal notranslate"><span class="pre">KLayoutView</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/macro_workflow.html#debugger">Debugger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/macro_workflow.html#reloading-libraries">Reloading libraries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/macro_workflow.html#examples">Examples</a></li>
@@ -150,22 +166,33 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/mask_export.html#ground-grid">Ground grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/mask_export.html#adding-and-modifying-chips">Adding and modifying chips</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/mask_export.html#multi-face-masks">Multi-face masks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/mask_export.html#composite-mask-maps">Composite mask maps</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../user_guide/simulations.html">External simulation tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/simulation/simulation_object.html">Creating simulation object</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/simulation/simulation_object.html">Creating a simulation object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/simulation/simulation_object.html#simulation-box">Simulation box</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/simulation/simulation_object.html#ports">Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/simulation/simulation_object.html#example-simulation">Example simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/simulation/simulation_object.html#simulation-scripts">Simulation scripts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/simulation/simulation_object.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/simulation/simulation_object.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/simulation/simulation_settings.html">Simulation export settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/simulation/ansys_export.html">Ansys export</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../user_guide/simulation/ansys_export.html#ansys-scripts">Ansys scripts</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/simulation/sonnet_export.html">Sonnet export</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/simulation/export_and_run.html">Run and export in one line</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../user_guide/file_system_and_utilities.html">General Structure and Miscellaneous Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/file_system_and_utilities.html#file-system-hierarchy">File system hierarchy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../user_guide/file_system_and_utilities.html#miscellaneous-utilities">Miscellaneous Utilities</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../user_guide/xsection.html">Creating cross section images</a><ul>
@@ -177,13 +204,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../user_guide/terminology.html">Terminology</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../salt.html">Salt Package Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#user-specific-content">User Specific Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../salt.html#release-notes">Release Notes</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../developer/index.html">Developer Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../developer/setup.html">Developer Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#prerequisites">Prerequisites</a><ul>
@@ -192,6 +212,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#unlinking">Unlinking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#manual-installation">Manual installation</a><ul>
@@ -203,8 +224,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../developer/standalone.html">KLayout Standalone Usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/standalone.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../developer/standalone.html#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../developer/standalone.html#installation">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/standalone.html#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../developer/standalone.html#jupyter-notebook-usage">Jupyter notebook usage</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../developer/containers.html">Containers</a><ul>
@@ -329,6 +354,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../api/kqcircuits.layer_config.html">kqcircuits.layer_config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.layer_config.default_layer_config.html">kqcircuits.layer_config.default_layer_config</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.layer_config.example_layer_config.html">kqcircuits.layer_config.example_layer_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.layer_config.html#module-kqcircuits.layer_config">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../api/kqcircuits.masks.html">kqcircuits.masks</a><ul>
@@ -352,8 +378,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.elmer.html">kqcircuits.simulations.export.elmer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.sonnet.html">kqcircuits.simulations.export.sonnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.xsection.html">kqcircuits.simulations.export.xsection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.export_and_run.html">kqcircuits.simulations.export.export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
@@ -405,7 +433,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.library_helper.html">kqcircuits.util.library_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.log_router.html">kqcircuits.util.log_router</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.macro_prepare.html">kqcircuits.util.macro_prepare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.merge.html">kqcircuits.util.merge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.netlist_extraction.html">kqcircuits.util.netlist_extraction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a></li>
@@ -428,10 +455,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../trademarks.html">Trademarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../about.html">About</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../about.html#contributors">Contributors</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../about.html">About</a></li>
 </ul>
 
             
@@ -518,20 +542,19 @@
 
 <span class="kn">import</span> <span class="nn">ast</span>
 <span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_faces</span><span class="p">,</span> <span class="n">klayout_executable_command</span><span class="p">,</span> <span class="n">STARTUPINFO</span><span class="p">,</span> <span class="n">XSECTION_PROCESS_PATH</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">STARTUPINFO</span><span class="p">,</span> <span class="n">XSECTION_PROCESS_PATH</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span><span class="p">,</span> <span class="n">klayout_executable_command</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.simulations.export.util</span> <span class="kn">import</span> <span class="n">export_layers</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.simulations.cross_section_simulation</span> <span class="kn">import</span> <span class="n">CrossSectionSimulation</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.simulations.simulation</span> <span class="kn">import</span> <span class="n">Simulation</span>
 
 
 <div class="viewcode-block" id="xsection_call"><a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.xsection.xsection_export.html#kqcircuits.simulations.export.xsection.xsection_export.xsection_call">[docs]</a><span class="k">def</span> <span class="nf">xsection_call</span><span class="p">(</span><span class="n">input_oas</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">output_oas</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">cut1</span><span class="p">:</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">,</span> <span class="n">cut2</span><span class="p">:</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">,</span>
-        <span class="n">process_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">XSECTION_PROCESS_PATH</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">process_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">XSECTION_PROCESS_PATH</span><span class="p">,</span> <span class="n">parameters_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calls on KLayout to run the XSection plugin</span>
 
 <span class="sd">    Args:</span>
@@ -540,6 +563,9 @@
 <span class="sd">        cut1: DPoint of first endpoint of the cross-section cut</span>
 <span class="sd">        cut2: DPoint of second endpoint of the cross-section cut</span>
 <span class="sd">        process_path: XSection process file that defines cross-section etching depths etc</span>
+<span class="sd">        parameters_path: If process_path points to kqc_process.xs,</span>
+<span class="sd">            parameters_path should point to the XSection parameters json file</span>
+<span class="sd">            containing sweeped parameters and layer information.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;nt&quot;</span><span class="p">:</span>
         <span class="n">klayout_dir_name</span> <span class="o">=</span> <span class="s2">&quot;KLayout&quot;</span>
@@ -549,22 +575,28 @@
         <span class="k">raise</span> <span class="ne">SystemError</span><span class="p">(</span><span class="s2">&quot;Error: unsupported operating system&quot;</span><span class="p">)</span>
     <span class="n">xsection_plugin_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~&quot;</span><span class="p">),</span> <span class="n">klayout_dir_name</span><span class="p">,</span> <span class="s2">&quot;salt/xsection/macros/xsection.lym&quot;</span><span class="p">)</span>
     <span class="n">cut_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cut1</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">cut1</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">;</span><span class="si">{</span><span class="n">cut2</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">cut2</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Hack: Weird prefix keeps getting added when path is converted to string which breaks the ruby plugin</span>
-        <span class="n">xs_run</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">process_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\\\</span><span class="s2">?</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-        <span class="c1"># When debugging, remove &#39;-z&#39; argument to see ruby error messages</span>
-        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">klayout_executable_command</span><span class="p">(),</span> <span class="n">input_oas</span><span class="o">.</span><span class="n">absolute</span><span class="p">(),</span> <span class="s1">&#39;-z&#39;</span><span class="p">,</span> <span class="s1">&#39;-nc&#39;</span><span class="p">,</span> <span class="s1">&#39;-rx&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="n">xsection_plugin_path</span><span class="p">,</span>
-                        <span class="s1">&#39;-rd&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;xs_run=</span><span class="si">{</span><span class="n">xs_run</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;-rd&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;xs_cut=</span><span class="si">{</span><span class="n">cut_string</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;-rd&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;xs_out=</span><span class="si">{</span><span class="n">output_oas</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">],</span>
-            <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">startupinfo</span><span class="o">=</span><span class="n">STARTUPINFO</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Klayout executable not found.&quot;</span><span class="p">)</span></div>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">klayout_executable_command</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Can&#39;t find klayout executable command!&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="n">xsection_plugin_path</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The &#39;xsection&#39; plugin is missing in KLayout! Go to &#39;Tools-&gt;Manage Packages&#39; to install it.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Hack: Weird prefix keeps getting added when path is converted to string which breaks the ruby plugin</span>
+    <span class="n">xs_run</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">process_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\\\</span><span class="s2">?</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">xs_params</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">parameters_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\\\</span><span class="s2">?</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="c1"># When debugging, remove &#39;-z&#39; argument to see ruby error messages</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">klayout_executable_command</span><span class="p">(),</span> <span class="n">input_oas</span><span class="o">.</span><span class="n">absolute</span><span class="p">(),</span> <span class="s1">&#39;-z&#39;</span><span class="p">,</span> <span class="s1">&#39;-nc&#39;</span><span class="p">,</span> <span class="s1">&#39;-rx&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="n">xsection_plugin_path</span><span class="p">,</span>
+                    <span class="s1">&#39;-rd&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;xs_run=</span><span class="si">{</span><span class="n">xs_run</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;-rd&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;xs_params=</span><span class="si">{</span><span class="n">xs_params</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;-rd&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;xs_cut=</span><span class="si">{</span><span class="n">cut_string</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;-rd&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;xs_out=</span><span class="si">{</span><span class="n">output_oas</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">],</span>
+        <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">startupinfo</span><span class="o">=</span><span class="n">STARTUPINFO</span><span class="p">)</span></div>
 
 
 <span class="c1"># pylint: disable=dangerous-default-value</span>
 <div class="viewcode-block" id="create_xsections_from_simulations"><a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.xsection.xsection_export.html#kqcircuits.simulations.export.xsection.xsection_export.create_xsections_from_simulations">[docs]</a><span class="k">def</span> <span class="nf">create_xsections_from_simulations</span><span class="p">(</span><span class="n">simulations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Simulation</span><span class="p">],</span>
+                                      <span class="n">output_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
                                       <span class="n">cuts</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">]]],</span>
                                       <span class="n">process_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">XSECTION_PROCESS_PATH</span><span class="p">,</span>
                                       <span class="n">ma_permittivity</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
@@ -573,6 +605,7 @@
                                       <span class="n">ma_thickness</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
                                       <span class="n">ms_thickness</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
                                       <span class="n">sa_thickness</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                                      <span class="n">london_penetration_depth</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
                                       <span class="n">magnification_order</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
                                     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Simulation</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create cross-sections of all simulation geometries in the list.</span>
@@ -580,15 +613,17 @@
 
 <span class="sd">    Args:</span>
 <span class="sd">        simulations: List of Simulation objects, usually produced by a sweep</span>
+<span class="sd">        output_path: Path for the exported simulation files</span>
 <span class="sd">        cuts: 1. A tuple (p1, p2), where p1 and p2 are endpoints of a cross-section cut or</span>
 <span class="sd">              2. a list of such tuples such that each Simulation object gets an individual cut</span>
 <span class="sd">        process_path: XSection process file that defines cross-section etching depths etc</span>
-<span class="sd">        ma_permittivity: Permittivity of metal-to-vaccuum oxide layer</span>
-<span class="sd">        ms_permittivity: Permittivity of metal-to-substrate oxide layer</span>
-<span class="sd">        sa_permittivity: Permittivity of substrate-to-vaccuum oxide layer</span>
-<span class="sd">        ma_thickness: Thickness of metal-to-vaccuum oxide layer</span>
-<span class="sd">        ms_thickness: Thickness of metal-to-substrate oxide layer</span>
-<span class="sd">        sa_thickness: Thickness of substrate-to-vaccuum oxide layer</span>
+<span class="sd">        ma_permittivity: Permittivity of metal–vacuum (air) interface</span>
+<span class="sd">        ms_permittivity: Permittivity of metal–substrate interface</span>
+<span class="sd">        sa_permittivity: Permittivity of substrate–vacuum (air) interface</span>
+<span class="sd">        ma_thickness: Thickness of metal–vacuum (air) interface</span>
+<span class="sd">        ms_thickness: Thickness of metal–substrate interface</span>
+<span class="sd">        sa_thickness: Thickness of substrate–vacuum (air) interface</span>
+<span class="sd">        london_penetration_depth: London penetration depth of the superconducting material</span>
 <span class="sd">        magnification_order: Increase magnification of simulation geometry to accomodate more precise spacial units.</span>
 <span class="sd">            0 =   no magnification with 1e-3 dbu</span>
 <span class="sd">            1 =  10x magnification with 1e-4 dbu</span>
@@ -606,20 +641,19 @@
     <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">simulation</span><span class="o">.</span><span class="n">get_parameters</span><span class="p">()[</span><span class="s2">&quot;face_stack&quot;</span><span class="p">])</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">simulation</span> <span class="ow">in</span> <span class="n">simulations</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Only single face and flip chip cross section simulations currently supported&quot;</span><span class="p">)</span>
 
-    <span class="c1"># Hack: tmp file for xsection tied to the process filepath</span>
-    <span class="n">xsection_dir</span> <span class="o">=</span> <span class="n">process_path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;tmp/xsection&quot;</span><span class="p">)</span>
+    <span class="n">xsection_dir</span> <span class="o">=</span> <span class="n">output_path</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;xsection_tmp&quot;</span><span class="p">)</span>
     <span class="n">xsection_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">layout</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Layout</span><span class="p">()</span>
     <span class="n">load_opts</span> <span class="o">=</span> <span class="n">_load_layout_options_for_xsection_output</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">simulation</span><span class="p">,</span> <span class="n">cut</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">simulations</span><span class="p">,</span> <span class="n">cuts</span><span class="p">):</span>
-        <span class="n">_dump_xsection_parameters</span><span class="p">(</span><span class="n">xsection_dir</span><span class="p">,</span> <span class="n">simulation</span><span class="p">)</span>
+        <span class="n">xsection_parameters</span> <span class="o">=</span> <span class="n">_dump_xsection_parameters</span><span class="p">(</span><span class="n">xsection_dir</span><span class="p">,</span> <span class="n">simulation</span><span class="p">)</span>
         <span class="n">simulation_file</span> <span class="o">=</span> <span class="n">xsection_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;original_</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.oas&quot;</span>
         <span class="n">xsection_file</span>   <span class="o">=</span> <span class="n">xsection_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;xsection_</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.oas&quot;</span>
         <span class="n">export_layers</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">simulation_file</span><span class="p">),</span> <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span> <span class="p">[</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="p">],</span>
                     <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;OASIS&#39;</span><span class="p">,</span>
                     <span class="n">layers</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-        <span class="n">xsection_call</span><span class="p">(</span><span class="n">simulation_file</span><span class="p">,</span> <span class="n">xsection_file</span><span class="p">,</span> <span class="n">cut</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cut</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">process_path</span><span class="p">)</span>
+        <span class="n">xsection_call</span><span class="p">(</span><span class="n">simulation_file</span><span class="p">,</span> <span class="n">xsection_file</span><span class="p">,</span> <span class="n">cut</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cut</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">process_path</span><span class="p">,</span> <span class="n">xsection_parameters</span><span class="p">)</span>
 
         <span class="n">layout</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">xsection_file</span><span class="p">),</span> <span class="n">load_opts</span><span class="p">)</span>
         <span class="n">xsection_cell</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">top_cells</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -637,13 +671,14 @@
                 <span class="n">ma_thickness</span><span class="p">,</span>
                 <span class="n">ms_thickness</span><span class="p">,</span>
                 <span class="n">sa_thickness</span><span class="p">,</span>
+                <span class="n">london_penetration_depth</span><span class="p">,</span>
                 <span class="n">magnification_order</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">xsection_cell</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">layout</span><span class="o">.</span><span class="n">top_cells</span><span class="p">())]</span></div>
 <span class="c1"># pylint: enable=dangerous-default-value</span>
 
 
 <div class="viewcode-block" id="separate_signal_layer_shapes"><a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.xsection.xsection_export.html#kqcircuits.simulations.export.xsection.xsection_export.separate_signal_layer_shapes">[docs]</a><span class="k">def</span> <span class="nf">separate_signal_layer_shapes</span><span class="p">(</span><span class="n">simulation</span><span class="p">:</span> <span class="n">Simulation</span><span class="p">,</span> <span class="n">sort_key</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">pya</span><span class="o">.</span><span class="n">Shape</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Separate shapes in simulation_signal layer to their own dedicated signal layers for each face</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Separate shapes in signal layer to their own dedicated signal layers for each face</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        simulation: A Simulation object where the layer will be separated</span>
@@ -657,23 +692,24 @@
             <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="n">point_in_shape</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">point_in_shape</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
     <span class="n">signal_index</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">gen_free_layer_slots</span> <span class="o">=</span> <span class="n">free_layer_slots</span><span class="p">(</span><span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">face_id</span><span class="p">,</span> <span class="n">face</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">face</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">default_faces</span> <span class="ow">or</span> <span class="s2">&quot;simulation_signal&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">default_faces</span><span class="p">[</span><span class="n">face</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">:</span>
+        <span class="n">signal_layer</span> <span class="o">=</span> <span class="n">find_layer_by_name</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">face</span><span class="si">}</span><span class="s2">_signal&quot;</span><span class="p">,</span> <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">signal_layer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">continue</span>
-        <span class="n">simulation_signal_layer</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;simulation_signal&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="o">=</span><span class="n">face_id</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">each_shape</span><span class="p">(</span><span class="n">simulation_signal_layer</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">sort_key</span><span class="p">):</span>
+        <span class="n">signal_layer_idx</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">signal_layer</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">each_shape</span><span class="p">(</span><span class="n">signal_layer_idx</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">sort_key</span><span class="p">):</span>
             <span class="c1"># Reuse layer if it already used in layout</span>
-            <span class="n">signal_layer</span> <span class="o">=</span> <span class="n">layer_already_exists</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">face</span><span class="si">}</span><span class="s2">_signal_</span><span class="si">{</span><span class="n">signal_index</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="p">)</span>
+            <span class="n">signal_layer</span> <span class="o">=</span> <span class="n">find_layer_by_name</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">face</span><span class="si">}</span><span class="s2">_signal_</span><span class="si">{</span><span class="n">signal_index</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="p">)</span>
             <span class="c1"># If no such layer, find next available layer index</span>
             <span class="k">if</span> <span class="n">signal_layer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">layer_index</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">gen_free_layer_slots</span><span class="p">)</span>
                 <span class="n">signal_layer</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">LayerInfo</span><span class="p">(</span><span class="n">layer_index</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">face</span><span class="si">}</span><span class="s2">_signal_</span><span class="si">{</span><span class="n">signal_index</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">shapes</span><span class="p">(</span><span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">signal_layer</span><span class="p">))</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
             <span class="n">signal_index</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">simulation_signal_layer</span><span class="p">)</span></div>
+        <span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="n">signal_layer_idx</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="layer_already_exists"><a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.xsection.xsection_export.html#kqcircuits.simulations.export.xsection.xsection_export.layer_already_exists">[docs]</a><span class="k">def</span> <span class="nf">layer_already_exists</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">layout</span><span class="p">):</span>
+<div class="viewcode-block" id="find_layer_by_name"><a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.xsection.xsection_export.html#kqcircuits.simulations.export.xsection.xsection_export.find_layer_by_name">[docs]</a><span class="k">def</span> <span class="nf">find_layer_by_name</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">layout</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns layerinfo if there already is a layer by layer_name in layout. None if no such layer exists&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">layout</span><span class="o">.</span><span class="n">layer_infos</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">l</span><span class="o">.</span><span class="n">datatype</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">layer_name</span> <span class="o">==</span> <span class="n">l</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
@@ -721,18 +757,20 @@
     <span class="n">sim_layers</span><span class="p">[</span><span class="s2">&quot;b_substrate&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">next</span><span class="p">(</span><span class="n">gen_free_layer_slots</span><span class="p">)</span><span class="si">}</span><span class="s2">/0&quot;</span>
     <span class="n">sim_layers</span><span class="p">[</span><span class="s2">&quot;t_substrate&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">next</span><span class="p">(</span><span class="n">gen_free_layer_slots</span><span class="p">)</span><span class="si">}</span><span class="s2">/0&quot;</span>
     <span class="n">simulation_params</span><span class="p">[</span><span class="s1">&#39;sim_layers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sim_layers</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">xsection_dir</span> <span class="o">/</span> <span class="s2">&quot;xsection_parameters.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sweep_file</span><span class="p">:</span>
+    <span class="n">xsection_parameters_file</span> <span class="o">=</span> <span class="n">xsection_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;parameters_</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.json&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">xsection_parameters_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sweep_file</span><span class="p">:</span>
         <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">simulation_params</span><span class="p">,</span> <span class="n">sweep_file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xsection_parameters_file</span>
 
 
 <span class="k">def</span> <span class="nf">_clean_tmp_xsection_directory</span><span class="p">(</span><span class="n">xsection_dir</span><span class="p">,</span> <span class="n">simulations</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">xsection_dir</span> <span class="o">/</span> <span class="s2">&quot;xsection_parameters.json&quot;</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">xsection_dir</span> <span class="o">/</span> <span class="s2">&quot;xsection_parameters.json&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">simulation</span> <span class="ow">in</span> <span class="n">simulations</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">xsection_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;original_</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.oas&quot;</span><span class="p">):</span>
             <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">xsection_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;original_</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.oas&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">xsection_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;xsection_</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.oas&quot;</span><span class="p">):</span>
             <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">xsection_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;xsection_</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.oas&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">xsection_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;parameters_</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.json&quot;</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">xsection_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;parameters_</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.json&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">xsection_dir</span><span class="p">):</span>
         <span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="n">xsection_dir</span><span class="p">)</span>
 
@@ -846,7 +884,7 @@
     <span class="n">substrate_layers</span> <span class="o">=</span> <span class="p">[</span><span class="n">layer</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer_infos</span><span class="p">()</span> <span class="k">if</span> <span class="n">layer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_substrate&quot;</span><span class="p">)]</span>
     <span class="n">substrate</span> <span class="o">=</span> <span class="n">_combine_region_from_layers</span><span class="p">(</span><span class="n">simulation</span><span class="p">,</span> <span class="n">substrate_layers</span><span class="p">)</span>
     <span class="n">metal_layers</span>  <span class="o">=</span> <span class="p">[</span><span class="n">layer</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer_infos</span><span class="p">()</span> <span class="k">if</span> <span class="n">layer</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span>
-        <span class="p">[</span><span class="s2">&quot;b_simulation_ground&quot;</span><span class="p">,</span> <span class="s2">&quot;t_simulation_ground&quot;</span><span class="p">,</span> <span class="s2">&quot;b_simulation_signal&quot;</span><span class="p">,</span> <span class="s2">&quot;t_simulation_signal&quot;</span><span class="p">]]</span>
+        <span class="p">[</span><span class="s2">&quot;b_ground&quot;</span><span class="p">,</span> <span class="s2">&quot;t_ground&quot;</span><span class="p">,</span> <span class="s2">&quot;b_signal&quot;</span><span class="p">,</span> <span class="s2">&quot;t_signal&quot;</span><span class="p">]]</span>
     <span class="n">metal_layers</span> <span class="o">+=</span> <span class="p">[</span><span class="n">layer</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer_infos</span><span class="p">()</span> <span class="k">if</span> <span class="n">layer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;b_signal_&quot;</span><span class="p">)]</span>
     <span class="n">metal_layers</span> <span class="o">+=</span> <span class="p">[</span><span class="n">layer</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">simulation</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer_infos</span><span class="p">()</span> <span class="k">if</span> <span class="n">layer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;t_signal_&quot;</span><span class="p">)]</span>
     <span class="n">metals</span> <span class="o">=</span> <span class="n">_combine_region_from_layers</span><span class="p">(</span><span class="n">simulation</span><span class="p">,</span> <span class="n">metal_layers</span><span class="p">)</span>
@@ -887,12 +925,14 @@
 
 <span class="k">def</span> <span class="nf">_construct_cross_section_simulation</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">xsection_cell</span><span class="p">,</span> <span class="n">simulation</span><span class="p">,</span>
         <span class="n">ma_permittivity</span><span class="p">,</span> <span class="n">ms_permittivity</span><span class="p">,</span> <span class="n">sa_permittivity</span><span class="p">,</span>
-        <span class="n">ma_thickness</span><span class="p">,</span> <span class="n">ms_thickness</span><span class="p">,</span> <span class="n">sa_thickness</span><span class="p">,</span> <span class="n">magnification_order</span><span class="p">):</span>
+        <span class="n">ma_thickness</span><span class="p">,</span> <span class="n">ms_thickness</span><span class="p">,</span> <span class="n">sa_thickness</span><span class="p">,</span>
+        <span class="n">london_penetration_depth</span><span class="p">,</span> <span class="n">magnification_order</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Produce CrossSectionSimulation object&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">magnification_order</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">layout</span><span class="o">.</span><span class="n">dbu</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">-</span> <span class="n">magnification_order</span><span class="p">)</span>
         <span class="n">xsection_cell</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="n">magnification_order</span><span class="p">))</span>
     <span class="n">xsection_parameters</span> <span class="o">=</span> <span class="n">simulation</span><span class="o">.</span><span class="n">get_parameters</span><span class="p">()</span>
+    <span class="n">xsection_parameters</span><span class="p">[</span><span class="s1">&#39;london_penetration_depth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">london_penetration_depth</span>
     <span class="n">cell_bbox</span> <span class="o">=</span> <span class="n">xsection_cell</span><span class="o">.</span><span class="n">dbbox</span><span class="p">()</span>
     <span class="c1"># Disabled for single face and flip-chip cases</span>
     <span class="c1">#cell_bbox.p1 -= pya.DPoint(0, xsection_parameters[&#39;lower_box_height&#39;])</span>
@@ -901,6 +941,10 @@
     <span class="n">xsection_parameters</span><span class="p">[</span><span class="s1">&#39;box&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cell_bbox</span>
     <span class="n">xsection_parameters</span><span class="p">[</span><span class="s1">&#39;cell&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xsection_cell</span>
     <span class="n">xsection_simulation</span> <span class="o">=</span> <span class="n">CrossSectionSimulation</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="o">**</span><span class="n">xsection_parameters</span><span class="p">)</span>
+    <span class="c1"># Keep all parameters given in simulations for JSON</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">xsection_parameters</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">xsection_simulation</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">xsection_simulation</span><span class="o">.</span><span class="n">xsection_source_class</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">simulation</span><span class="p">)</span>
     <span class="n">xsection_simulation</span><span class="o">.</span><span class="n">register_cell_layers_as_sim_layers</span><span class="p">()</span>
 
     <span class="n">material_dict</span> <span class="o">=</span> <span class="n">xsection_parameters</span><span class="p">[</span><span class="s1">&#39;material_dict&#39;</span><span class="p">]</span>

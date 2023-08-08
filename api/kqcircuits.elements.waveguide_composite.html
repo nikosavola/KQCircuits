@@ -101,6 +101,16 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../salt.html">Getting started (Salt package)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#first-look-around">First look around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#setting-up-a-user-package-directory">Setting up a user package directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#defining-a-custom-element">Defining a custom element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#defining-a-custom-chip">Defining a custom chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#release-notes">Release Notes</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/usage.html">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/gui_features.html">GUI Features</a><ul>
@@ -117,9 +127,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/gui_workflow.html">Point-and-click workflow tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/python_workflow.html">Python workflow tutorial</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/python_workflow.html#file-system-hierarchy">File system hierarchy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../user_guide/python_workflow.html#structure-of-pcell-code">Structure of  PCell code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/python_workflow.html#structure-of-element-code">Structure of Element code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/python_workflow.html#element-class"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> class</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../user_guide/python_workflow.html#pcell-libraries">PCell Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_guide/python_workflow.html#libraries">Libraries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/python_workflow.html#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/python_workflow.html#build">Build</a></li>
 </ul>
@@ -130,17 +140,23 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/python_workflow.html#refpoints">Refpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/python_workflow.html#faces">Faces</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/python_workflow.html#layer-configuration-files">Layer configuration files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/python_workflow.html#adding-a-new-face">Adding a new face</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../user_guide/python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/python_workflow.html#opening-element-or-chip-from-an-ide">Opening <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code> from an IDE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/macro_workflow.html">Macro development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../user_guide/macro_workflow.html#basic-workflow">Basic workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/macro_workflow.html#running-the-first-example">Running the first example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/macro_workflow.html#interacting-with-the-klayout-application">Interacting with the KLayout application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../user_guide/macro_workflow.html#creating-a-new-panel">Creating a new panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_guide/macro_workflow.html#accessing-the-currently-active-panel">Accessing the currently active panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_guide/macro_workflow.html#using-klayoutview">Using <code class="docutils literal notranslate"><span class="pre">KLayoutView</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/macro_workflow.html#debugger">Debugger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/macro_workflow.html#reloading-libraries">Reloading libraries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/macro_workflow.html#examples">Examples</a></li>
@@ -152,22 +168,33 @@
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/mask_export.html#ground-grid">Ground grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/mask_export.html#adding-and-modifying-chips">Adding and modifying chips</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/mask_export.html#multi-face-masks">Multi-face masks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_guide/mask_export.html#composite-mask-maps">Composite mask maps</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/simulations.html">External simulation tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../user_guide/simulation/simulation_object.html">Creating simulation object</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/simulation/simulation_object.html">Creating a simulation object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../user_guide/simulation/simulation_object.html#simulation-box">Simulation box</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_guide/simulation/simulation_object.html#ports">Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_guide/simulation/simulation_object.html#example-simulation">Example simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_guide/simulation/simulation_object.html#simulation-scripts">Simulation scripts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/simulation/simulation_object.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../user_guide/simulation/simulation_object.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/simulation/simulation_settings.html">Simulation export settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/simulation/ansys_export.html">Ansys export</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/simulation/ansys_export.html#ansys-scripts">Ansys scripts</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/simulation/sonnet_export.html">Sonnet export</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/simulation/export_and_run.html">Run and export in one line</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/file_system_and_utilities.html">General Structure and Miscellaneous Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/file_system_and_utilities.html#file-system-hierarchy">File system hierarchy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/file_system_and_utilities.html#miscellaneous-utilities">Miscellaneous Utilities</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/xsection.html">Creating cross section images</a><ul>
@@ -179,13 +206,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/terminology.html">Terminology</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../salt.html">Salt Package Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../salt.html#user-specific-content">User Specific Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../salt.html#release-notes">Release Notes</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#prerequisites">Prerequisites</a><ul>
@@ -194,6 +214,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#unlinking">Unlinking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#manual-installation">Manual installation</a><ul>
@@ -205,8 +226,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">KLayout Standalone Usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#installation">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#jupyter-notebook-usage">Jupyter notebook usage</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../developer/containers.html">Containers</a><ul>
@@ -331,6 +356,7 @@
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.layer_config.html">kqcircuits.layer_config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.layer_config.default_layer_config.html">kqcircuits.layer_config.default_layer_config</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.layer_config.example_layer_config.html">kqcircuits.layer_config.example_layer_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.layer_config.html#module-kqcircuits.layer_config">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.masks.html">kqcircuits.masks</a><ul>
@@ -354,8 +380,10 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.elmer.html">kqcircuits.simulations.export.elmer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.sonnet.html">kqcircuits.simulations.export.sonnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.xsection.html">kqcircuits.simulations.export.xsection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.export_and_run.html">kqcircuits.simulations.export.export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
@@ -407,7 +435,6 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.library_helper.html">kqcircuits.util.library_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.log_router.html">kqcircuits.util.log_router</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.macro_prepare.html">kqcircuits.util.macro_prepare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.merge.html">kqcircuits.util.merge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.netlist_extraction.html">kqcircuits.util.netlist_extraction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a></li>
@@ -430,10 +457,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../trademarks.html">Trademarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../about.html#contributors">Contributors</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
 </ul>
 
             
@@ -625,6 +649,9 @@ parameter puts N airbridges evenly distributed across the preceding edge.</p>
 the waveguide between that node and the previous one. It will in fact create a Meander element
 instead of a normal waveguide between those nodes to achieve the correct length. Alternative parameter
 <code class="docutils literal notranslate"><span class="pre">length_increment</span></code> sets the waveguide length increment compared to normal waveguide.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">add_metal</span></code> parameter is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> for a node then the specified WaveguideCoplanar
+segment will also use the “base metal addition” layer so that a waveguide trace may continue
+inside a metal gap region.</p>
 <p>A notable implementation detail is that every Airbridge (sub)class is done as AirbridgeConnection.
 This way a waveguide taper is automatically inserted before and after the airbridge so the user
 does not have to manually add these. Other Node types do not have this feature.</p>
@@ -648,9 +675,44 @@ flip chip, taper or any custom element.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.waveguide_composite.WaveguideComposite.get_segment_cells">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_segment_cells</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_composite.html#WaveguideComposite.get_segment_cells"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_composite.WaveguideComposite.get_segment_cells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the subcells of a <code class="docutils literal notranslate"><span class="pre">WaveguideComposite</span></code> cell, ordered by node index.</p>
+<p>The subcells include <code class="docutils literal notranslate"><span class="pre">WaveguideCoplanar</span></code>, <code class="docutils literal notranslate"><span class="pre">WaveguideCoplanarTaper</span></code> and <code class="docutils literal notranslate"><span class="pre">Meander</span></code> cells for straight,
+tapered and meandering segments, respectively, and any element cells that were inserted explicitly
+(<code class="docutils literal notranslate"><span class="pre">element</span></code> argument) or implicitly (changing <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> or <code class="docutils literal notranslate"><span class="pre">face_id</span></code>) at any <code class="docutils literal notranslate"><span class="pre">Node</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">node_index</span></code> returned with each subcell is an index to the <code class="docutils literal notranslate"><span class="pre">nodes</span></code> parameter of the
+<code class="docutils literal notranslate"><span class="pre">WaveguideComposite</span></code> cell. It points to the node that _created_ the subcell, which is the node following a
+segment for regular <code class="docutils literal notranslate"><span class="pre">WaveguideCoplanar</span></code> segments, and the node that specified the element or parameter change
+otherwise.</p>
+<p>Note that there may be multiple subcells per node, and some nodes may not have associated subcells (in
+particular, regular <code class="docutils literal notranslate"><span class="pre">WaveguideCoplanar</span></code> segments are merged when possible). Subscells are returned in the
+order in which they appear in the waveguide.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cell</strong> – A WaveguideComposite cell. Can be a PCell or static cell created from a PCell.</p>
+</dd>
+</dl>
+<p>Returns: A list of tuples (node_index: int, subcell: pya.Cell) ordered by node_index.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="kqcircuits.elements.waveguide_composite.WaveguideComposite.get_segment_lengths">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_segment_lengths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_composite.html#WaveguideComposite.get_segment_lengths"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_composite.WaveguideComposite.get_segment_lengths" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retreives the segment lengths of each waveguide segment in a WaveguideComposite cell</p>
+<dd><p>Retrieves the segment lengths of each waveguide segment in a WaveguideComposite cell.</p>
+<p>Waveguide segments are <code class="docutils literal notranslate"><span class="pre">WaveguideCoplanar</span></code>, <code class="docutils literal notranslate"><span class="pre">WaveguideCoplanarTaper</span></code> and <code class="docutils literal notranslate"><span class="pre">Meander</span></code> subcells.
+This method returns a list with the same length as the <code class="docutils literal notranslate"><span class="pre">nodes</span></code> parameter, where each element is the total
+length of all waveguides directly preceding and/or defined in that node. For example, for a taper node both the
+preceding regular waveguide and the taper itself are counted.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">WaveguideComposite</span></code> merges consecutive waveguide segments if they have no special elements. As
+a consequence, the corresponding waveguide lengths all accumulate in the next index which has a taper, meander
+or other element, and the length for nodes that contain ony <code class="docutils literal notranslate"><span class="pre">WaveguideCoplanar</span></code> is reported as 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cell</strong> – A WaveguideComposite cell. Can be a PCell or static cell created from a PCell.</p>
+</dd>
+</dl>
+<p>Returns: A list waveguide lengths per node</p>
 </dd></dl>
 
 <dl class="py method">
@@ -707,6 +769,12 @@ subclass. Elements are oriented collinear to the preceding Node and an automatic
 inserted after if the next Node is not collinear.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.elements.waveguide_composite.WaveguideComposite.check_node_type">
+<span class="sig-name descname"><span class="pre">check_node_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/elements/waveguide_composite.html#WaveguideComposite.check_node_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.elements.waveguide_composite.WaveguideComposite.check_node_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over supported Node types and run approriate function</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py function">
@@ -741,8 +809,6 @@ inserted after if the next Node is not collinear.</p>
 <li><p><strong>gui_path</strong><em> (Shape)</em><span> - </span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">(0,0;200,0)</span> <span class="pre">w=1</span> <span class="pre">bx=0</span> <span class="pre">ex=0</span> <span class="pre">r=false</span></code></p></li>
 <li><p><strong>gui_path_shadow</strong><em> (Shape)</em><span> - Hidden path to detect GUI operations</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">(0,0;200,0)</span> <span class="pre">w=1</span> <span class="pre">bx=0</span> <span class="pre">ex=0</span> <span class="pre">r=false</span></code></p></li>
 <li><p><strong>tight_routing</strong><em> (Boolean)</em><span> - Tight routing for corners</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><strong>term1</strong><em> (Double)</em><span> - Termination length start</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>term2</strong><em> (Double)</em><span> - Termination length end</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>a</strong><em> (Double)</em><span> - Width of center conductor</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>b</strong><em> (Double)</em><span> - Width of gap</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">6</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>n</strong><em> (Int)</em><span> - Number of points on turns</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">64</span></code></p></li>
@@ -760,6 +826,11 @@ inserted after if the next Node is not collinear.</p>
 <li><p><strong>connector_b</strong><em> (Double)</em><span> - Gap width at the connector area</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">40</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>round_connector</strong><em> (Boolean)</em><span> - Use round connector shape</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>n_center_bumps</strong><em> (Int)</em><span> - Number of center bumps in series</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><strong>a2</strong><em> (Double)</em><span> - Non-physical value ‘-1’ means that the default size ‘a’ is used.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">-1</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>b2</strong><em> (Double)</em><span> - Non-physical value ‘-1’ means that the default size ‘b’ is used.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">-1</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>term1</strong><em> (Double)</em><span> - Termination length start</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>term2</strong><em> (Double)</em><span> - Termination length end</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
+<li><p><strong>add_metal</strong><em> (Boolean)</em><span> - Add trace in base metal addition too</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>airbridge_type</strong><em> (String)</em><span> - Airbridge type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Airbridge</span> <span class="pre">Rectangular</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['Airbridge</span> <span class="pre">Rectangular',</span> <span class="pre">'Airbridge</span> <span class="pre">Multi</span> <span class="pre">Face']</span></code></p></li>
 <li><p><strong>taper_length</strong><em> (Double)</em><span> - Taper length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 </ul>

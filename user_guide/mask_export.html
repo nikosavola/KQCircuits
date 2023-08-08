@@ -101,6 +101,16 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../salt.html">Getting started (Salt package)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#first-look-around">First look around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#setting-up-a-user-package-directory">Setting up a user package directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#defining-a-custom-element">Defining a custom element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#defining-a-custom-chip">Defining a custom chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#release-notes">Release Notes</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gui_features.html">GUI Features</a><ul>
@@ -117,9 +127,9 @@
 <li class="toctree-l2"><a class="reference internal" href="gui_workflow.html">Point-and-click workflow tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_workflow.html">Python workflow tutorial</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="python_workflow.html#file-system-hierarchy">File system hierarchy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python_workflow.html#structure-of-pcell-code">Structure of  PCell code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python_workflow.html#structure-of-element-code">Structure of Element code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="python_workflow.html#element-class"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> class</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python_workflow.html#pcell-libraries">PCell Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python_workflow.html#libraries">Libraries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="python_workflow.html#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="python_workflow.html#build">Build</a></li>
 </ul>
@@ -130,17 +140,23 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="python_workflow.html#refpoints">Refpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="python_workflow.html#faces">Faces</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="python_workflow.html#layer-configuration-files">Layer configuration files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="python_workflow.html#adding-a-new-face">Adding a new face</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="python_workflow.html#opening-element-or-chip-from-an-ide">Opening <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code> from an IDE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="macro_workflow.html">Macro development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="macro_workflow.html#basic-workflow">Basic workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macro_workflow.html#running-the-first-example">Running the first example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macro_workflow.html#interacting-with-the-klayout-application">Interacting with the KLayout application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="macro_workflow.html#creating-a-new-panel">Creating a new panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="macro_workflow.html#accessing-the-currently-active-panel">Accessing the currently active panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="macro_workflow.html#using-klayoutview">Using <code class="docutils literal notranslate"><span class="pre">KLayoutView</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="macro_workflow.html#debugger">Debugger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="macro_workflow.html#reloading-libraries">Reloading libraries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="macro_workflow.html#examples">Examples</a></li>
@@ -152,22 +168,33 @@
 <li class="toctree-l4"><a class="reference internal" href="#ground-grid">Ground grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-and-modifying-chips">Adding and modifying chips</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#multi-face-masks">Multi-face masks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#composite-mask-maps">Composite mask maps</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="simulations.html">External simulation tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="simulation/simulation_object.html">Creating simulation object</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="simulation/simulation_object.html">Creating a simulation object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation/simulation_object.html#simulation-box">Simulation box</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation/simulation_object.html#ports">Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation/simulation_object.html#example-simulation">Example simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation/simulation_object.html#simulation-scripts">Simulation scripts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="simulation/simulation_object.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="simulation/simulation_object.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="simulation/simulation_settings.html">Simulation export settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulation/ansys_export.html">Ansys export</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="simulation/ansys_export.html#ansys-scripts">Ansys scripts</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="simulation/sonnet_export.html">Sonnet export</a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulation/export_and_run.html">Run and export in one line</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_system_and_utilities.html">General Structure and Miscellaneous Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file_system_and_utilities.html#file-system-hierarchy">File system hierarchy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_system_and_utilities.html#miscellaneous-utilities">Miscellaneous Utilities</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="xsection.html">Creating cross section images</a><ul>
@@ -179,13 +206,6 @@
 <li class="toctree-l2"><a class="reference internal" href="terminology.html">Terminology</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../salt.html">Salt Package Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../salt.html#user-specific-content">User Specific Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../salt.html#release-notes">Release Notes</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#prerequisites">Prerequisites</a><ul>
@@ -194,6 +214,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#unlinking">Unlinking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#manual-installation">Manual installation</a><ul>
@@ -205,8 +226,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">KLayout Standalone Usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#installation">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#jupyter-notebook-usage">Jupyter notebook usage</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../developer/containers.html">Containers</a><ul>
@@ -331,6 +356,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.layer_config.html">kqcircuits.layer_config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.layer_config.default_layer_config.html">kqcircuits.layer_config.default_layer_config</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.layer_config.example_layer_config.html">kqcircuits.layer_config.example_layer_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.layer_config.html#module-kqcircuits.layer_config">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.masks.html">kqcircuits.masks</a><ul>
@@ -354,8 +380,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.elmer.html">kqcircuits.simulations.export.elmer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.sonnet.html">kqcircuits.simulations.export.sonnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.xsection.html">kqcircuits.simulations.export.xsection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.export_and_run.html">kqcircuits.simulations.export.export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
@@ -407,7 +435,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.library_helper.html">kqcircuits.util.library_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.log_router.html">kqcircuits.util.log_router</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.macro_prepare.html">kqcircuits.util.macro_prepare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.merge.html">kqcircuits.util.merge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.netlist_extraction.html">kqcircuits.util.netlist_extraction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a></li>
@@ -430,10 +457,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../trademarks.html">Trademarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../about.html#contributors">Contributors</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
 </ul>
 
             
@@ -511,12 +535,21 @@
 mask and the parameters of those chips. These scripts will export
 <code class="docutils literal notranslate"><span class="pre">.oas</span></code>/<code class="docutils literal notranslate"><span class="pre">.gds</span></code> files required for photomask production and possibly EBL,
 as well as auxiliary files such as netlists, images and automatic mask
-documentation. The mask scripts can be run either from the macro editor or
-from the command line using <code class="docutils literal notranslate"><span class="pre">klayout</span> <span class="pre">-z</span> <span class="pre">-r</span> <span class="pre">./scripts/masks/maskname.py</span></code>.
-Masks also accept an optional <code class="docutils literal notranslate"><span class="pre">-d</span></code> switch to build the mask without KLayout
-and in a single process thus facilitating debugging mask issues. Please note
-that debug mode lacks certain features that are tied to the presence of
-KLayout.</p>
+documentation. There are three ways to run the mask scripts:</p>
+<ul class="simple">
+<li><p>With the console script: <code class="docutils literal notranslate"><span class="pre">kqc</span> <span class="pre">mask</span> <span class="pre">quick_demo.py</span></code>. This uses multiple processes for efficiency.
+This should be the default way of usage.</p></li>
+<li><p>As a standalone python script from the console in a single process for debugging: <code class="docutils literal notranslate"><span class="pre">python</span>
+<span class="pre">./scripts/masks/quick_demo.py</span> <span class="pre">-d</span></code> or <code class="docutils literal notranslate"><span class="pre">kqc</span> <span class="pre">mask</span> <span class="pre">quick_demo.py</span> <span class="pre">-d</span></code>. This also prints out debug
+information.</p></li>
+<li><p>From the KLayout macro editor. Slow single process execution, good to observe the created mask
+without loading it from file.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Windows and Mac needs the console script (<code class="docutils literal notranslate"><span class="pre">kqc</span></code>) to export a mask using multiprocessing but in Linux you may
+run them directly from the terminal with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">scripts/masks/quick_demo.py</span></code>.</p>
+</div>
 <div class="section" id="tutorial">
 <h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basic-mask-script-and-export">
@@ -527,7 +560,6 @@ KLayout.</p>
 <li><p>Add the following script to the <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/scripts/masks">kqcircuits_scripts/masks</a> folder in
 the <code class="docutils literal notranslate"><span class="pre">Python</span></code> tab of the Macro IDE:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports required for any mask</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">TMP_PATH</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.masks.mask_set</span> <span class="kn">import</span> <span class="n">MaskSet</span>
 <span class="c1"># Import chips required for this mask</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.chips.demo</span> <span class="kn">import</span> <span class="n">Demo</span>
@@ -568,8 +600,8 @@ the <code class="docutils literal notranslate"><span class="pre">Python</span></
 <span class="c1"># This generates the layout in KLayout based on previous calls to</span>
 <span class="c1"># ``add_mask_layout()`` and ``add_chip()`.</span>
 <span class="n">test_mask</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
-<span class="c1"># Export the mask files to TMP_PATH</span>
-<span class="n">test_mask</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">TMP_PATH</span><span class="p">)</span>
+<span class="c1"># Export the mask files to TMP_PATH, unless an ``export_path`` argument has been given to MaskSet.</span>
+<span class="n">test_mask</span><span class="o">.</span><span class="n">export</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Any mask script should follow roughly the same structure. The
@@ -578,9 +610,9 @@ mask) are generally the same for any mask.</p>
 </li>
 <li><p>(Optional) Open <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/scripts/macros/logging_setup.lym">kqcircuits_scripts/macros/logging_setup</a> and run it.
 This makes mask generation logs visible in the Macro console.</p></li>
-<li><p>With the mask script open, click “Run script from current tab”
-(Shift+F5). This generates the mask and exports the files to the
-folder defined by <code class="docutils literal notranslate"><span class="pre">kqcircuits.default.TMP_PATH</span></code>.</p></li>
+<li><p>With the mask script open, click “Run script from current tab” (Shift+F5). This generates the
+mask and exports the files to the folder defined by <code class="docutils literal notranslate"><span class="pre">kqcircuits.default.TMP_PATH</span></code> or to any
+directory spcified by the <code class="docutils literal notranslate"><span class="pre">export_path</span></code> argument to <code class="docutils literal notranslate"><span class="pre">MaskSet</span></code>.</p></li>
 </ol>
 </div></blockquote>
 <p>If you generate the mask again (for example in the following sections), it is
@@ -608,14 +640,21 @@ masks that are really produced.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Add the new chips:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test_mask</span><span class="o">.</span><span class="n">add_chip</span><span class="p">(</span><span class="n">DemoTwoface</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">)</span>
-<span class="n">test_mask</span><span class="o">.</span><span class="n">add_chip</span><span class="p">(</span><span class="n">QualityFactor</span><span class="p">,</span> <span class="s2">&quot;QF1&quot;</span><span class="p">)</span>
+<li><p>Add a new variant of the demo chip with different parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test_mask</span><span class="o">.</span><span class="n">add_chip</span><span class="p">(</span><span class="n">Demo</span><span class="p">,</span> <span class="s2">&quot;DE2&quot;</span><span class="p">,</span> <span class="n">include_couplers</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">readout_res_lengths</span><span class="o">=</span><span class="p">[</span><span class="mi">5400</span><span class="p">,</span> <span class="mi">5500</span><span class="p">,</span> <span class="mi">5600</span><span class="p">,</span> <span class="mi">5700</span><span class="p">])</span>
 </pre></div>
 </div>
 </li>
-<li><p>Add a new variant of the demo chip with different parameters:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test_mask</span><span class="o">.</span><span class="n">add_chip</span><span class="p">(</span><span class="n">Demo</span><span class="p">,</span> <span class="s2">&quot;DE2&quot;</span><span class="p">,</span> <span class="n">include_couplers</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">readout_res_lengths</span><span class="o">=</span><span class="p">[</span><span class="mi">5400</span><span class="p">,</span> <span class="mi">5500</span><span class="p">,</span> <span class="mi">5600</span><span class="p">,</span> <span class="mi">5700</span><span class="p">])</span>
+<li><p>Add several chips at once in parallel:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test_mask</span><span class="o">.</span><span class="n">add_chip</span><span class="p">([</span>
+    <span class="p">(</span><span class="n">DemoTwoface</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">QualityFactor</span><span class="p">,</span> <span class="s2">&quot;QF1&quot;</span><span class="p">),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>You may also add chips generated elsewhere and stored in a .oas file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test_mask</span><span class="o">.</span><span class="n">add_chip</span><span class="p">(</span><span class="s2">&quot;/home/user/my_chip.oas&quot;</span><span class="p">,</span> <span class="s2">&quot;MCF&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -670,6 +709,60 @@ top” to verify that “Test 1t1” contains the parts of DemoTwoface in
 “1t1”-face and “Test 2b1” contains the parts of DemoTwoface in “2b1”-face
 (with proper mirroring and rotation).</p></li>
 </ol>
+</div>
+<div class="section" id="composite-mask-maps">
+<h3>Composite mask maps<a class="headerlink" href="#composite-mask-maps" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">add_mask_layout()</span></code> function returns a layout object that may be used to construct more
+complicated mask layouts using the <code class="docutils literal notranslate"><span class="pre">add_chips_map()</span></code> function. This function adds further
+“sub-grids” to the “main” mask map added by <code class="docutils literal notranslate"><span class="pre">add_mask_layout()</span></code>. Usually a central rectangular
+part is added first then it is extended with sub-layouts from all four sides. These may be added
+many times. The following example will create a layout like Demo’s “Bottom face (1t1) mask” but with
+9 big chips in the middle and regular size chips all around it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span> <span class="o">=</span> <span class="n">mdemo</span><span class="o">.</span><span class="n">add_mask_layout</span><span class="p">([</span>
+    <span class="p">[</span><span class="s2">&quot;CH2&quot;</span><span class="p">,</span> <span class="s2">&quot;CH2&quot;</span><span class="p">,</span> <span class="s2">&quot;CH2&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;CH2&quot;</span><span class="p">,</span> <span class="s2">&quot;CH2&quot;</span><span class="p">,</span> <span class="s2">&quot;CH2&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;CH2&quot;</span><span class="p">,</span> <span class="s2">&quot;CH2&quot;</span><span class="p">,</span> <span class="s2">&quot;CH2&quot;</span><span class="p">],</span>
+<span class="p">],</span> <span class="s2">&quot;1t1&quot;</span><span class="p">,</span> <span class="n">layers_to_mask</span><span class="o">=</span><span class="n">layers_to_mask</span><span class="p">,</span> <span class="n">align_to</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">45000</span><span class="p">,</span> <span class="mi">45000</span><span class="p">),</span> <span class="n">chip_size</span><span class="o">=</span><span class="mi">30000</span><span class="p">,</span> <span class="n">edge_clearance</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+
+<span class="n">layout</span><span class="o">.</span><span class="n">add_chips_map</span><span class="p">([</span>
+    <span class="p">[</span><span class="s2">&quot;CH1&quot;</span><span class="p">,</span> <span class="s2">&quot;CH1&quot;</span><span class="p">,</span> <span class="s2">&quot;CH1&quot;</span><span class="p">,</span> <span class="s2">&quot;CH1&quot;</span><span class="p">,</span> <span class="s2">&quot;CH1&quot;</span><span class="p">,</span> <span class="s2">&quot;CH1&quot;</span><span class="p">,</span> <span class="s2">&quot;CH1&quot;</span><span class="p">,</span> <span class="s2">&quot;CH1&quot;</span><span class="p">,</span> <span class="s2">&quot;CH1&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">],</span>
+<span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">chip_size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="n">layout</span><span class="o">.</span><span class="n">add_chips_map</span><span class="p">([</span>
+    <span class="p">[</span><span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;SX1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;JT1&quot;</span><span class="p">,</span> <span class="s2">&quot;QF1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;SX1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;AC1&quot;</span><span class="p">,</span> <span class="s2">&quot;ST1&quot;</span><span class="p">],</span>
+<span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">chip_size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="n">layout</span><span class="o">.</span><span class="n">add_chips_map</span><span class="p">([</span>
+    <span class="p">[</span><span class="s2">&quot;JT2&quot;</span><span class="p">,</span> <span class="s2">&quot;JT2&quot;</span><span class="p">,</span> <span class="s2">&quot;JT2&quot;</span><span class="p">,</span> <span class="s2">&quot;JT2&quot;</span><span class="p">,</span> <span class="s2">&quot;JT2&quot;</span><span class="p">,</span> <span class="s2">&quot;JT2&quot;</span><span class="p">,</span> <span class="s2">&quot;JT2&quot;</span><span class="p">,</span> <span class="s2">&quot;JT2&quot;</span><span class="p">,</span> <span class="s2">&quot;JT2&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;SX1&quot;</span><span class="p">,</span> <span class="s2">&quot;SX1&quot;</span><span class="p">,</span> <span class="s2">&quot;SX1&quot;</span><span class="p">,</span> <span class="s2">&quot;SX1&quot;</span><span class="p">,</span> <span class="s2">&quot;SX1&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">],</span>
+<span class="p">],</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">chip_size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="n">layout</span><span class="o">.</span><span class="n">add_chips_map</span><span class="p">([</span>
+    <span class="p">[</span><span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;---&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">,</span> <span class="s2">&quot;DE1&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;AC1&quot;</span><span class="p">,</span> <span class="s2">&quot;AC1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">,</span> <span class="s2">&quot;DT1&quot;</span><span class="p">],</span>
+<span class="p">],</span> <span class="n">align_to</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">45000</span><span class="p">,</span> <span class="mi">65000</span><span class="p">),</span> <span class="n">chip_size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="o">...</span>
+
+<span class="n">mdemo</span><span class="o">.</span><span class="n">add_chip</span><span class="p">([</span>
+<span class="o">...</span>
+<span class="p">(</span><span class="n">Chip</span><span class="p">,</span> <span class="s2">&quot;CH2&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;box&quot;</span><span class="p">:</span> <span class="n">pya</span><span class="o">.</span><span class="n">DBox</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">30000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">))}),</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">add_mask_layout()</span></code> works as usual but we may choose to specify only the “interesting”
+central parts without all the <code class="docutils literal notranslate"><span class="pre">&quot;---&quot;</span></code> placeholders. In this case the <code class="docutils literal notranslate"><span class="pre">align_to</span></code> parameter has to
+be used to place this mask map fragment at the desired <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> coordinates.</p>
+<p>After that we may call <code class="docutils literal notranslate"><span class="pre">add_chips_map()</span></code> as many times as we wish. The function attaches the
+specified mask map fragmet to the already added mask map, the <code class="docutils literal notranslate"><span class="pre">align</span></code> parameter is used to choose
+the side to attach to. The mask fragment will be centerd by default, and if it is “left” or “right”
+aligned then it is also rotated 90 degrees clockwise.</p>
+<p>Note that the last “top”  fragment is only covering the top-left side of the wafer. As we do not
+want to center this it is “manually” placed using the <code class="docutils literal notranslate"><span class="pre">align_to</span></code> parameter. In this case the
+<code class="docutils literal notranslate"><span class="pre">align</span></code> parameter may be omitted, but it still can be useful if we want to exploit its rotation
+feature for left or right parts.</p>
 </div>
 </div>
 </div>

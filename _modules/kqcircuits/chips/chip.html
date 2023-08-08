@@ -99,6 +99,16 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../salt.html">Getting started (Salt package)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#first-look-around">First look around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#setting-up-a-user-package-directory">Setting up a user package directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#defining-a-custom-element">Defining a custom element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#defining-a-custom-chip">Defining a custom chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#release-notes">Release Notes</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_guide/index.html">User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/usage.html">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/gui_features.html">GUI Features</a><ul>
@@ -115,9 +125,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/gui_workflow.html">Point-and-click workflow tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/python_workflow.html">Python workflow tutorial</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#file-system-hierarchy">File system hierarchy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#structure-of-pcell-code">Structure of  PCell code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#structure-of-element-code">Structure of Element code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#element-class"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> class</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#pcell-libraries">PCell Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#libraries">Libraries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#build">Build</a></li>
 </ul>
@@ -128,17 +138,23 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#refpoints">Refpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#faces">Faces</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#layer-configuration-files">Layer configuration files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#adding-a-new-face">Adding a new face</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#opening-element-or-chip-from-an-ide">Opening <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code> from an IDE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/macro_workflow.html">Macro development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/macro_workflow.html#basic-workflow">Basic workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/macro_workflow.html#running-the-first-example">Running the first example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/macro_workflow.html#interacting-with-the-klayout-application">Interacting with the KLayout application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/macro_workflow.html#creating-a-new-panel">Creating a new panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/macro_workflow.html#accessing-the-currently-active-panel">Accessing the currently active panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/macro_workflow.html#using-klayoutview">Using <code class="docutils literal notranslate"><span class="pre">KLayoutView</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/macro_workflow.html#debugger">Debugger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/macro_workflow.html#reloading-libraries">Reloading libraries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/macro_workflow.html#examples">Examples</a></li>
@@ -150,22 +166,33 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../user_guide/mask_export.html#ground-grid">Ground grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../user_guide/mask_export.html#adding-and-modifying-chips">Adding and modifying chips</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../user_guide/mask_export.html#multi-face-masks">Multi-face masks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/mask_export.html#composite-mask-maps">Composite mask maps</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/simulations.html">External simulation tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html">Creating simulation object</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html">Creating a simulation object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html#simulation-box">Simulation box</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html#ports">Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html#example-simulation">Example simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html#simulation-scripts">Simulation scripts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/simulation_settings.html">Simulation export settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/ansys_export.html">Ansys export</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/ansys_export.html#ansys-scripts">Ansys scripts</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/sonnet_export.html">Sonnet export</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/export_and_run.html">Run and export in one line</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user_guide/file_system_and_utilities.html">General Structure and Miscellaneous Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/file_system_and_utilities.html#file-system-hierarchy">File system hierarchy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/file_system_and_utilities.html#miscellaneous-utilities">Miscellaneous Utilities</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/xsection.html">Creating cross section images</a><ul>
@@ -177,13 +204,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/terminology.html">Terminology</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../salt.html">Salt Package Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#user-specific-content">User Specific Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../salt.html#release-notes">Release Notes</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/setup.html">Developer Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#prerequisites">Prerequisites</a><ul>
@@ -192,6 +212,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#unlinking">Unlinking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#manual-installation">Manual installation</a><ul>
@@ -203,8 +224,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/standalone.html">KLayout Standalone Usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#installation">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#jupyter-notebook-usage">Jupyter notebook usage</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/containers.html">Containers</a><ul>
@@ -329,6 +354,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.layer_config.html">kqcircuits.layer_config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.layer_config.default_layer_config.html">kqcircuits.layer_config.default_layer_config</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.layer_config.example_layer_config.html">kqcircuits.layer_config.example_layer_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.layer_config.html#module-kqcircuits.layer_config">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.masks.html">kqcircuits.masks</a><ul>
@@ -352,8 +378,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.elmer.html">kqcircuits.simulations.export.elmer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.sonnet.html">kqcircuits.simulations.export.sonnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.xsection.html">kqcircuits.simulations.export.xsection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.export_and_run.html">kqcircuits.simulations.export.export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
@@ -405,7 +433,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.library_helper.html">kqcircuits.util.library_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.log_router.html">kqcircuits.util.log_router</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.macro_prepare.html">kqcircuits.util.macro_prepare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.merge.html">kqcircuits.util.merge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.netlist_extraction.html">kqcircuits.util.netlist_extraction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a></li>
@@ -428,10 +455,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../trademarks.html">Trademarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../about.html#contributors">Contributors</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
 </ul>
 
             
@@ -514,19 +538,20 @@
 <span class="c1"># The software distribution should follow IQM trademark policy for open-source software</span>
 <span class="c1"># (meetiqm.com/developers/osstmpolicy). IQM welcomes contributions to the code. Please see our contribution agreements</span>
 <span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
-
+<span class="c1"># pylint: disable=R0904</span>
+<span class="c1"># TODO: Consider refactoring to reduce number of public methods</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">from</span> <span class="nn">autologging</span> <span class="kn">import</span> <span class="n">logged</span>
 
 <span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_layers</span><span class="p">,</span> <span class="n">default_junction_type</span><span class="p">,</span> <span class="n">default_sampleholders</span><span class="p">,</span> <span class="n">default_mask_parameters</span><span class="p">,</span> \
-                                <span class="n">default_bump_parameters</span><span class="p">,</span> <span class="n">default_marker_type</span>
+    <span class="n">default_bump_parameters</span><span class="p">,</span> <span class="n">default_marker_type</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.chip_frame</span> <span class="kn">import</span> <span class="n">ChipFrame</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.element</span> <span class="kn">import</span> <span class="n">Element</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.launcher</span> <span class="kn">import</span> <span class="n">Launcher</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.launcher_dc</span> <span class="kn">import</span> <span class="n">LauncherDC</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.util.geometry_helper</span> <span class="kn">import</span> <span class="n">region_with_merged_polygons</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.util.merge</span> <span class="kn">import</span> <span class="n">merge_layout_layers_on_face</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span><span class="p">,</span> <span class="n">add_parameters_from</span><span class="p">,</span> <span class="n">add_parameter</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.test_structures.junction_test_pads.junction_test_pads</span> <span class="kn">import</span> <span class="n">JunctionTestPads</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.test_structures.stripes_test</span> <span class="kn">import</span> <span class="n">StripesTest</span>
@@ -537,10 +562,11 @@
 
 
 <div class="viewcode-block" id="Chip"><a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip">[docs]</a><span class="nd">@logged</span>
+<span class="nd">@add_parameters_from</span><span class="p">(</span><span class="n">Tsv</span><span class="p">,</span> <span class="s2">&quot;tsv_type&quot;</span><span class="p">)</span>
 <span class="nd">@add_parameters_from</span><span class="p">(</span><span class="n">FlipChipConnectorRf</span><span class="p">,</span> <span class="s2">&quot;connector_type&quot;</span><span class="p">)</span>
 <span class="nd">@add_parameter</span><span class="p">(</span><span class="n">ChipFrame</span><span class="p">,</span> <span class="s2">&quot;box&quot;</span><span class="p">,</span> <span class="n">hidden</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nd">@add_parameters_from</span><span class="p">(</span><span class="n">ChipFrame</span><span class="p">,</span> <span class="s2">&quot;name_mask&quot;</span><span class="p">,</span> <span class="s2">&quot;name_chip&quot;</span><span class="p">,</span> <span class="s2">&quot;name_copy&quot;</span><span class="p">,</span> <span class="s2">&quot;name_brand&quot;</span><span class="p">,</span>
-                     <span class="s2">&quot;dice_grid_margin&quot;</span><span class="p">,</span> <span class="n">marker_types</span><span class="o">=</span><span class="p">[</span><span class="n">default_marker_type</span><span class="p">]</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
+                     <span class="s2">&quot;dice_grid_margin&quot;</span><span class="p">,</span> <span class="n">marker_types</span><span class="o">=</span><span class="p">[</span><span class="n">default_marker_type</span><span class="p">]</span> <span class="o">*</span> <span class="mi">8</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Chip</span><span class="p">(</span><span class="n">Element</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base PCell declaration for chips.</span>
 
@@ -558,10 +584,9 @@
                      <span class="n">docstring</span><span class="o">=</span><span class="s2">&quot;Width of center conductor in the capped region (μm)&quot;</span><span class="p">)</span>
     <span class="n">b_capped</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Width of gap in the capped region &quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
 
-
     <span class="c1"># Tsv grid parameters</span>
     <span class="n">with_gnd_tsvs</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeBoolean</span><span class="p">,</span> <span class="s2">&quot;Make ground TSVs&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-    <span class="n">tsv_grid_spacing</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span><span class="s2">&quot;TSV grid distance (center to center)&quot;</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
+    <span class="n">tsv_grid_spacing</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;TSV grid distance (center to center)&quot;</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
     <span class="n">tsv_edge_to_tsv_edge_separation</span> <span class="o">=</span> \
         <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Ground TSV clearance to manually placed TSVs (edge to edge)&quot;</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
     <span class="n">tsv_edge_to_nearest_element</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Ground TSV clearance to other elements (edge to edge)&quot;</span><span class="p">,</span>
@@ -590,7 +615,6 @@
         <span class="s2">&quot;List of chip frame sizes (type DBox) for each face. None uses the chips box parameter.&quot;</span><span class="p">,</span>
         <span class="n">default</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DBox</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">1500</span><span class="p">),</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">8500</span><span class="p">,</span> <span class="mi">8500</span><span class="p">))],</span>
         <span class="n">hidden</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
 
 <div class="viewcode-block" id="Chip.display_text_impl"><a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip.display_text_impl">[docs]</a>    <span class="k">def</span> <span class="nf">display_text_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Provide a descriptive text for the cell</span>
@@ -728,12 +752,7 @@
 <span class="sd">            face: face dictionary containing layer names as keys and layer info objects as values</span>
 <span class="sd">            tolerance: gap length to be ignored while merging (µm)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">gaps</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">face</span><span class="p">[</span><span class="s2">&quot;base_metal_gap_wo_grid&quot;</span><span class="p">])))</span>
-        <span class="n">metal</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">face</span><span class="p">[</span><span class="s2">&quot;base_metal_addition&quot;</span><span class="p">])))</span>
-        <span class="n">grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">face</span><span class="p">[</span><span class="s2">&quot;ground_grid&quot;</span><span class="p">]))</span>
-        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">shapes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">face</span><span class="p">[</span><span class="s2">&quot;base_metal_gap&quot;</span><span class="p">]))</span>
-        <span class="n">res</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">region_with_merged_polygons</span><span class="p">(</span><span class="n">gaps</span> <span class="o">-</span> <span class="n">metal</span><span class="p">,</span> <span class="n">tolerance</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">))</span>
-        <span class="n">res</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span></div>
+        <span class="n">merge_layout_layers_on_face</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Chip.merge_layout_layers"><a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip.merge_layout_layers">[docs]</a>    <span class="k">def</span> <span class="nf">merge_layout_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Creates &quot;base_metal_gap&quot; layers on all faces.</span>
@@ -765,7 +784,7 @@
                 <span class="n">text_margin</span><span class="o">=</span><span class="n">default_mask_parameters</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="n">face</span><span class="p">]][</span><span class="s2">&quot;text_margin&quot;</span><span class="p">],</span>
                 <span class="n">marker_dist</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frames_marker_dist</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
                 <span class="n">diagonal_squares</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frames_diagonal_squares</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
-                <span class="n">marker_types</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">marker_types</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">4</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span>
+                <span class="n">marker_types</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">marker_types</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">4</span><span class="p">:(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">]</span>
             <span class="p">)</span>
 
             <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frames_mirrored</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span><span class="p">:</span>  <span class="c1"># Accept both boolean and string representation</span>
@@ -775,10 +794,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">produce_frame</span><span class="p">(</span><span class="n">frame_parameters</span><span class="p">,</span> <span class="n">frame_trans</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_gnd_tsvs</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_produce_ground_tsvs</span><span class="p">(</span><span class="n">face_id</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_produce_ground_tsvs</span><span class="p">(</span><span class="n">face_id</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_face1_gnd_tsvs</span><span class="p">:</span>
             <span class="n">tsv_box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_box</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">enlarged</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_tsv</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_tsv</span><span class="p">))</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_produce_ground_tsvs</span><span class="p">(</span><span class="n">face_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tsv_box</span><span class="o">=</span><span class="n">tsv_box</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_produce_ground_tsvs</span><span class="p">(</span><span class="n">face_id</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">tsv_box</span><span class="o">=</span><span class="n">tsv_box</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_gnd_bumps</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_produce_ground_bumps</span><span class="p">()</span></div>
@@ -828,11 +847,11 @@
                                                         <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
 
         <span class="n">existing_tsvs_bottom</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">)))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
-        <span class="n">avoidance_existing_tsvs_bottom</span> <span class="o">=</span> <span class="n">existing_tsvs_bottom</span><span class="o">.</span>\
+            <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
+        <span class="n">avoidance_existing_tsvs_bottom</span> <span class="o">=</span> <span class="n">existing_tsvs_bottom</span><span class="o">.</span> \
             <span class="n">sized</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">tsv_edge_to_nearest_element</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
         <span class="n">existing_tsvs_top</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
         <span class="n">avoidance_existing_tsvs_top</span> <span class="o">=</span> <span class="n">existing_tsvs_top</span><span class="o">.</span><span class="n">sized</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tsv_edge_to_nearest_element</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
         <span class="n">avoidance_region</span> <span class="o">=</span> <span class="p">(</span><span class="n">avoidance_layer_bottom</span> <span class="o">+</span> <span class="n">avoidance_layer_top</span> <span class="o">+</span> <span class="n">avoidance_existing_bumps</span> <span class="o">+</span>
                             <span class="n">avoidance_existing_tsvs_bottom</span> <span class="o">+</span> <span class="n">avoidance_existing_tsvs_top</span><span class="p">)</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
@@ -886,7 +905,7 @@
                     <span class="n">label_trans</span> <span class="o">=</span> <span class="n">label_trans</span> <span class="o">*</span> <span class="n">rel_label_trans</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">label_trans</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Chip.produce_launchers"><a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip.produce_launchers">[docs]</a>    <span class="k">def</span> <span class="nf">produce_launchers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sampleholder_type</span><span class="p">,</span> <span class="n">launcher_assignments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Chip.produce_launchers"><a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip.produce_launchers">[docs]</a>    <span class="k">def</span> <span class="nf">produce_launchers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sampleholder_type</span><span class="p">,</span> <span class="n">launcher_assignments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">face_id</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produces launchers for typical sample holders and sets chip size (``self.box``) accordingly.</span>
 
 <span class="sd">        This is a wrapper around ``produce_n_launchers()`` to generate typical launcher configurations.</span>
@@ -895,6 +914,7 @@
 <span class="sd">            sampleholder_type: name of the sample holder type</span>
 <span class="sd">            launcher_assignments: dictionary of (port_id: name) that assigns a name to some of the launchers</span>
 <span class="sd">            enabled: list of enabled launchers, empty means all</span>
+<span class="sd">            face_id: index of face_ids in which to insert the launchers</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            launchers as a dictionary :code:`{name: (point, heading, distance from chip edge)}`</span>
@@ -907,11 +927,12 @@
 
         <span class="k">if</span> <span class="n">sampleholder_type</span> <span class="ow">in</span> <span class="n">default_sampleholders</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">produce_n_launchers</span><span class="p">(</span><span class="o">**</span><span class="n">default_sampleholders</span><span class="p">[</span><span class="n">sampleholder_type</span><span class="p">],</span>
-                                            <span class="n">launcher_assignments</span><span class="o">=</span><span class="n">launcher_assignments</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="n">enabled</span><span class="p">)</span>
+                                            <span class="n">launcher_assignments</span><span class="o">=</span><span class="n">launcher_assignments</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="n">enabled</span><span class="p">,</span> <span class="n">face_id</span><span class="o">=</span><span class="n">face_id</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">{}</span></div>
 
 <div class="viewcode-block" id="Chip.produce_n_launchers"><a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip.produce_n_launchers">[docs]</a>    <span class="k">def</span> <span class="nf">produce_n_launchers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">launcher_type</span><span class="p">,</span> <span class="n">launcher_width</span><span class="p">,</span> <span class="n">launcher_gap</span><span class="p">,</span> <span class="n">launcher_indent</span><span class="p">,</span> <span class="n">pad_pitch</span><span class="p">,</span>
-                            <span class="n">launcher_assignments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">launcher_frame_gap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chip_box</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+                            <span class="n">launcher_assignments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">launcher_frame_gap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enabled</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chip_box</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                            <span class="n">face_id</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produces n launchers at default locations and optionally changes the chip size.</span>
 
 <span class="sd">        Launcher pads are equally distributed around the chip. This may be overridden by specifying</span>
@@ -931,6 +952,7 @@
 <span class="sd">            launcher_assignments: dictionary of (port_id: name) that assigns a name to some of the launchers</span>
 <span class="sd">            enabled: optional list of enabled launchers</span>
 <span class="sd">            chip_box: optionally changes the chip size (``self.box``)</span>
+<span class="sd">            face_id: index of face_ids in which to insert the launchers</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            launchers as a dictionary :code:`{name: (point, heading, distance from chip edge)}`</span>
@@ -943,11 +965,11 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="n">chip_box</span>
 
         <span class="k">if</span> <span class="n">launcher_type</span> <span class="o">==</span> <span class="s2">&quot;DC&quot;</span><span class="p">:</span>
-            <span class="n">launcher_cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">LauncherDC</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">launcher_width</span><span class="p">)</span>
+            <span class="n">launcher_cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">LauncherDC</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">launcher_width</span><span class="p">,</span> <span class="n">face_ids</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="n">face_id</span><span class="p">]])</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">launcher_cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">Launcher</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">launcher_width</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">launcher_width</span><span class="p">,</span>
                                              <span class="n">a_launcher</span><span class="o">=</span><span class="n">launcher_width</span><span class="p">,</span> <span class="n">b_launcher</span><span class="o">=</span><span class="n">launcher_gap</span><span class="p">,</span>
-                                             <span class="n">launcher_frame_gap</span><span class="o">=</span><span class="n">launcher_frame_gap</span><span class="p">)</span>
+                                             <span class="n">launcher_frame_gap</span><span class="o">=</span><span class="n">launcher_frame_gap</span><span class="p">,</span> <span class="n">face_ids</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="n">face_id</span><span class="p">]])</span>
 
         <span class="n">pads_per_side</span> <span class="o">=</span> <span class="n">n</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
@@ -963,17 +985,24 @@
         <span class="n">_h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">p2</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">p1</span><span class="o">.</span><span class="n">y</span>
         <span class="n">sides</span> <span class="o">=</span> <span class="p">[</span><span class="n">_w</span><span class="p">,</span> <span class="n">_h</span><span class="p">,</span> <span class="n">_w</span><span class="p">,</span> <span class="n">_h</span><span class="p">]</span>
 
-        <span class="n">launchers</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># dictionary of point, heading, distance from chip edge</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_insert_launchers</span><span class="p">(</span><span class="n">dirs</span><span class="p">,</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">launcher_assignments</span><span class="p">,</span> <span class="n">launcher_cell</span><span class="p">,</span> <span class="n">launcher_indent</span><span class="p">,</span>
+                                      <span class="n">launcher_width</span><span class="p">,</span> <span class="n">pad_pitch</span><span class="p">,</span> <span class="n">pads_per_side</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">trans</span><span class="p">)</span></div>
 
-        <span class="n">port_id</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">def</span> <span class="nf">_insert_launchers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">launcher_assignments</span><span class="p">,</span> <span class="n">launcher_cell</span><span class="p">,</span> <span class="n">launcher_indent</span><span class="p">,</span> <span class="n">launcher_width</span><span class="p">,</span>
+                          <span class="n">pad_pitch</span><span class="p">,</span> <span class="n">pads_per_side</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">trans</span><span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Inserts launcher cell at predefined parameters and returns launcher cells</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">port_id</span><span class="p">,</span> <span class="n">launchers</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">np</span><span class="p">,</span> <span class="n">dr</span><span class="p">,</span> <span class="n">tr</span><span class="p">,</span> <span class="n">si</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pads_per_side</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">trans</span><span class="p">,</span> <span class="n">sides</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">np</span><span class="p">):</span>
                 <span class="n">port_id</span> <span class="o">+=</span> <span class="mi">1</span>
                 <span class="k">if</span> <span class="n">launcher_assignments</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">port_id</span> <span class="ow">in</span> <span class="n">launcher_assignments</span><span class="p">:</span>
-                        <span class="n">name</span> <span class="o">=</span> <span class="n">launcher_assignments</span><span class="p">[</span><span class="n">port_id</span><span class="p">]</span>
-                    <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">port_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">launcher_assignments</span><span class="p">:</span>
                         <span class="k">continue</span>
+                    <span class="n">name</span> <span class="o">=</span> <span class="n">launcher_assignments</span><span class="p">[</span><span class="n">port_id</span><span class="p">]</span>
+
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">port_id</span><span class="p">)</span>
 
@@ -987,8 +1016,7 @@
                 <span class="n">launcher_inst</span><span class="p">,</span> <span class="n">launcher_refpoints</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">launcher_cell</span><span class="p">,</span> <span class="n">transf</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
                 <span class="n">launcher_inst</span><span class="o">.</span><span class="n">set_property</span><span class="p">(</span><span class="s2">&quot;port_id&quot;</span><span class="p">,</span> <span class="n">port_id</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">add_port</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">launcher_refpoints</span><span class="p">[</span><span class="s2">&quot;port&quot;</span><span class="p">])</span>
-
-        <span class="k">return</span> <span class="n">launchers</span></div>
+        <span class="k">return</span> <span class="n">launchers</span>
 
 <div class="viewcode-block" id="Chip.make_grid_locations"><a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip.make_grid_locations">[docs]</a>    <span class="k">def</span> <span class="nf">make_grid_locations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">delta_x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">delta_y</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>  <span class="c1"># pylint: disable=no-self-use</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1003,12 +1031,12 @@
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c1"># array size for bump creation</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="o">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">box</span><span class="o">.</span><span class="n">p1</span><span class="p">)</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">delta_x</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span><span class="o">*</span><span class="mi">2</span> <span class="c1"># force even number</span>
-        <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="o">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">box</span><span class="o">.</span><span class="n">p1</span><span class="p">)</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">delta_y</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span><span class="o">*</span><span class="mi">2</span> <span class="c1"># force even number</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="o">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">box</span><span class="o">.</span><span class="n">p1</span><span class="p">)</span><span class="o">.</span><span class="n">x</span> <span class="o">/</span> <span class="n">delta_x</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># force even number</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="o">.</span><span class="n">p2</span> <span class="o">-</span> <span class="n">box</span><span class="o">.</span><span class="n">p1</span><span class="p">)</span><span class="o">.</span><span class="n">y</span> <span class="o">/</span> <span class="n">delta_y</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># force even number</span>
 
         <span class="n">locations</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">m</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">m</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
                 <span class="n">locations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">box</span><span class="o">.</span><span class="n">center</span><span class="p">()</span> <span class="o">+</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">delta_x</span><span class="p">,</span> <span class="n">j</span> <span class="o">*</span> <span class="n">delta_y</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">locations</span></div>
 
@@ -1023,37 +1051,45 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_grid_locations</span><span class="p">(</span><span class="n">tsv_box</span><span class="p">,</span> <span class="n">delta_x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tsv_grid_spacing</span><span class="p">,</span> <span class="n">delta_y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tsv_grid_spacing</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">_produce_ground_tsvs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                             <span class="n">face_id</span> <span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-                             <span class="n">tsv_box</span> <span class="o">=</span>  <span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_produce_ground_tsvs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face_id</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">tsv_box</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> <span class="c1"># pylint: disable=dangerous-default-value</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produces ground TSVs between bottom and top face.</span>
 
 <span class="sd">         The TSVs avoid ground grid avoidance on both faces, and keep a minimum distance to any existing (manually</span>
 <span class="sd">         placed) TSVs.</span>
 <span class="sd">         &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Starting ground TSV generation on face </span><span class="si">{</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="n">face_id</span><span class="p">]</span><span class="w"> </span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="n">tsv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">Tsv</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="n">face_ids</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="n">face_id</span><span class="p">]])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Starting ground TSV generation on face(s) </span><span class="si">{</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="n">f_id</span><span class="p">]</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">f_id</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">face_id</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">tsv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">Tsv</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="n">face_ids</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="n">f_id</span><span class="p">]</span> <span class="k">for</span> <span class="n">f_id</span> <span class="ow">in</span> <span class="n">face_id</span><span class="p">])</span>
+
+        <span class="c1"># Determine the shape of the tsv from its through_silicon_via layer. Assumes that when merged the tsv</span>
+        <span class="c1"># contains only one polygon.</span>
+        <span class="n">tsv_size_polygon</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="n">tsv</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+                                <span class="o">.</span><span class="n">merged</span><span class="p">()</span><span class="o">.</span><span class="n">each</span><span class="p">(),</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">tsv_size_polygon</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tsv_size_polygon</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="n">tsv</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+                                    <span class="o">.</span><span class="n">merged</span><span class="p">()</span><span class="o">.</span><span class="n">each</span><span class="p">(),</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">tsv_size_polygon</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No TSVs found on either face&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">tsv_box</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">tsv_box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">enlarged</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_tsv</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_tsv</span><span class="p">))</span>
 
-        <span class="k">def</span> <span class="nf">region_from_layer</span><span class="p">(</span><span class="n">layer_name</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">face_id</span><span class="p">)))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
-
-        <span class="n">avoidance_region</span> <span class="o">=</span> <span class="p">(</span><span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">)</span> <span class="o">+</span>
-                            <span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via_avoidance&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
-        <span class="n">avoidance_existing_tsv_region</span> <span class="o">=</span> <span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">)</span>
-        <span class="n">existing_tsv_count</span> <span class="o">=</span> <span class="n">avoidance_existing_tsv_region</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-        <span class="n">avoidance_to_element_region</span> <span class="o">=</span> <span class="p">(</span><span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;base_metal_gap_wo_grid&quot;</span><span class="p">)</span>
-                                       <span class="o">+</span> <span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;indium_bump&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
-
         <span class="n">locations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ground_tsv_locations</span><span class="p">(</span><span class="n">tsv_box</span><span class="p">)</span>
         <span class="n">locations_itype</span> <span class="o">=</span> <span class="p">[</span><span class="n">pya</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">))</span> <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">locations</span><span class="p">]</span>
 
-        <span class="c1"># Determine the shape of the tsv from its through_silicon_via layer. Assumes that when merged the tsv</span>
-        <span class="c1"># contains only one polygon.</span>
-        <span class="n">tsv_size_polygon</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="n">tsv</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">)))</span>
-                                <span class="o">.</span><span class="n">merged</span><span class="p">()</span><span class="o">.</span><span class="n">each</span><span class="p">())</span>
+        <span class="k">def</span> <span class="nf">region_from_layer</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">f_id</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">begin_shapes_rec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">f_id</span><span class="p">)))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
+
+        <span class="n">avoidance_region</span> <span class="o">=</span> <span class="p">(</span><span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                            <span class="o">+</span> <span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via_avoidance&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                            <span class="o">+</span> <span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                            <span class="o">+</span> <span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via_avoidance&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
+
+        <span class="n">avoidance_to_element_region</span> <span class="o">=</span> <span class="p">(</span><span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;base_metal_gap_wo_grid&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                                       <span class="o">+</span> <span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;indium_bump&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                                       <span class="o">+</span> <span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;base_metal_gap_wo_grid&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                                       <span class="o">+</span> <span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;indium_bump&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">merged</span><span class="p">()</span>
+        <span class="n">avoidance_existing_tsv_region</span> <span class="o">=</span> <span class="n">region_from_layer</span><span class="p">(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">,</span> <span class="n">face_id</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">existing_tsv_count</span> <span class="o">=</span> <span class="n">avoidance_existing_tsv_region</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
         <span class="k">def</span> <span class="nf">filter_locations</span><span class="p">(</span><span class="n">filter_region</span><span class="p">,</span> <span class="n">separation</span><span class="p">,</span> <span class="n">input_locations</span><span class="p">):</span>
             <span class="n">sized_tsv</span> <span class="o">=</span> <span class="n">tsv_size_polygon</span><span class="o">.</span><span class="n">sized</span><span class="p">(</span><span class="n">separation</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>

@@ -99,6 +99,16 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../salt.html">Getting started (Salt package)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#first-look-around">First look around</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#setting-up-a-user-package-directory">Setting up a user package directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#defining-a-custom-element">Defining a custom element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#defining-a-custom-chip">Defining a custom chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#release-notes">Release Notes</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_guide/index.html">User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../user_guide/usage.html">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../user_guide/gui_features.html">GUI Features</a><ul>
@@ -115,9 +125,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../user_guide/gui_workflow.html">Point-and-click workflow tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../user_guide/python_workflow.html">Python workflow tutorial</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/python_workflow.html#file-system-hierarchy">File system hierarchy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/python_workflow.html#structure-of-pcell-code">Structure of  PCell code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/python_workflow.html#structure-of-element-code">Structure of Element code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/python_workflow.html#element-class"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> class</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/python_workflow.html#pcell-libraries">PCell Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/python_workflow.html#libraries">Libraries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/python_workflow.html#parameters">Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/python_workflow.html#build">Build</a></li>
 </ul>
@@ -128,17 +138,23 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/python_workflow.html#refpoints">Refpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/python_workflow.html#faces">Faces</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/python_workflow.html#layer-configuration-files">Layer configuration files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/python_workflow.html#adding-a-new-face">Adding a new face</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/python_workflow.html#opening-element-or-chip-from-an-ide">Opening <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code> from an IDE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../user_guide/macro_workflow.html">Macro development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/macro_workflow.html#basic-workflow">Basic workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/macro_workflow.html#running-the-first-example">Running the first example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/macro_workflow.html#interacting-with-the-klayout-application">Interacting with the KLayout application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/macro_workflow.html#creating-a-new-panel">Creating a new panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/macro_workflow.html#accessing-the-currently-active-panel">Accessing the currently active panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/macro_workflow.html#using-klayoutview">Using <code class="docutils literal notranslate"><span class="pre">KLayoutView</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/macro_workflow.html#debugger">Debugger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/macro_workflow.html#reloading-libraries">Reloading libraries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/macro_workflow.html#examples">Examples</a></li>
@@ -150,22 +166,33 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/mask_export.html#ground-grid">Ground grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/mask_export.html#adding-and-modifying-chips">Adding and modifying chips</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/mask_export.html#multi-face-masks">Multi-face masks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/mask_export.html#composite-mask-maps">Composite mask maps</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../user_guide/simulations.html">External simulation tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/simulation/simulation_object.html">Creating simulation object</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/simulation/simulation_object.html">Creating a simulation object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/simulation/simulation_object.html#simulation-box">Simulation box</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/simulation/simulation_object.html#ports">Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/simulation/simulation_object.html#example-simulation">Example simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/simulation/simulation_object.html#simulation-scripts">Simulation scripts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/simulation/simulation_object.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/simulation/simulation_object.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/simulation/simulation_settings.html">Simulation export settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/simulation/ansys_export.html">Ansys export</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../user_guide/simulation/ansys_export.html#ansys-scripts">Ansys scripts</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/simulation/sonnet_export.html">Sonnet export</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/simulation/export_and_run.html">Run and export in one line</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../user_guide/file_system_and_utilities.html">General Structure and Miscellaneous Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/file_system_and_utilities.html#file-system-hierarchy">File system hierarchy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../user_guide/file_system_and_utilities.html#miscellaneous-utilities">Miscellaneous Utilities</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../user_guide/xsection.html">Creating cross section images</a><ul>
@@ -177,13 +204,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../user_guide/terminology.html">Terminology</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../salt.html">Salt Package Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#user-specific-content">User Specific Content</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../salt.html#release-notes">Release Notes</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/index.html">Developer Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../developer/setup.html">Developer Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#prerequisites">Prerequisites</a><ul>
@@ -192,6 +212,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#unlinking">Unlinking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#manual-installation">Manual installation</a><ul>
@@ -203,8 +224,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../developer/standalone.html">KLayout Standalone Usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/standalone.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../developer/standalone.html#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../developer/standalone.html#installation">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/standalone.html#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../developer/standalone.html#jupyter-notebook-usage">Jupyter notebook usage</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../developer/containers.html">Containers</a><ul>
@@ -329,6 +354,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../api/kqcircuits.layer_config.html">kqcircuits.layer_config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.layer_config.default_layer_config.html">kqcircuits.layer_config.default_layer_config</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.layer_config.example_layer_config.html">kqcircuits.layer_config.example_layer_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.layer_config.html#module-kqcircuits.layer_config">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../api/kqcircuits.masks.html">kqcircuits.masks</a><ul>
@@ -352,8 +378,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.elmer.html">kqcircuits.simulations.export.elmer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.sonnet.html">kqcircuits.simulations.export.sonnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.xsection.html">kqcircuits.simulations.export.xsection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.export_and_run.html">kqcircuits.simulations.export.export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
@@ -405,7 +433,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.library_helper.html">kqcircuits.util.library_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.log_router.html">kqcircuits.util.log_router</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.macro_prepare.html">kqcircuits.util.macro_prepare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.merge.html">kqcircuits.util.merge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.netlist_extraction.html">kqcircuits.util.netlist_extraction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a></li>
@@ -428,10 +455,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../trademarks.html">Trademarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../about.html#contributors">Contributors</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a></li>
 </ul>
 
             
@@ -516,6 +540,7 @@
 <span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
 
 
+<span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_output_format</span>
@@ -546,21 +571,44 @@
     <span class="k">return</span> <span class="n">find_edge_from_point_in_polygons</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">shapes</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">Shapes</span><span class="o">.</span><span class="n">SPolygons</span><span class="p">),</span> <span class="n">point</span><span class="p">,</span> <span class="n">dbu</span><span class="p">,</span> <span class="n">tolerance</span><span class="p">)</span></div>
 
 
+<span class="k">def</span> <span class="nf">_dist</span><span class="p">(</span><span class="n">edge</span><span class="p">:</span> <span class="n">pya</span><span class="o">.</span><span class="n">Edge</span><span class="p">,</span> <span class="n">point</span><span class="p">:</span> <span class="n">pya</span><span class="o">.</span><span class="n">Point</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    If point projected to line by edge is in edge then use `distance_abs`</span>
+<span class="sd">    but otherwise take the minimum distance to end points</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">v_edge</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="n">edge</span><span class="o">.</span><span class="n">p2</span><span class="o">-</span><span class="n">edge</span><span class="o">.</span><span class="n">p1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">v_edge</span><span class="o">.</span><span class="n">sprod</span><span class="p">(</span><span class="n">v_edge</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">v_point_start</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="n">point</span><span class="o">-</span><span class="n">edge</span><span class="o">.</span><span class="n">p1</span><span class="p">)</span>
+        <span class="n">v_point_end</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="n">point</span><span class="o">-</span><span class="n">edge</span><span class="o">.</span><span class="n">p2</span><span class="p">)</span>
+
+        <span class="n">v_point_start_projection</span> <span class="o">=</span> <span class="n">v_edge</span><span class="o">.</span><span class="n">sprod</span><span class="p">(</span><span class="n">v_point_start</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">v_edge</span><span class="o">.</span><span class="n">sprod</span><span class="p">(</span><span class="n">v_edge</span><span class="p">))</span>
+        <span class="n">v_point_end_projection</span> <span class="o">=</span> <span class="n">v_edge</span><span class="o">.</span><span class="n">sprod</span><span class="p">(</span><span class="n">v_point_end</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">v_edge</span><span class="o">.</span><span class="n">sprod</span><span class="p">(</span><span class="n">v_edge</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">edge</span><span class="o">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">v_point_start_projection</span><span class="o">+</span><span class="n">v_point_end_projection</span><span class="p">):</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="n">edge</span><span class="o">.</span><span class="n">distance_abs</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">out</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">edge</span><span class="o">.</span><span class="n">p1</span><span class="p">),</span> <span class="n">point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">edge</span><span class="o">.</span><span class="n">p2</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">edge</span><span class="o">.</span><span class="n">p1</span><span class="p">),</span> <span class="n">point</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">edge</span><span class="o">.</span><span class="n">p2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
 <div class="viewcode-block" id="find_edge_from_point_in_polygons"><a class="viewcode-back" href="../../../../api/kqcircuits.simulations.export.util.html#kqcircuits.simulations.export.util.find_edge_from_point_in_polygons">[docs]</a><span class="k">def</span> <span class="nf">find_edge_from_point_in_polygons</span><span class="p">(</span><span class="n">polygons</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">pya</span><span class="o">.</span><span class="n">Polygon</span><span class="p">],</span> <span class="n">point</span><span class="p">:</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">,</span> <span class="n">dbu</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Finds the edge closest to a point, and returns the edge as well as it&#39;s polygon and edge index</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="c1"># Find closest edge to point</span>
     <span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">edge</span><span class="o">.</span><span class="n">to_dtype</span><span class="p">(</span><span class="n">dbu</span><span class="p">))</span>
              <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">polygon</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">polygons</span><span class="p">)</span>
              <span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">polygon</span><span class="o">.</span><span class="n">each_edge</span><span class="p">())</span>
              <span class="p">]</span>
-    <span class="p">(</span><span class="n">sq_distance</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">nearest_edge</span><span class="p">)</span> <span class="o">=</span> \
-        <span class="nb">sorted</span><span class="p">([(((</span><span class="n">edge</span><span class="o">.</span><span class="n">p1</span> <span class="o">+</span> <span class="n">edge</span><span class="o">.</span><span class="n">p2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sq_distance</span><span class="p">(</span><span class="n">point</span><span class="p">),</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">if</span> <span class="n">sq_distance</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+    <span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">nearest_edge</span><span class="p">)</span> <span class="o">=</span> \
+        <span class="nb">sorted</span><span class="p">([(</span><span class="n">_dist</span><span class="p">(</span><span class="n">edge</span><span class="p">,</span> <span class="n">point</span><span class="p">),</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">edge</span><span class="p">)</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">nearest_edge</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No edge found at </span><span class="si">{</span><span class="n">point</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">nearest_edge</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">sq_distance</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No edge found at </span><span class="si">{</span><span class="n">point</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">nearest_edge</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">distance</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="get_enclosing_polygon"><a class="viewcode-back" href="../../../../api/kqcircuits.simulations.export.util.html#kqcircuits.simulations.export.util.get_enclosing_polygon">[docs]</a><span class="k">def</span> <span class="nf">get_enclosing_polygon</span><span class="p">(</span><span class="n">points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]):</span>
